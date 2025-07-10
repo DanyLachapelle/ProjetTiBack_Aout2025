@@ -12,7 +12,15 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:4300","http://localhost:4200") // Autoriser l'origine Angular
+            .AllowAnyHeader()                   // Autoriser tous les en-têtes
+            .AllowAnyMethod();                  // Autoriser toutes les méthodes HTTP (GET, POST, etc.)
+    });
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -61,7 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAngularApp");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

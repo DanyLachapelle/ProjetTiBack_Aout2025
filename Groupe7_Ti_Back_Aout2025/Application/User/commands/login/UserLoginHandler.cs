@@ -21,51 +21,41 @@ public class UserLoginHandler:IQueryHandler<UserLoginQuery, UserLoginOutput>
         _logger = logger;
     }
     
-    public UserLoginOutput Handle(UserLoginQuery query)
+   public UserLoginOutput Handle(UserLoginQuery query)
+{
+    _logger.LogInformation("Login attempt with username: {Pseudo}", query.pseudo);
+
+    // Find the user by pseudo
+    var user = _userRepository.GetUserByPseudo(query.pseudo);
+
+    if (user == null)
     {
-        _logger.LogInformation("Tentative de connexion avec le pseudo : {Pseudo}", query.pseudo);
-
-        // Recherche l'utilisateur par son pseudo
-        var user = _userRepository.GetUserByPseudo(query.pseudo);
-       
-        if (user == null)
-        {
-            _logger.LogWarning("Aucun utilisateur trouvé avec le pseudo : {Pseudo}", query.pseudo);
-            // Si aucun utilisateur trouvé, on retourne une erreur ou null
-            throw new Exception("Invalid credentials");
-        }
-
-        var generatedHash = BCrypt.Net.BCrypt.HashPassword(query.password);
-        _logger.LogInformation("Mot de passe fourni : {Password}", query.password);
-        _logger.LogInformation("Hash généré depuis mot de passe : {Hash}", generatedHash);
-        _logger.LogInformation("Hash stocké dans la base : {StoredHash}", user.password);
-
-        // Vérification du mot de passe
-        if (!VerifyPassword(query.password, user.password))
-        {
-            Console.WriteLine("Mot de passe incorrect pour l'utilisateur : " + query.pseudo);
-            // Si le mot de passe est incorrect
-            throw new Exception("Invalid credentials");
-        }
-
-        // // Authentification réussie, mettre à jour l'état de connexion
-        // user.IsLoggedIn = true;
-        Console.WriteLine("Connexion réussie pour : " + query.pseudo);
-
-        // Sauvegarder les modifications dans la base de données
-        _userRepository.Save(user);  // Cette méthode doit être dans ton repository
-        
-        
-        // // Génération du token
-        var token = _tokenService.GenerateToken(user);
-
-        // Retourner l'utilisateur avec le token
-        var output = _mapper.Map<UserLoginOutput>(user);
-        output.Token = token;
-
-        // Retourner l'utilisateur avec ses informations
-        return output;
+        _logger.LogWarning("No user found with pseudo: {Pseudo}", query.pseudo);
+        throw new InvalidOperationException("Invalid pseudo");
     }
+
+    _logger.LogInformation("Provided password: {Password}", query.password);
+    _logger.LogInformation("Stored password hash: {StoredHash}", user.password);
+
+    // Verify password using bcrypt
+    if (!VerifyPassword(query.password, user.password))
+    {
+        _logger.LogWarning("Incorrect password for user: {Pseudo}", query.pseudo);
+        throw new InvalidOperationException("Invalid password");
+    }
+
+    _logger.LogInformation("Login successful for: {Pseudo}", query.pseudo);
+
+    _userRepository.Save(user);
+
+    var token = _tokenService.GenerateToken(user);
+
+    var output = _mapper.Map<UserLoginOutput>(user);
+    output.Token = token;
+
+    return output;
+}
+
     private bool VerifyPassword(string providedPassword, string storedPasswordHash)
     {
         // _logger.LogInformation("Mot de passe fourni : {Provided}", providedPassword);

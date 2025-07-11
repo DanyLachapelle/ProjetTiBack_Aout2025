@@ -18,9 +18,15 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:4300","http://localhost:4200") // Autoriser l'origine Angular
+        policy.WithOrigins(
+                "http://localhost:4300",
+                "http://localhost:4200",
+                "https://localhost:4300",
+                "https://localhost:4200"
+            ) // Autoriser l'origine Angular
             .AllowAnyHeader()                   // Autoriser tous les en-têtes
-            .AllowAnyMethod();                  // Autoriser toutes les méthodes HTTP (GET, POST, etc.)
+            .AllowAnyMethod()                   // Autoriser toutes les méthodes HTTP (GET, POST, etc.)
+            .AllowCredentials();                // Autoriser les cookies et credentials
     });
 });
 builder.Services.AddControllers();
@@ -76,9 +82,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowAngularApp");
-app.UseHttpsRedirection();
 
+// CORS doit être appelé avant les autres middlewares
+app.UseCors("AllowAngularApp");
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

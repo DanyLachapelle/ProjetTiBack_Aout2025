@@ -24,12 +24,11 @@ public class UserContext:DbContext
     {
         modelBuilder.Entity<Domain.User>(builder =>
         {
-            builder.ToTable("Users"); 
+            builder.ToTable("utilisateur"); 
             builder.HasKey(x => x.id); 
             builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.pseudo).HasColumnName("pseudo").IsRequired();
-            builder.Property(x => x.email).HasColumnName("email");
-            builder.Property(x => x.password).HasColumnName("password");
+            builder.Property(x => x.pseudo).HasColumnName("login").IsRequired();
+            builder.Property(x => x.password).HasColumnName("mot_passe");
             builder.Property(x => x.role).HasColumnName("role");
         });
     }

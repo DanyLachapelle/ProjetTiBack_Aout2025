@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Groupe7_Ti_Back_Aout2025.props" />
+</Project>

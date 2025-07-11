@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj": {}
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\obj\\",
+        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -42,6 +45,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.20, )"
@@ -75,17 +86,17 @@
         }
       }
     },
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -128,17 +139,17 @@
         }
       }
     },
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj": {
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
+        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
         "projectName": "Groupe7_Ti_Back_Aout2025",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\obj\\",
+        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
+        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -150,8 +161,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj"
+              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj"
               }
             }
           }
@@ -166,6 +177,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.20, )"
@@ -206,17 +221,17 @@
         }
       }
     },
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -228,8 +243,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
+              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
               }
             }
           }
@@ -244,29 +259,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[15.0.0, )"
-            },
-            "BCrypt.Net-Next": {
-              "target": "Package",
-              "version": "[4.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.20, )"
             },
-            "Microsoft.EntityFrameworkCore.Relational": {
+            "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[7.0.20, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[9.0.7, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.9.0, )"
             }
           },
           "imports": [

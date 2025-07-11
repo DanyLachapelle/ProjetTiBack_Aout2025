@@ -125,6 +125,12 @@ public class MocktailService : IMocktailService
         await _mocktailRepository.DeleteAsync(id);
     }
 
+    public async Task<IEnumerable<IngredientDto>> GetAllIngredientsAsync()
+    {
+        var ingredients = await _mocktailRepository.GetAllIngredientsAsync();
+        return ingredients.Select(MapToIngredientDto);
+    }
+
     private MocktailDto MapToDto(Domain.Mocktail mocktail)
     {
         return new MocktailDto
@@ -141,6 +147,18 @@ public class MocktailService : IMocktailService
                 Quantity = mi.Quantity,
                 Unit = mi.Unit
             }).ToList()
+        };
+    }
+
+    private IngredientDto MapToIngredientDto(Domain.Ingredient ingredient)
+    {
+        return new IngredientDto
+        {
+            Id = ingredient.Id,
+            Name = ingredient.Name,
+            Stock = ingredient.Stock,
+            Limit = ingredient.Limit,
+            Unit = ingredient.Unit
         };
     }
 

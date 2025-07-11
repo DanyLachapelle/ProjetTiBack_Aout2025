@@ -9,4 +9,5 @@ public interface IMocktailService
     Task<MocktailDto> CreateAsync(CreateMocktailRequest request);
     Task<MocktailDto> UpdateAsync(int id, UpdateMocktailRequest request);
     Task DeleteAsync(int id);
+    Task<IEnumerable<IngredientDto>> GetAllIngredientsAsync();
 } 

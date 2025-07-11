@@ -4,7 +4,9 @@ using Application.MappingProfile;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
+using Application.Services;
 using Infrastructure.User;
+using Infrastructure.Mocktail;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -56,6 +58,11 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<UserLoginQuery, UserLoginOutput>, UserLoginHandler>();
+
+// MOCKTAIL
+builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
+builder.Services.AddScoped<IMocktailService, MocktailService>();
+
 builder.Services.AddDbContext<UserContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

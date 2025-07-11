@@ -57,4 +57,9 @@ public class MocktailRepository : IMocktailRepository
     {
         return await _context.Mocktails.AnyAsync(m => m.Id == id);
     }
+
+    public async Task<IEnumerable<Domain.Ingredient>> GetAllIngredientsAsync()
+    {
+        return await _context.Ingredients.ToListAsync();
+    }
 } 

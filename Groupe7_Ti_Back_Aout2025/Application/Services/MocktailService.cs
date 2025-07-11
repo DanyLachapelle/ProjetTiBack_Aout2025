@@ -27,14 +27,97 @@ public class MocktailService : IMocktailService
 
     public async Task<MocktailDto> CreateAsync(CreateMocktailRequest request)
     {
-        // TODO: Implémenter la création
-        throw new NotImplementedException();
+        // Récupérer tous les ingrédients pour les mapper
+        var allIngredients = await _mocktailRepository.GetAllIngredientsAsync();
+        
+        // Créer le mocktail
+        var mocktail = new Domain.Mocktail
+        {
+            Name = request.Name,
+            Description = request.Description,
+            Price = request.Price,
+            Image = request.Image
+        };
+
+        // Créer les associations mocktail-ingrédients
+        var mocktailIngredients = new List<Domain.MocktailIngredient>();
+        
+        foreach (var ingredientRequest in request.Ingredients)
+        {
+            var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientRequest.Name);
+            if (ingredient == null)
+            {
+                throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
+            }
+
+            var mocktailIngredient = new Domain.MocktailIngredient
+            {
+                Mocktail = mocktail,
+                Ingredient = ingredient,
+                Quantity = ingredientRequest.Quantity,
+                Unit = ingredientRequest.Unit
+            };
+            
+            mocktailIngredients.Add(mocktailIngredient);
+        }
+
+        mocktail.MocktailIngredients = mocktailIngredients;
+
+        // Sauvegarder le mocktail
+        var createdMocktail = await _mocktailRepository.CreateAsync(mocktail);
+        
+        return MapToDto(createdMocktail);
     }
 
     public async Task<MocktailDto> UpdateAsync(int id, UpdateMocktailRequest request)
     {
-        // TODO: Implémenter la mise à jour
-        throw new NotImplementedException();
+        // Récupérer le mocktail existant
+        var existingMocktail = await _mocktailRepository.GetByIdAsync(id);
+        if (existingMocktail == null)
+        {
+            throw new ArgumentException($"Mocktail with id {id} not found");
+        }
+
+        // Récupérer tous les ingrédients pour les mapper
+        var allIngredients = await _mocktailRepository.GetAllIngredientsAsync();
+        
+        // Mettre à jour les propriétés du mocktail
+        existingMocktail.Name = request.Name;
+        existingMocktail.Description = request.Description;
+        existingMocktail.Price = request.Price;
+        existingMocktail.Image = request.Image;
+
+        // Supprimer les anciennes associations d'ingrédients
+        existingMocktail.MocktailIngredients.Clear();
+
+        // Créer les nouvelles associations mocktail-ingrédients
+        var mocktailIngredients = new List<Domain.MocktailIngredient>();
+        
+        foreach (var ingredientRequest in request.Ingredients)
+        {
+            var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientRequest.Name);
+            if (ingredient == null)
+            {
+                throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
+            }
+
+            var mocktailIngredient = new Domain.MocktailIngredient
+            {
+                Mocktail = existingMocktail,
+                Ingredient = ingredient,
+                Quantity = ingredientRequest.Quantity,
+                Unit = ingredientRequest.Unit
+            };
+            
+            mocktailIngredients.Add(mocktailIngredient);
+        }
+
+        existingMocktail.MocktailIngredients = mocktailIngredients;
+
+        // Sauvegarder les modifications
+        var updatedMocktail = await _mocktailRepository.UpdateAsync(existingMocktail);
+        
+        return MapToDto(updatedMocktail);
     }
 
     public async Task DeleteAsync(int id)

@@ -47,6 +47,52 @@ public class MocktailController : ControllerBase
         }
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateMocktailRequest request)
+    {
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Données invalides", errors = ModelState });
+            }
+
+            var createdMocktail = await _mocktailService.CreateAsync(request);
+            return CreatedAtAction(nameof(GetById), new { id = createdMocktail.Id }, createdMocktail);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+        }
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateMocktailRequest request)
+    {
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Données invalides", errors = ModelState });
+            }
+
+            var updatedMocktail = await _mocktailService.UpdateAsync(id, request);
+            return Ok(updatedMocktail);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+        }
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

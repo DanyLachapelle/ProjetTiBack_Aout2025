@@ -44,7 +44,7 @@ public class MocktailService : IMocktailService
         
         foreach (var ingredientRequest in request.Ingredients)
         {
-            var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientRequest.Name);
+            var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientRequest.Name);
             if (ingredient == null)
             {
                 throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
@@ -95,7 +95,7 @@ public class MocktailService : IMocktailService
         
         foreach (var ingredientRequest in request.Ingredients)
         {
-            var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientRequest.Name);
+            var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientRequest.Name);
             if (ingredient == null)
             {
                 throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
@@ -143,29 +143,29 @@ public class MocktailService : IMocktailService
             Image = mocktail.Image,
             Ingredients = mocktail.MocktailIngredients.Select(mi => new MocktailIngredientDto
             {
-                Name = mi.Ingredient.Name,
+                Name = mi.Ingredient.name,
                 Quantity = mi.Quantity,
                 Unit = mi.Unit
             }).ToList()
         };
     }
 
-    private IngredientDto MapToIngredientDto(Domain.Ingredient ingredient)
+    private IngredientDto MapToIngredientDto(Domain.ingredient ingredient)
     {
         return new IngredientDto
         {
-            Id = ingredient.Id,
-            Name = ingredient.Name,
-            Stock = ingredient.Stock,
-            Limit = ingredient.Limit,
-            Unit = ingredient.Unit
+            id = ingredient.id,
+            name = ingredient.name,
+            quantity = ingredient.quantity,
+            restock_threshold = ingredient.restock_threshold,
+            unit = ingredient.unit
         };
     }
 
     private bool IsAvailable(Domain.Mocktail mocktail)
     {
         return mocktail.MocktailIngredients.All(mi => 
-            mi.Ingredient.Stock >= mi.Quantity
+            mi.Ingredient.quantity >= mi.Quantity
         );
     }
 } 

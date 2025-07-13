@@ -8,7 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="User\query\" />
+      <Folder Include="Ingredient\commands\" />
+      <Folder Include="User_account\query\" />
     </ItemGroup>
 
     <ItemGroup>

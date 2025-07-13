@@ -22,5 +22,5 @@ public class MocktailIngredient
 
     // Navigation properties
     public virtual Mocktail Mocktail { get; set; } = null!;
-    public virtual Ingredient Ingredient { get; set; } = null!;
+    public virtual ingredient Ingredient { get; set; } = null!;
 } 

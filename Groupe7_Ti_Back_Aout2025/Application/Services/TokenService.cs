@@ -11,11 +11,11 @@ public class TokenService
 {
     private const double EXPIRY_DURATION_MINUTES = 30;
 
-    public string BuildToken(string key, string issuer, User user)
+    public string BuildToken(string key, string issuer, UserAccount userAccount)
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.Name, user.pseudo),
+            new Claim(ClaimTypes.Name, userAccount.username),
             new Claim(ClaimTypes.NameIdentifier,
                 Guid.NewGuid().ToString())
         };
@@ -53,13 +53,13 @@ public class TokenService
         return true;
     }
 
-    public string GenerateToken(User user)
+    public string GenerateToken(UserAccount userAccount)
     {
-        var userLoginQuery = new UserLoginQuery
+        var userLoginQuery = new UserAccountLoginQuery
         {
-            pseudo = user.pseudo
+            username = userAccount.username
         };
 
-        return BuildToken("JeNeSuisPasConMaisJeMangesDesCaillouxAvecDeLaTerreMésopotamienneHuillée", "www.joydipkanjilal.net", user);;
+        return BuildToken("JeNeSuisPasConMaisJeMangesDesCaillouxAvecDeLaTerreMésopotamienneHuillée", "www.joydipkanjilal.net", userAccount);;
     }
 }

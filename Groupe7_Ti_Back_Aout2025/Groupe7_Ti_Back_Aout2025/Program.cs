@@ -1,5 +1,7 @@
 using System.Text;
 using Api.Services;
+using Application.Ingredient.query;
+using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
 using Application.User.commands;
 using Application.User.commands.login;
@@ -7,9 +9,11 @@ using Application.Utils;
 using Application.Services;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
+using Infrastructure.User.Ingredient;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using DbContext = Infrastructure.User.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,17 +63,22 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 // USER
-builder.Services.AddScoped<UserContext>();
+builder.Services.AddScoped<DbContext>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<UserCommandProcessor>();
-builder.Services.AddScoped<IQueryHandler<UserLoginQuery, UserLoginOutput>, UserLoginHandler>();
+builder.Services.AddScoped<UserAccountCommandProcessor>();
+builder.Services.AddScoped<ICommandHandler<UserAccountLoginQuery, UserAccountLoginOutput>, UserAccountLoginHandler>();
 
+// ingredient
+builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
+builder.Services.AddScoped<IngredientGetAllQueryProcessor>();
+builder.Services.AddScoped<IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput>, IngredientGetAllHandler>();
+    
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 builder.Services.AddScoped<IMocktailService, MocktailService>();
 
-builder.Services.AddDbContext<UserContext>(dbContextBuilder =>
+builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

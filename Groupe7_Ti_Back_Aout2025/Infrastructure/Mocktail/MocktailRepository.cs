@@ -1,14 +1,15 @@
 using Domain;
 using Infrastructure.User;
 using Microsoft.EntityFrameworkCore;
+using DbContext = Infrastructure.User.DbContext;
 
 namespace Infrastructure.Mocktail;
 
 public class MocktailRepository : IMocktailRepository
 {
-    private readonly UserContext _context;
+    private readonly DbContext _context;
 
-    public MocktailRepository(UserContext context)
+    public MocktailRepository(DbContext context)
     {
         _context = context;
     }
@@ -58,7 +59,7 @@ public class MocktailRepository : IMocktailRepository
         return await _context.Mocktails.AnyAsync(m => m.Id == id);
     }
 
-    public async Task<IEnumerable<Domain.Ingredient>> GetAllIngredientsAsync()
+    public async Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync()
     {
         return await _context.Ingredients.ToListAsync();
     }

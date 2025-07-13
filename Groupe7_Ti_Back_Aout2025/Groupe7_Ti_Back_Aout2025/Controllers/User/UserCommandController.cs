@@ -9,22 +9,22 @@ namespace Groupe7_Ti_Back_Aout2025.Controllers.User;
 [Route("api/users")]
 public class UserCommandController: ControllerBase
 {
-    private readonly UserCommandProcessor _userCommandsProcessor;
+    private readonly UserAccountCommandProcessor _userAccountCommandsProcessor;
     private readonly IUserRepository _userRepository;
     //private readonly ILogger<UserLoginHandler> _logger;
     
-    public UserCommandController(UserCommandProcessor userCommandsProcessor, IUserRepository userRepository)
+    public UserCommandController(UserAccountCommandProcessor userAccountCommandsProcessor, IUserRepository userRepository)
     {
-        _userCommandsProcessor = userCommandsProcessor;
+        _userAccountCommandsProcessor = userAccountCommandsProcessor;
         _userRepository = userRepository;
         //_logger = logger;
     }
     
     [HttpPost("login")]
-    [ProducesResponseType(typeof(UserLoginQuery), StatusCodes.Status201Created)]
-    [ProducesResponseType(typeof(UserLoginQuery), StatusCodes.Status409Conflict)]
+    [ProducesResponseType(typeof(UserAccountLoginQuery), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(UserAccountLoginQuery), StatusCodes.Status409Conflict)]
     [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
-    public ActionResult<UserLoginQuery> Login([FromBody] UserLoginQuery query)
+    public ActionResult<UserAccountLoginQuery> Login([FromBody] UserAccountLoginQuery query)
     {
         if (!ModelState.IsValid)
         {
@@ -33,7 +33,7 @@ public class UserCommandController: ControllerBase
 
         try
         {
-            var result = _userCommandsProcessor.Login(query);
+            var result = _userAccountCommandsProcessor.Login(query);
             return Ok(result);
         }
         catch (InvalidOperationException ex)

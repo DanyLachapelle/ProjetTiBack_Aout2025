@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {}
+    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
+    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Application\\obj\\",
+        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,11 +26,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
+              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -86,17 +86,17 @@
         }
       }
     },
-    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -139,17 +139,17 @@
         }
       }
     },
-    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -161,8 +161,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
+              "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj"
               }
             }
           }

@@ -3,15 +3,15 @@ using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.User;
 
-public class UserContext:DbContext
+public class DbContext:Microsoft.EntityFrameworkCore.DbContext
 {
-    public DbSet<Domain.User> Users { get; set; }
+    public DbSet<Domain.UserAccount> Users { get; set; }
     public DbSet<Domain.Mocktail> Mocktails { get; set; }
-    public DbSet<Domain.Ingredient> Ingredients { get; set; }
+    public DbSet<Domain.ingredient> Ingredients { get; set; }
     public DbSet<Domain.MocktailIngredient> MocktailIngredients { get; set; }
     
     private readonly ILoggerFactory _loggerFactory;
-    public UserContext(DbContextOptions<UserContext> options, ILoggerFactory loggerFactory) 
+    public DbContext(DbContextOptions<DbContext> options, ILoggerFactory loggerFactory) 
         : base(options)
     {
         _loggerFactory = loggerFactory;
@@ -26,13 +26,13 @@ public class UserContext:DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Domain.User>(builder =>
+        modelBuilder.Entity<Domain.UserAccount>(builder =>
         {
-            builder.ToTable("utilisateur"); 
+            builder.ToTable("user_account"); 
             builder.HasKey(x => x.id); 
             builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.pseudo).HasColumnName("login").IsRequired();
-            builder.Property(x => x.password).HasColumnName("mot_passe");
+            builder.Property(x => x.username).HasColumnName("username").IsRequired();
+            builder.Property(x => x.password).HasColumnName("password").IsRequired();
             builder.Property(x => x.role).HasColumnName("role");
         });
 
@@ -47,15 +47,15 @@ public class UserContext:DbContext
             builder.Property(x => x.Image).HasColumnName("image");
         });
 
-        modelBuilder.Entity<Domain.Ingredient>(builder =>
+        modelBuilder.Entity<Domain.ingredient>(builder =>
         {
             builder.ToTable("ingredient");
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.Name).HasColumnName("nom").IsRequired();
-            builder.Property(x => x.Stock).HasColumnName("quantite_disponible").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Limit).HasColumnName("seuil_restock").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Unit).HasColumnName("unite").HasMaxLength(10);
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).HasColumnName("id");
+            builder.Property(x => x.name).HasColumnName("name").IsRequired();
+            builder.Property(x => x.quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.restock_threshold).HasColumnName("restock_threshold").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.unit).HasColumnName("unit").HasMaxLength(10);
         });
 
         modelBuilder.Entity<Domain.MocktailIngredient>(builder =>

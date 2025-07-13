@@ -14,4 +14,10 @@ public class IngredientRepository:IIngredientRepository
     {
         return _context.Ingredients.ToList();
     }
+
+    public void CreateIngredient(ingredient ingredient)
+    {
+        _context.Ingredients.Add(ingredient);
+        _context.SaveChanges();
+    }
 }

@@ -1,5 +1,7 @@
 using System.Text;
 using Api.Services;
+using Application.Ingredient.commands;
+using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
@@ -71,8 +73,10 @@ builder.Services.AddScoped<ICommandHandler<UserAccountLoginQuery, UserAccountLog
 
 // ingredient
 builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
-builder.Services.AddScoped<IngredientGetAllQueryProcessor>();
+builder.Services.AddScoped<IngredientQueryProcessor>();
+builder.Services.AddScoped<IngredientCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput>, IngredientGetAllHandler>();
+builder.Services.AddScoped<ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>, CreateIngredientHandler>();
     
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();

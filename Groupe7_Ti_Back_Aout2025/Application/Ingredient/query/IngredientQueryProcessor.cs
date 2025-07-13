@@ -3,11 +3,11 @@ using Application.Utils;
 
 namespace Application.Ingredient.query;
 
-public class IngredientGetAllQueryProcessor
+public class IngredientQueryProcessor
 {
    private  readonly IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput> _ingredientGetAllHandler;
    
-   public IngredientGetAllQueryProcessor(IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput> ingredientGetAllHandler)
+   public IngredientQueryProcessor(IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput> ingredientGetAllHandler)
       {
          _ingredientGetAllHandler = ingredientGetAllHandler;
       }

@@ -10,10 +10,10 @@ namespace Groupe7_Ti_Back_Aout2025.Controllers.Ingredient;
 [Route("api/ingredients")]
 public class IngredientQueryController:ControllerBase
 {
-    private readonly IngredientGetAllQueryProcessor _ingredientqueryCommandsProcessor;
+    private readonly IngredientQueryProcessor _ingredientqueryCommandsProcessor;
     private readonly IIngredientRepository _ingredientRepository;
     
-    public IngredientQueryController(IngredientGetAllQueryProcessor ingredientqueryCommandsProcessor, IIngredientRepository ingredientRepository)
+    public IngredientQueryController(IngredientQueryProcessor ingredientqueryCommandsProcessor, IIngredientRepository ingredientRepository)
     {
         _ingredientqueryCommandsProcessor = ingredientqueryCommandsProcessor;
         _ingredientRepository = ingredientRepository;

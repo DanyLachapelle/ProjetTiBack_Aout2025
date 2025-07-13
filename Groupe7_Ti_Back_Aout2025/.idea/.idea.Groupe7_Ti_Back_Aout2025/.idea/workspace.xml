@@ -9,122 +9,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Ingredient/query/IngredientGetAllQueryProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Ingredient/query/getAllIngredient/IngredientGetAllHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Ingredient/query/getAllIngredient/IngredientGetAllOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Ingredient/query/getAllIngredient/IngredientGetAllQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/User_account/commands/UserAccountCommandProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientQueryController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Ingredient/IIngredientRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Ingredient/IngredientRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/UserAccount/IUserRepository.cs" afterDir="false" />
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="getAllIngredient fonctionnel">
+      <change afterPath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientCommandController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/DTOs/IngredientDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DTOs/IngredientDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/MappingProfile/Profile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/MappingProfile/Profile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/MocktailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/MocktailService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User/commands/UserCommandProcessor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User/commands/login/UserLoginHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User/commands/login/UserLoginOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginOutput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User/commands/login/UserLoginQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/query/IngredientGetAllQueryProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/query/IngredientQueryProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Ingredient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/MocktailIngredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/MocktailIngredient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/UserAccount.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientQueryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientQueryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/IngredientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/IngredientController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Mocktail/IMocktailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Mocktail/IMocktailRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/User/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/User/UserContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/User/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UserAccount/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Ingredient/IIngredientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Ingredient/IIngredientRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Ingredient/IngredientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Ingredient/IngredientRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +165,15 @@
       <updated>1752217974754</updated>
       <workItem from="1752217976362" duration="6636000" />
     </task>
+    <task id="LOCAL-00001" summary="getAllIngredient fonctionnel">
+      <option name="closed" value="true" />
+      <created>1752444999132</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752444999133</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,5 +194,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="getAllIngredient fonctionnel" />
+    <option name="LAST_COMMIT_MESSAGE" value="getAllIngredient fonctionnel" />
   </component>
 </project>

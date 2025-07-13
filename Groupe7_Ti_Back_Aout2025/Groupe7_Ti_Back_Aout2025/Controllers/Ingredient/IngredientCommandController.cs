@@ -1,5 +1,6 @@
 ﻿using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.deleteIngredient;
 using Infrastructure.User.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,5 +39,29 @@ public class IngredientCommandController:ControllerBase
             // Log the exception if necessary
             return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
         }
+        
     }
+    
+    [HttpDelete("deleteIngredient/{id}")]
+    [ProducesResponseType(typeof(DeleteIngredientOutput), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
+    public ActionResult<DeleteIngredientOutput> DeleteIngredient(int id)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = _ingredientCommandsProcessor.DeleteIngredient(id);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
+        }
+    }
+
+    
 }

@@ -20,4 +20,15 @@ public class IngredientRepository:IIngredientRepository
         _context.Ingredients.Add(ingredient);
         _context.SaveChanges();
     }
+
+    public void DeleteIngredient(ingredient ingredient)
+    {
+        _context.Ingredients.Remove(ingredient);
+        _context.SaveChanges();
+    }
+
+    public ingredient GetIngredientById(int commandId)
+    {
+        return _context.Ingredients.FirstOrDefault(i => i.id == commandId);
+    }
 }

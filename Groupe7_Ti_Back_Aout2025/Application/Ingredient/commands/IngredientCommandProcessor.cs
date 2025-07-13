@@ -1,4 +1,5 @@
 ﻿using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.deleteIngredient;
 using Application.Utils;
 
 namespace Application.Ingredient.commands;
@@ -6,11 +7,15 @@ namespace Application.Ingredient.commands;
 public class IngredientCommandProcessor
 {
     private readonly ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> _createIngredientHandler;
-public IngredientCommandProcessor(ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> createIngredientHandler)
+    private readonly ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> _deleteIngredientHandler;
+    
+    public IngredientCommandProcessor(
+        ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> createIngredientHandler,
+        ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> deleteIngredientHandler)
     {
-        _createIngredientHandler = createIngredientHandler;
+        _createIngredientHandler = createIngredientHandler ?? throw new ArgumentNullException(nameof(createIngredientHandler));
+        _deleteIngredientHandler = deleteIngredientHandler ?? throw new ArgumentNullException(nameof(deleteIngredientHandler));
     }
-
     public object? CreateIngredient(CreateIngredientQuery command)
     {
         if (command == null)
@@ -25,4 +30,17 @@ public IngredientCommandProcessor(ICommandHandler<CreateIngredientQuery, CreateI
 
         return _createIngredientHandler.Handle(command);
     }
+    
+    public DeleteIngredientOutput DeleteIngredient(int id)
+    {
+        var command = new DeleteIngredientQuery { id = id };
+
+        if (id <= 0)
+        {
+            throw new ArgumentException("Invalid ingredient ID provided");
+        }
+
+        return _deleteIngredientHandler.Handle(command);
+    }
+    
 }

@@ -6,4 +6,6 @@ public interface IIngredientRepository
 {
     List<ingredient> GetAllIngredient();
     void CreateIngredient(ingredient ingredient);
+    void DeleteIngredient(ingredient ingredient);
+    ingredient GetIngredientById(int commandId);
 }

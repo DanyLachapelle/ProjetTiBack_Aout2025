@@ -2,6 +2,7 @@ using System.Text;
 using Api.Services;
 using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
@@ -77,6 +78,7 @@ builder.Services.AddScoped<IngredientQueryProcessor>();
 builder.Services.AddScoped<IngredientCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput>, IngredientGetAllHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>, CreateIngredientHandler>();
+builder.Services.AddScoped<ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput>, DeleteIngredientHandler>();
     
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();

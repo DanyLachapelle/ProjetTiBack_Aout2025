@@ -83,6 +83,7 @@ builder.Services.AddScoped<ICommandHandler<CreateIngredientQuery, CreateIngredie
 builder.Services.AddScoped<ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput>, DeleteIngredientHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput>, UpdateLimitIngredientHandler>();    
 builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput>, UpdateQuantityIngredientHandler>();
+
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 builder.Services.AddScoped<IMocktailService, MocktailService>();

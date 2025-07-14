@@ -31,4 +31,16 @@ public class IngredientRepository:IIngredientRepository
     {
         return _context.Ingredients.FirstOrDefault(i => i.id == commandId);
     }
+
+    public bool UpdateRestockThreshold(int ingredientId, decimal restockThreshold)
+    {
+        var ingredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredientId);
+        if (ingredient == null)
+            return false;
+
+        ingredient.restock_threshold = restockThreshold;
+        _context.SaveChanges();
+        return true;
+    }
+
 }

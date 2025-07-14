@@ -1,6 +1,7 @@
 ﻿using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
+using Application.Ingredient.commands.UpdateLimitIngredient;
 using Infrastructure.User.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,6 +63,36 @@ public class IngredientCommandController:ControllerBase
             return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
         }
     }
+    
+    [HttpPut("updateLimitIngredient/{id}")]
+    [ProducesResponseType(typeof(UpdateLimitIngredientOutput), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    public ActionResult<UpdateLimitIngredientOutput> UpdateLimitIngredient(
+        int id,
+        [FromBody] UpdateLimitIngredientQuery command)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = _ingredientCommandsProcessor.UpdateLimitIngredient(id, command);
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
+        }
+    }
+
+    
 
     
 }

@@ -13,4 +13,15 @@ public class ingredient
     
     // Navigation property pour les mocktails
     public virtual ICollection<MocktailIngredient> MocktailIngredients { get; set; } = new List<MocktailIngredient>();
+    
+    // Méthode métier pour ajouter de la quantité
+    public void AddQuantity(decimal amount)
+    {
+        if (amount <= 0)
+        {
+            throw new ArgumentException("Amount to add must be positive", nameof(amount));
+        }
+
+        quantity += amount;
+    }
 } 

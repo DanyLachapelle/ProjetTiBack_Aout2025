@@ -9,4 +9,5 @@ public interface IIngredientRepository
     void DeleteIngredient(ingredient ingredient);
     ingredient GetIngredientById(int commandId);
     bool UpdateRestockThreshold(int ingredientId, decimal restockThreshold);
+    void UpdateQuantityIngredient(ingredient ingredient);
 }

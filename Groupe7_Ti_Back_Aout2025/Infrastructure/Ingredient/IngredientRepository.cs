@@ -43,4 +43,17 @@ public class IngredientRepository:IIngredientRepository
         return true;
     }
 
+    public void UpdateQuantityIngredient(ingredient ingredient)
+    {
+        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredient.id);
+        if (existingIngredient != null)
+        {
+            existingIngredient.quantity = ingredient.quantity;
+            _context.SaveChanges();
+        }
+        else
+        {
+            throw new ArgumentException("Ingredient not found");
+        }
+    }
 }

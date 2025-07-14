@@ -2,6 +2,7 @@
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
+using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Infrastructure.User.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 
@@ -91,6 +92,29 @@ public class IngredientCommandController:ControllerBase
             return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
         }
     }
+
+    
+    [HttpPut("updateQuantity/{id}")]
+    public ActionResult<UpdateQuantityIngredientOutput> UpdateQuantity(int id, [FromBody] decimal amount)
+    {
+        try
+        {
+            var command = new UpdateQuantityIngredientQuery() { Id = id, Amount = amount };
+            var result = _ingredientCommandsProcessor.UpdateQuantityIngredient(id, command);
+
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
+        }
+    }
+
+
 
     
 

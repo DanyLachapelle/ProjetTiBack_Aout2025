@@ -4,6 +4,7 @@ using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
+using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
@@ -81,6 +82,7 @@ builder.Services.AddScoped<IQueryHandler<IngredientGetAllQuery, IngredientGetAll
 builder.Services.AddScoped<ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>, CreateIngredientHandler>();
 builder.Services.AddScoped<ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput>, DeleteIngredientHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput>, UpdateLimitIngredientHandler>();    
+builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput>, UpdateQuantityIngredientHandler>();
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 builder.Services.AddScoped<IMocktailService, MocktailService>();

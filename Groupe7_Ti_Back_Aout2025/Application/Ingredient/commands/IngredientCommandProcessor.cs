@@ -1,6 +1,7 @@
 ﻿using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
+using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Utils;
 
 namespace Application.Ingredient.commands;
@@ -10,15 +11,18 @@ public class IngredientCommandProcessor
     private readonly ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> _createIngredientHandler;
     private readonly ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> _deleteIngredientHandler;
     private readonly ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> _updateLimitIngredientHandler;
+    private readonly ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput> _updateQuantityIngredientHandler;
     
     public IngredientCommandProcessor(
         ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> createIngredientHandler,
         ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> deleteIngredientHandler,
-        ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> updateLimitIngredientHandler)
+        ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> updateLimitIngredientHandler,
+        ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput> updateQuantityIngredientHandler)
     {
-        _createIngredientHandler = createIngredientHandler ?? throw new ArgumentNullException(nameof(createIngredientHandler));
-        _deleteIngredientHandler = deleteIngredientHandler ?? throw new ArgumentNullException(nameof(deleteIngredientHandler));
-        _updateLimitIngredientHandler = updateLimitIngredientHandler ?? throw new ArgumentNullException(nameof(updateLimitIngredientHandler));
+        _createIngredientHandler = createIngredientHandler;
+        _deleteIngredientHandler = deleteIngredientHandler;
+        _updateLimitIngredientHandler = updateLimitIngredientHandler;
+        _updateQuantityIngredientHandler = updateQuantityIngredientHandler;
     }
     public object? CreateIngredient(CreateIngredientQuery command)
     {
@@ -62,6 +66,23 @@ public class IngredientCommandProcessor
         };
 
         return _updateLimitIngredientHandler.Handle(command);
+    }
+    
+    public UpdateQuantityIngredientOutput UpdateQuantityIngredient(int id, UpdateQuantityIngredientQuery query)
+    {
+        if (query == null)
+            throw new ArgumentNullException(nameof(query));
+
+        if (id <= 0)
+            throw new ArgumentException("Invalid ingredient ID");
+
+        var command = new UpdateQuantityIngredientQuery
+        {
+            Id = id,
+            Amount = query.Amount
+        };
+
+        return _updateQuantityIngredientHandler.Handle(command);
     }
 
 

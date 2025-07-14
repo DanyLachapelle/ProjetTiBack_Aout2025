@@ -7,4 +7,5 @@ public class IngredientDto
     public decimal quantity { get; set; }
     public decimal restock_threshold { get; set; }
     public string unit { get; set; } = string.Empty;
+    public DateTime? last_modified_at { get; set; } 
 } 

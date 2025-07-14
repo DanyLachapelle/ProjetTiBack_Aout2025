@@ -56,6 +56,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
             builder.Property(x => x.restock_threshold).HasColumnName("restock_threshold").HasColumnType("decimal(10,2)");
             builder.Property(x => x.unit).HasColumnName("unit").HasMaxLength(10);
+            builder.Property(x => x.last_modified_at).HasColumnName("last_modified_at").HasColumnType("DATETIME2");
         });
 
         modelBuilder.Entity<Domain.MocktailIngredient>(builder =>

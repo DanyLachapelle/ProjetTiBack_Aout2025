@@ -49,6 +49,8 @@ public class IngredientRepository:IIngredientRepository
         if (existingIngredient != null)
         {
             existingIngredient.quantity = ingredient.quantity;
+            existingIngredient.last_modified_at = ingredient.last_modified_at;
+            Console.WriteLine($"Updating ingredient id={ingredient.id} quantity={ingredient.quantity} last_modified_at={ingredient.last_modified_at}");
             _context.SaveChanges();
         }
         else

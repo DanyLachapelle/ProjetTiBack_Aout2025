@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.User;
+﻿using System.Linq;
+
+namespace Infrastructure.User;
 
 public class UserRepository:IUserRepository
 {

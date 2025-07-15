@@ -17,6 +17,7 @@ public class IngredientRepository:IIngredientRepository
 
     public void CreateIngredient(ingredient ingredient)
     {
+        ingredient.last_modified_at = DateTime.Now; 
         _context.Ingredients.Add(ingredient);
         _context.SaveChanges();
     }

@@ -18,19 +18,19 @@ public class MocktailController : ControllerBase
         _mocktailRepository = mocktailRepository ?? throw new ArgumentNullException(nameof(mocktailRepository));
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
-    {
-        try
-        {
-            var mocktails = await _mocktailService.GetAllAsync();
-            return Ok(mocktails);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
-        }
-    }
+    // [HttpGet]
+    // public async Task<IActionResult> GetAll()
+    // {
+    //     try
+    //     {
+    //         var mocktails = await _mocktailService.GetAllAsync();
+    //         return Ok(mocktails);
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
 
     // [HttpGet("{id}")]
     // public async Task<IActionResult> GetById(int id)

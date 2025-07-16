@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Mocktails.query;
+using Application.Mocktails.query.getAllMocktail;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
 using Application.Services;
@@ -21,7 +22,7 @@ public class MocktailQueryController:ControllerBase
         _mocktailRepository = mocktailRepository;
     }
     
-    [HttpGet("{id}")]
+    [HttpGet("getMocktailById/{id}")]
     public ActionResult<MocktailDto?> GetMocktailById(int id)
     {
         var query = new GetbyidMocktailQuery(id);
@@ -35,15 +36,17 @@ public class MocktailQueryController:ControllerBase
         return Ok(result);
     }
 
-
-    
-
-    
-    
-    
-    
-    
-
-    
-    
+    [HttpGet("getAllMocktails")]
+    public ActionResult<List<MocktailDto>> GetAllMocktails()
+    {
+        var query = new GetAllMocktailQuery();
+        var result = _mocktailQueryProcessor.GetAllMocktails(query);
+        
+        if (result == null || !result.Any())
+        {
+            return NotFound();
+        }
+        
+        return Ok(result);
+    }
 }

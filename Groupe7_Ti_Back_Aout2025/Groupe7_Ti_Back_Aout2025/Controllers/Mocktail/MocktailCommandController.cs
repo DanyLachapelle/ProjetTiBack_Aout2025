@@ -19,7 +19,7 @@ public class MocktailCommandController:ControllerBase
         _mocktailRepository = mocktailRepository;
     }
     
-    [HttpDelete("{id}")]
+    [HttpDelete("DeleteMocktail/{id}")]
     public IActionResult Delete(int id)
     {
         var command = new DeleteMocktailCommand(id);
@@ -33,7 +33,7 @@ public class MocktailCommandController:ControllerBase
         return Ok(new DeleteMocktailOutput());
     }
     
-    [HttpPost]
+    [HttpPost("CreateMocktail")]
     public IActionResult Create([FromBody] CreateMocktailCommand command)
     {
         if (command == null)
@@ -53,7 +53,7 @@ public class MocktailCommandController:ControllerBase
         }
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("UpdateMocktail/{id}")]
     public IActionResult Update(int id, [FromBody] UpdateMocktailCommand command)
     {
         try

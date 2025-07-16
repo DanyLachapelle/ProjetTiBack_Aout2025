@@ -14,12 +14,20 @@ public class MocktailRepository : IMocktailRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<Domain.mocktail>> GetAllAsync()
+    // public async Task<IEnumerable<Domain.mocktail>> GetAllAsync()
+    // {
+    //     return await _context.Mocktails
+    //         .Include(m => m.MocktailIngredients)
+    //         .ThenInclude(mi => mi.Ingredient)
+    //         .ToListAsync();
+    // }
+
+    public IEnumerable<Domain.mocktail> GetAllMocktails()
     {
-        return await _context.Mocktails
+        return _context.Mocktails
             .Include(m => m.MocktailIngredients)
             .ThenInclude(mi => mi.Ingredient)
-            .ToListAsync();
+            .ToList();
     }
 
     // public async Task<Domain.mocktail?> GetByIdAsync(int id)

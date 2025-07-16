@@ -13,11 +13,11 @@ public class MocktailService : IMocktailService
         _mocktailRepository = mocktailRepository;
     }
 
-    public async Task<IEnumerable<MocktailDto>> GetAllAsync()
-    {
-        var mocktails = await _mocktailRepository.GetAllAsync();
-        return mocktails.Select(MapToDto);
-    }
+    // public async Task<IEnumerable<MocktailDto>> GetAllAsync()
+    // {
+    //     var mocktails = await _mocktailRepository.GetAllAsync();
+    //     return mocktails.Select(MapToDto);
+    // }
 
     // public async Task<MocktailDto?> GetByIdAsync(int id)
     // {

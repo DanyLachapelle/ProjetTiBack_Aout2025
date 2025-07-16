@@ -113,7 +113,7 @@ public class MocktailController : ControllerBase
     // }
 
     // [HttpPut("{id}")]
-    // public async Task<IActionResult> Update(int id, [FromBody] UpdateMocktailRequest request)
+    // public IActionResult Update(int id, [FromBody] UpdateMocktailRequest request)
     // {
     //     try
     //     {
@@ -122,7 +122,7 @@ public class MocktailController : ControllerBase
     //             return BadRequest(new { message = "Données invalides", errors = ModelState });
     //         }
     //
-    //         var updatedMocktail = await _mocktailService.UpdateAsync(id, request);
+    //         var updatedMocktail = _mocktailService.Update(id, request); // méthode synchrone
     //         return Ok(updatedMocktail);
     //     }
     //     catch (ArgumentException ex)
@@ -134,6 +134,7 @@ public class MocktailController : ControllerBase
     //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
     //     }
     // }
+
 
     // [HttpDelete("{id}")]
     // public async Task<IActionResult> Delete(int id)

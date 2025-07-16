@@ -12,6 +12,7 @@ using Application.MappingProfile;
 using Application.Mocktails.commands;
 using Application.Mocktails.commands.createMocktail;
 using Application.Mocktails.commands.deleteMocktail;
+using Application.Mocktails.commands.updateMocktail;
 using Application.Mocktails.query;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
@@ -100,6 +101,7 @@ builder.Services.AddScoped<MocktailCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<GetbyidMocktailQuery, MocktailDto>, GetbyidMocktailHandler>();
 builder.Services.AddScoped<ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput>, DeleteMocktailHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateMocktailCommand, CreateMocktailOutput>, CreateMocktailHandler>();
+builder.Services.AddScoped<ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput>, UpdateMocktailHandler>();
 builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

@@ -9,7 +9,8 @@ public interface IMocktailRepository
     Domain.mocktail? GetMocktailById(int id);
     //Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail);
     Domain.mocktail CreateMocktail(Domain.mocktail mocktail);
-    Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail);
+    //Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail);
+    Domain.mocktail UpdateMocktail(Domain.mocktail mocktail);
     //Task DeleteAsync(int id);
     void DeleteMocktail(mocktail mocktail);
 

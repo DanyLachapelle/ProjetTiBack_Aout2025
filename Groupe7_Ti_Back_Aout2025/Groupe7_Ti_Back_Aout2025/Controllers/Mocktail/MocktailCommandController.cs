@@ -1,6 +1,7 @@
 ﻿using Application.Mocktails.commands;
 using Application.Mocktails.commands.createMocktail;
 using Application.Mocktails.commands.deleteMocktail;
+using Application.Mocktails.commands.updateMocktail;
 using Infrastructure.Mocktail;
 using Microsoft.AspNetCore.Mvc;
 
@@ -51,6 +52,27 @@ public class MocktailCommandController:ControllerBase
             return StatusCode(500, new { message = "Erreur lors de la création du mocktail.", error = ex.Message });
         }
     }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, [FromBody] UpdateMocktailCommand command)
+    {
+        try
+        {
+            command.id = id; // injecte l'id du route dans la commande
+            var result = _mocktailCommandProcessor.UpdateMocktail(command);
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+        }
+    }
+
+
 
 
 

@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="DeleteMocktail fonctionelle">
-      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailOutput.cs" afterDir="false" />
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="CreateMocktail fonctionelle">
+      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailOutput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/MocktailCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/MocktailCommandProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/IMocktailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/IMocktailService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/MocktailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/MocktailService.cs" afterDir="false" />
@@ -41,7 +42,6 @@
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Mocktail/IMocktailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Mocktail/IMocktailRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
@@ -169,7 +169,7 @@
       <updated>1752217974754</updated>
       <workItem from="1752217976362" duration="6636000" />
       <workItem from="1752524594982" duration="7947000" />
-      <workItem from="1752677205799" duration="10935000" />
+      <workItem from="1752677205799" duration="12969000" />
     </task>
     <task id="LOCAL-00001" summary="getAllIngredient fonctionnel">
       <option name="closed" value="true" />
@@ -243,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752702367340</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="CreateMocktail fonctionelle">
+      <option name="closed" value="true" />
+      <created>1752705008988</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752705008988</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +280,7 @@
     <MESSAGE value="Ingredient Management fonctionnel" />
     <MESSAGE value="getbyidMocktail fonctionelle" />
     <MESSAGE value="DeleteMocktail fonctionelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="DeleteMocktail fonctionelle" />
+    <MESSAGE value="CreateMocktail fonctionelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="CreateMocktail fonctionelle" />
   </component>
 </project>

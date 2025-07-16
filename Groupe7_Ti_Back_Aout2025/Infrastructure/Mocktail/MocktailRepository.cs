@@ -52,12 +52,19 @@ public class MocktailRepository : IMocktailRepository
     }
 
 
-    public async Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail)
+    // public async Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail)
+    // {
+    //     _context.Mocktails.Update(mocktail);
+    //     await _context.SaveChangesAsync();
+    //     return mocktail;
+    // }
+    public Domain.mocktail UpdateMocktail(Domain.mocktail mocktail)
     {
         _context.Mocktails.Update(mocktail);
-        await _context.SaveChangesAsync();
+        _context.SaveChanges();
         return mocktail;
     }
+
 
     // public async Task DeleteAsync(int id)
     // {

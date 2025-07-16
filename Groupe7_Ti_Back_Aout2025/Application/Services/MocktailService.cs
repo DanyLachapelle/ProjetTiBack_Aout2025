@@ -74,18 +74,18 @@ public class MocktailService : IMocktailService
     //     return MapToDto(createdMocktail);
     // }
 
-    // public async Task<MocktailDto> UpdateAsync(int id, UpdateMocktailRequest request)
+    // public MocktailDto Update(int id, UpdateMocktailRequest request)
     // {
     //     // Récupérer le mocktail existant
-    //     var existingMocktail = await _mocktailRepository.GetMocktailById(id);
+    //     var existingMocktail = _mocktailRepository.GetMocktailById(id);
     //     if (existingMocktail == null)
     //     {
     //         throw new ArgumentException($"Mocktail with id {id} not found");
     //     }
     //
     //     // Récupérer tous les ingrédients pour les mapper
-    //     var allIngredients = await _mocktailRepository.GetAllIngredientsAsync();
-    //     
+    //     var allIngredients = _mocktailRepository.GetAllIngredientsAsync().Result; // Attention : Result ici bloque le thread
+    //
     //     // Mettre à jour les propriétés du mocktail
     //     existingMocktail.nom = request.Name;
     //     existingMocktail.description = request.Description;
@@ -97,7 +97,7 @@ public class MocktailService : IMocktailService
     //
     //     // Créer les nouvelles associations mocktail-ingrédients
     //     var mocktailIngredients = new List<Domain.mocktail_ingredient>();
-    //     
+    //
     //     foreach (var ingredientRequest in request.Ingredients)
     //     {
     //         var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientRequest.Name);
@@ -113,17 +113,19 @@ public class MocktailService : IMocktailService
     //             quantite = ingredientRequest.Quantity,
     //             unite = ingredientRequest.Unit
     //         };
-    //         
+    //
     //         mocktailIngredients.Add(mocktailIngredient);
     //     }
     //
     //     existingMocktail.MocktailIngredients = mocktailIngredients;
     //
     //     // Sauvegarder les modifications
-    //     var updatedMocktail = await _mocktailRepository.UpdateAsync(existingMocktail);
-    //     
+    //     var updatedMocktail = _mocktailRepository.UpdateAsync(existingMocktail).Result;
+    //
     //     return MapToDto(updatedMocktail);
     // }
+
+    
     // public MocktailDto Update(int id, UpdateMocktailRequest request)
     // {
     //     // Récupérer le mocktail existant

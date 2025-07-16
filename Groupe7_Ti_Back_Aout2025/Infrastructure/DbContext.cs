@@ -41,9 +41,9 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.ToTable("mocktail");
             builder.HasKey(x => x.id);
             builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.nom).HasColumnName("nom").IsRequired();
+            builder.Property(x => x.name).HasColumnName("name").IsRequired();
             builder.Property(x => x.description).HasColumnName("description");
-            builder.Property(x => x.prix).HasColumnName("prix").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.price).HasColumnName("price").HasColumnType("decimal(10,2)");
             builder.Property(x => x.image).HasColumnName("image");
         });
 
@@ -72,8 +72,8 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.id).HasColumnName("id");
             builder.Property(x => x.mocktail_id).HasColumnName("mocktail_id");
             builder.Property(x => x.ingredient_id).HasColumnName("ingredient_id");
-            builder.Property(x => x.quantite).HasColumnName("quantite").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.unite).HasColumnName("unite").HasMaxLength(10);
+            builder.Property(x => x.quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.unit).HasColumnName("unit").HasMaxLength(10);
 
             // Relations
             builder.HasOne(x => x.Mocktail)

@@ -9,8 +9,8 @@ public class mocktail_ingredient
     public int id { get; set; }
     public int mocktail_id { get; set; }
     public int ingredient_id { get; set; }
-    public decimal quantite { get; set; }
-    public string unite { get; set; } = string.Empty;
+    public decimal quantity { get; set; }
+    public string unit { get; set; } = string.Empty;
 
     // Navigation properties
     [JsonIgnore]

@@ -25,16 +25,16 @@ namespace Application.Mocktails.Query.GetByIdMocktail
             return new MocktailDto
             {
                 Id = mocktail.id,
-                Name = mocktail.nom,
+                Name = mocktail.name,
                 Description = mocktail.description,
-                Price = mocktail.prix,
+                Price = mocktail.price,
                 Available = IsAvailable(mocktail),
                 Image = mocktail.image,
                 Ingredients = mocktail.MocktailIngredients.Select(mi => new MocktailIngredientDto
                 {
                     Name = mi.Ingredient.name,
-                    Quantity = mi.quantite,
-                    Unit = mi.unite
+                    Quantity = mi.quantity,
+                    Unit = mi.unit
                 }).ToList()
             };
         }

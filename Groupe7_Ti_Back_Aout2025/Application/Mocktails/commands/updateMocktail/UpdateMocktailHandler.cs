@@ -24,9 +24,9 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
         }
 
         // Mise à jour des propriétés classiques
-        mocktail.nom = command.nom;
+        mocktail.name = command.nom;
         mocktail.description = command.description;
-        mocktail.prix = command.prix;
+        mocktail.price = command.prix;
         mocktail.image = command.image;
 
         // --- Mise à jour des ingrédients ---
@@ -55,8 +55,8 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
             {
                 Mocktail = mocktail,
                 Ingredient = ingredient,
-                quantite = ingredientDto.Quantity,
-                unite = ingredientDto.Unit
+                quantity = ingredientDto.Quantity,
+                unit = ingredientDto.Unit
             };
 
             mocktail.MocktailIngredients.Add(mocktailIngredient);

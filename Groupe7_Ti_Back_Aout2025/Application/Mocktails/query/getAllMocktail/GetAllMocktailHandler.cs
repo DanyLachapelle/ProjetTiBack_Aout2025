@@ -23,16 +23,16 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
         return mocktails.Select(m => new MocktailDto
         {
             Id = m.id,
-            Name = m.nom,
+            Name = m.name,
             Description = m.description,
-            Price = m.prix,
+            Price = m.price,
             Available = IsAvailable(m),
             Image = m.image,
             Ingredients = m.MocktailIngredients.Select(mi => new MocktailIngredientDto
             {
                 Name = mi.Ingredient.name,
-                Quantity = mi.quantite,
-                Unit = mi.unite
+                Quantity = mi.quantity,
+                Unit = mi.unit
             }).ToList()
         }).ToList();
     }

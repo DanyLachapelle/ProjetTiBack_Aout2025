@@ -20,9 +20,9 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
         // Création du mocktail
         var mocktail = new mocktail
         {
-            nom = command.nom,
+            name = command.nom,
             description = command.description,
-            prix = command.prix,
+            price = command.prix,
             image = command.image
         };
 
@@ -54,8 +54,8 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             var mocktailIngredient = new mocktail_ingredient
             {
                 Ingredient = ingredientEntity,
-                quantite = ingredientDto.Quantity,
-                unite = ingredientDto.Unit
+                quantity = ingredientDto.Quantity,
+                unit = ingredientDto.Unit
             };
 
             mocktail.MocktailIngredients.Add(mocktailIngredient);
@@ -67,7 +67,7 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
         return new CreateMocktailOutput
         {
             id = createdMocktail.id,
-            nom = createdMocktail.nom
+            nom = createdMocktail.name
         };
     }
 }

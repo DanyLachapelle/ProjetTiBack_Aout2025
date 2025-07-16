@@ -96,7 +96,7 @@ builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, Update
 
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
-builder.Services.AddScoped<IMocktailService, MocktailService>();
+//builder.Services.AddScoped<IMocktailService, MocktailService>();
 builder.Services.AddScoped<MocktailQueryProcessor>();
 builder.Services.AddScoped<MocktailCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<GetbyidMocktailQuery, MocktailDto>, GetbyidMocktailHandler>();

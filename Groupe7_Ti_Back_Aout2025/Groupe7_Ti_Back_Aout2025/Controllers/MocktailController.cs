@@ -135,17 +135,32 @@ public class MocktailController : ControllerBase
     //     }
     // }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        try
-        {
-            await _mocktailService.DeleteAsync(id);
-            return NoContent();
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
-        }
-    }
+    // [HttpDelete("{id}")]
+    // public async Task<IActionResult> Delete(int id)
+    // {
+    //     try
+    //     {
+    //         await _mocktailService.DeleteMocktail(id);
+    //         return NoContent();
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
+    
+    // [HttpDelete("{id}")]
+    // public IActionResult Delete(int id)
+    // {
+    //     try
+    //     {
+    //         _mocktailService.DeleteMocktail(id); // appel synchrone
+    //         return NoContent();
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
+
 } 

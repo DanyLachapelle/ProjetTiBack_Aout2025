@@ -51,15 +51,21 @@ public class MocktailRepository : IMocktailRepository
         return mocktail;
     }
 
-    public async Task DeleteAsync(int id)
+    // public async Task DeleteAsync(int id)
+    // {
+    //     var mocktail = await _context.Mocktails.FindAsync(id);
+    //     if (mocktail != null)
+    //     {
+    //         _context.Mocktails.Remove(mocktail);
+    //         await _context.SaveChangesAsync();
+    //     }
+    // }
+    public void DeleteMocktail(mocktail mocktail)
     {
-        var mocktail = await _context.Mocktails.FindAsync(id);
-        if (mocktail != null)
-        {
-            _context.Mocktails.Remove(mocktail);
-            await _context.SaveChangesAsync();
-        }
+        _context.Mocktails.Remove(mocktail);
+        _context.SaveChanges();
     }
+
 
     public async Task<bool> ExistsAsync(int id)
     {

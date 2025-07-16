@@ -24,7 +24,7 @@ public class MocktailQueryController:ControllerBase
     [HttpGet("{id}")]
     public ActionResult<MocktailDto?> GetMocktailById(int id)
     {
-        var query = new getbyidMocktailQuery(id);
+        var query = new GetbyidMocktailQuery(id);
         var result = _mocktailQueryProcessor.GetMocktailById(query);
         
         if (result == null)

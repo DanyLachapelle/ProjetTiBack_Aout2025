@@ -1,6 +1,6 @@
 ﻿namespace Application.Mocktails.query.getbyidMocktail;
 
-public class getbyidMocktailOutput
+public class GetbyidMocktailOutput
 {
     
 }

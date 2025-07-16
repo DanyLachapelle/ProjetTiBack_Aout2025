@@ -174,10 +174,15 @@ public class MocktailService : IMocktailService
     //     return MapToDto(updatedMocktail);
     // }
 
-    public async Task DeleteAsync(int id)
-    {
-        await _mocktailRepository.DeleteAsync(id);
-    }
+    // public async Task DeleteAsync(int id)
+    // {
+    //     await _mocktailRepository.DeleteAsync(id);
+    // }
+
+    // public void DeleteMocktail(int id)
+    // {
+    //     _mocktailRepository.DeleteMocktail(id);
+    // }
 
     public async Task<IEnumerable<IngredientDto>> GetAllIngredientsAsync()
     {

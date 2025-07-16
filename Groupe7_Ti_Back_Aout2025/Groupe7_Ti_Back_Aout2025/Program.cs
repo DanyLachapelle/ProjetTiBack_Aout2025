@@ -9,6 +9,8 @@ using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
+using Application.Mocktails.commands;
+using Application.Mocktails.commands.deleteMocktail;
 using Application.Mocktails.query;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
@@ -93,7 +95,9 @@ builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, Update
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 builder.Services.AddScoped<IMocktailService, MocktailService>();
 builder.Services.AddScoped<MocktailQueryProcessor>();
-builder.Services.AddScoped<IQueryHandler<getbyidMocktailQuery, MocktailDto>, GetByIdMocktailHandler>();
+builder.Services.AddScoped<MocktailCommandProcessor>();
+builder.Services.AddScoped<IQueryHandler<GetbyidMocktailQuery, MocktailDto>, GetbyidMocktailHandler>();
+builder.Services.AddScoped<ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput>, DeleteMocktailHandler>();
 builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

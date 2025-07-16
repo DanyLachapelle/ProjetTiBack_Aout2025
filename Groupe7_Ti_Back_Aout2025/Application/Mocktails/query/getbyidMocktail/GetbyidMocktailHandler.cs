@@ -6,16 +6,16 @@ using Infrastructure.Mocktail;
 
 namespace Application.Mocktails.Query.GetByIdMocktail
 {
-    public class GetByIdMocktailHandler:IQueryHandler<getbyidMocktailQuery, MocktailDto?>
+    public class GetbyidMocktailHandler:IQueryHandler<GetbyidMocktailQuery, MocktailDto?>
     {
         private readonly IMocktailRepository _mocktailRepository;
 
-        public GetByIdMocktailHandler(IMocktailRepository mocktailRepository)
+        public GetbyidMocktailHandler(IMocktailRepository mocktailRepository)
         {
             _mocktailRepository = mocktailRepository;
         }
 
-        public MocktailDto? Handle(getbyidMocktailQuery query)
+        public MocktailDto? Handle(GetbyidMocktailQuery query)
         {
             var mocktail = _mocktailRepository.GetMocktailById(query.Id);
 

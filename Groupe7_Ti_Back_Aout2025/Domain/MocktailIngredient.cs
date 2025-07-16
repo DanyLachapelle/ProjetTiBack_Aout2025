@@ -21,6 +21,6 @@ public class MocktailIngredient
     public string Unit { get; set; } = string.Empty;
 
     // Navigation properties
-    public virtual Mocktail Mocktail { get; set; } = null!;
+    public virtual mocktail Mocktail { get; set; } = null!;
     public virtual ingredient Ingredient { get; set; } = null!;
 } 

@@ -10,59 +10,34 @@ namespace Infrastructure.Mocktail;
 public class MocktailRepository : IMocktailRepository
 {
     private readonly DbContext _context;
-
     public MocktailRepository(DbContext context)
     {
         _context = context;
     }
-
-    public async Task<IEnumerable<Domain.Mocktail>> GetAllAsync()
+    public List<mocktail> GetAllMocktail()
     {
-        return await _context.Mocktails
-            .Include(m => m.MocktailIngredients)
-            .ThenInclude(mi => mi.Ingredient)
-            .ToListAsync();
+        return _context.Mocktails.ToList();
     }
 
-    public async Task<Domain.Mocktail?> GetByIdAsync(int id)
-    {
-        return await _context.Mocktails
-            .Include(m => m.MocktailIngredients)
-            .ThenInclude(mi => mi.Ingredient)
-            .FirstOrDefaultAsync(m => m.Id == id);
-    }
-
-    public async Task<Domain.Mocktail> CreateAsync(Domain.Mocktail mocktail)
+    public void CreateMocktail(mocktail mocktail)
     {
         _context.Mocktails.Add(mocktail);
-        await _context.SaveChangesAsync();
-        return mocktail;
+        _context.SaveChanges();
     }
 
-    public async Task<Domain.Mocktail> UpdateAsync(Domain.Mocktail mocktail)
+    public void DeleteMocktail(mocktail mocktail)
     {
-        _context.Mocktails.Update(mocktail);
-        await _context.SaveChangesAsync();
-        return mocktail;
+        _context.Mocktails.Remove(mocktail);
+        _context.SaveChanges();
     }
 
-    public async Task DeleteAsync(int id)
+    public mocktail GetMocktailById(int commandId)
     {
-        var mocktail = await _context.Mocktails.FindAsync(id);
-        if (mocktail != null)
-        {
-            _context.Mocktails.Remove(mocktail);
-            await _context.SaveChangesAsync();
-        }
+        return _context.Mocktails.FirstOrDefault(i => i.Id == commandId);
     }
 
-    public async Task<bool> ExistsAsync(int id)
+    public void UpdateMocktail(mocktail mocktail)
     {
-        return await _context.Mocktails.AnyAsync(m => m.Id == id);
-    }
-
-    public async Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync()
-    {
-        return await _context.Ingredients.ToListAsync();
+        
     }
 } 

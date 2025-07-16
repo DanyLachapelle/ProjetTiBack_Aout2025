@@ -6,7 +6,7 @@ namespace Infrastructure.User;
 public class DbContext:Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Domain.UserAccount> Users { get; set; }
-    public DbSet<Domain.Mocktail> Mocktails { get; set; }
+    public DbSet<Domain.mocktail> Mocktails { get; set; }
     public DbSet<Domain.ingredient> Ingredients { get; set; }
     public DbSet<Domain.MocktailIngredient> MocktailIngredients { get; set; }
     
@@ -36,7 +36,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.role).HasColumnName("role");
         });
 
-        modelBuilder.Entity<Domain.Mocktail>(builder =>
+        modelBuilder.Entity<Domain.mocktail>(builder =>
         {
             builder.ToTable("mocktail");
             builder.HasKey(x => x.Id);

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain;
 
 [Table("mocktail")]
-public class Mocktail
+public class mocktail
 {
     [Column("id")]
     public int Id { get; set; }
@@ -15,6 +15,8 @@ public class Mocktail
     [Column("description")]
     public string Description { get; set; } = string.Empty;
 
+    public bool Available { get; set; } 
+    
     [Column("prix")]
     public decimal Price { get; set; }
 

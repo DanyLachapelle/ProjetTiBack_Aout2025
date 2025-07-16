@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Mocktail\commands\" />
+      <Folder Include="Mocktail\query\" />
       <Folder Include="User_account\query\" />
     </ItemGroup>
 

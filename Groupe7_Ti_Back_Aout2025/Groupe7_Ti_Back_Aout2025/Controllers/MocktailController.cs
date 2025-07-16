@@ -89,28 +89,28 @@ public class MocktailController : ControllerBase
             mi.Ingredient.quantity >= mi.quantite
         );
     }
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateMocktailRequest request)
-    {
-        try
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new { message = "Données invalides", errors = ModelState });
-            }
-
-            var createdMocktail = await _mocktailService.CreateAsync(request);
-            return CreatedAtAction(nameof(GetById), new { id = createdMocktail.Id }, createdMocktail);
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
-        }
-    }
+    // [HttpPost]
+    // public async Task<IActionResult> Create([FromBody] CreateMocktailRequest request)
+    // {
+    //     try
+    //     {
+    //         if (!ModelState.IsValid)
+    //         {
+    //             return BadRequest(new { message = "Données invalides", errors = ModelState });
+    //         }
+    //
+    //         var createdMocktail = await _mocktailService.CreateAsync(request);
+    //         return CreatedAtAction(nameof(GetById), new { id = createdMocktail.Id }, createdMocktail);
+    //     }
+    //     catch (ArgumentException ex)
+    //     {
+    //         return BadRequest(new { message = ex.Message });
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
 
     // [HttpPut("{id}")]
     // public async Task<IActionResult> Update(int id, [FromBody] UpdateMocktailRequest request)

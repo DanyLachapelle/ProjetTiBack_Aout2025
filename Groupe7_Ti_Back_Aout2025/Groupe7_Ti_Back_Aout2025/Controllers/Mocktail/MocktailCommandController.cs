@@ -1,4 +1,5 @@
 ﻿using Application.Mocktails.commands;
+using Application.Mocktails.commands.createMocktail;
 using Application.Mocktails.commands.deleteMocktail;
 using Infrastructure.Mocktail;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,28 @@ public class MocktailCommandController:ControllerBase
         
         return Ok(new DeleteMocktailOutput());
     }
+    
+    [HttpPost]
+    public IActionResult Create([FromBody] CreateMocktailCommand command)
+    {
+        if (command == null)
+        {
+            return BadRequest(new { message = "Commande invalide." });
+        }
+
+        try
+        {
+            var result = _mocktailCommandProcessor.CreateMocktail(command);
+            // On retourne le mocktail créé sans exiger un id en entrée
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur lors de la création du mocktail.", error = ex.Message });
+        }
+    }
+
+
 
 
 }

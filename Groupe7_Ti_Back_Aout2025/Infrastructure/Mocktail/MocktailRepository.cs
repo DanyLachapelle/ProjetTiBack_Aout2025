@@ -37,12 +37,20 @@ public class MocktailRepository : IMocktailRepository
             .FirstOrDefault(m => m.id == id);
     }
 
-    public async Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail)
+    // public async Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail)
+    // {
+    //     _context.Mocktails.Add(mocktail);
+    //     await _context.SaveChangesAsync();
+    //     return mocktail;
+    // }
+
+    public Domain.mocktail CreateMocktail(Domain.mocktail mocktail)
     {
         _context.Mocktails.Add(mocktail);
-        await _context.SaveChangesAsync();
+        _context.SaveChanges();
         return mocktail;
     }
+
 
     public async Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail)
     {
@@ -76,4 +84,17 @@ public class MocktailRepository : IMocktailRepository
     {
         return await _context.Ingredients.ToListAsync();
     }
+    
+    public ingredient? GetIngredientByName(string name)
+    {
+        return _context.Ingredients.FirstOrDefault(i => i.name == name);
+    }
+
+    public ingredient AddIngredient(ingredient ingredient)
+    {
+        _context.Ingredients.Add(ingredient);
+        _context.SaveChanges();
+        return ingredient;
+    }
+
 } 

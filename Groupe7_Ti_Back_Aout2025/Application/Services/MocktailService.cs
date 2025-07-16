@@ -30,49 +30,49 @@ public class MocktailService : IMocktailService
     //     return mocktail != null ? MapToDto(mocktail) : null;
     // }
 
-    public async Task<MocktailDto> CreateAsync(CreateMocktailRequest request)
-    {
-        // Récupérer tous les ingrédients pour les mapper
-        var allIngredients = await _mocktailRepository.GetAllIngredientsAsync();
-        
-        // Créer le mocktail
-        var mocktail = new Domain.mocktail
-        {
-            nom = request.Name,
-            description = request.Description,
-            prix = request.Price,
-            image = request.Image
-        };
-
-        // Créer les associations mocktail-ingrédients
-        var mocktailIngredients = new List<Domain.mocktail_ingredient>();
-        
-        foreach (var ingredientRequest in request.Ingredients)
-        {
-            var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientRequest.Name);
-            if (ingredient == null)
-            {
-                throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
-            }
-
-            var mocktailIngredient = new Domain.mocktail_ingredient()
-            {
-                Mocktail = mocktail,
-                Ingredient = ingredient,
-                quantite = ingredientRequest.Quantity,
-                unite = ingredientRequest.Unit
-            };
-            
-            mocktailIngredients.Add(mocktailIngredient);
-        }
-
-        mocktail.MocktailIngredients = mocktailIngredients;
-
-        // Sauvegarder le mocktail
-        var createdMocktail = await _mocktailRepository.CreateAsync(mocktail);
-        
-        return MapToDto(createdMocktail);
-    }
+    // public async Task<MocktailDto> CreateAsync(CreateMocktailRequest request)
+    // {
+    //     // Récupérer tous les ingrédients pour les mapper
+    //     var allIngredients = await _mocktailRepository.GetAllIngredientsAsync();
+    //     
+    //     // Créer le mocktail
+    //     var mocktail = new Domain.mocktail
+    //     {
+    //         nom = request.Name,
+    //         description = request.Description,
+    //         prix = request.Price,
+    //         image = request.Image
+    //     };
+    //
+    //     // Créer les associations mocktail-ingrédients
+    //     var mocktailIngredients = new List<Domain.mocktail_ingredient>();
+    //     
+    //     foreach (var ingredientRequest in request.Ingredients)
+    //     {
+    //         var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientRequest.Name);
+    //         if (ingredient == null)
+    //         {
+    //             throw new ArgumentException($"Ingredient '{ingredientRequest.Name}' not found");
+    //         }
+    //
+    //         var mocktailIngredient = new Domain.mocktail_ingredient()
+    //         {
+    //             Mocktail = mocktail,
+    //             Ingredient = ingredient,
+    //             quantite = ingredientRequest.Quantity,
+    //             unite = ingredientRequest.Unit
+    //         };
+    //         
+    //         mocktailIngredients.Add(mocktailIngredient);
+    //     }
+    //
+    //     mocktail.MocktailIngredients = mocktailIngredients;
+    //
+    //     // Sauvegarder le mocktail
+    //     var createdMocktail = await _mocktailRepository.CreateAsync(mocktail);
+    //     
+    //     return MapToDto(createdMocktail);
+    // }
 
     // public async Task<MocktailDto> UpdateAsync(int id, UpdateMocktailRequest request)
     // {

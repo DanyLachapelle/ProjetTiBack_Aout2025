@@ -6,9 +6,9 @@ namespace Infrastructure.User;
 public class DbContext:Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Domain.UserAccount> Users { get; set; }
-    public DbSet<Domain.Mocktail> Mocktails { get; set; }
+    public DbSet<Domain.mocktail> Mocktails { get; set; }
     public DbSet<Domain.ingredient> Ingredients { get; set; }
-    public DbSet<Domain.MocktailIngredient> MocktailIngredients { get; set; }
+    public DbSet<Domain.mocktail_ingredient> MocktailIngredients { get; set; }
     
     private readonly ILoggerFactory _loggerFactory;
     public DbContext(DbContextOptions<DbContext> options, ILoggerFactory loggerFactory) 
@@ -36,15 +36,15 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.role).HasColumnName("role");
         });
 
-        modelBuilder.Entity<Domain.Mocktail>(builder =>
+        modelBuilder.Entity<Domain.mocktail>(builder =>
         {
             builder.ToTable("mocktail");
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.Name).HasColumnName("nom").IsRequired();
-            builder.Property(x => x.Description).HasColumnName("description");
-            builder.Property(x => x.Price).HasColumnName("prix").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Image).HasColumnName("image");
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).HasColumnName("id");
+            builder.Property(x => x.nom).HasColumnName("nom").IsRequired();
+            builder.Property(x => x.description).HasColumnName("description");
+            builder.Property(x => x.prix).HasColumnName("prix").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.image).HasColumnName("image");
         });
 
         modelBuilder.Entity<Domain.ingredient>(builder =>
@@ -59,25 +59,25 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.last_modified_at).HasColumnName("last_modified_at").HasColumnType("DATETIME2");
         });
 
-        modelBuilder.Entity<Domain.MocktailIngredient>(builder =>
+        modelBuilder.Entity<Domain.mocktail_ingredient>(builder =>
         {
             builder.ToTable("mocktail_ingredient");
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.MocktailId).HasColumnName("mocktail_id");
-            builder.Property(x => x.IngredientId).HasColumnName("ingredient_id");
-            builder.Property(x => x.Quantity).HasColumnName("quantite").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Unit).HasColumnName("unite").HasMaxLength(10);
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.id).HasColumnName("id");
+            builder.Property(x => x.mocktail_id).HasColumnName("mocktail_id");
+            builder.Property(x => x.ingredient_id).HasColumnName("ingredient_id");
+            builder.Property(x => x.quantite).HasColumnName("quantite").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.unite).HasColumnName("unite").HasMaxLength(10);
 
             // Relations
             builder.HasOne(x => x.Mocktail)
                 .WithMany(x => x.MocktailIngredients)
-                .HasForeignKey(x => x.MocktailId)
+                .HasForeignKey(x => x.mocktail_id)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(x => x.Ingredient)
                 .WithMany(x => x.MocktailIngredients)
-                .HasForeignKey(x => x.IngredientId)
+                .HasForeignKey(x => x.ingredient_id)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }

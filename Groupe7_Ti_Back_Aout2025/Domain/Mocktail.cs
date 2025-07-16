@@ -1,25 +1,16 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Domain;
 
-[Table("mocktail")]
-public class Mocktail
+public class mocktail
 {
-    [Column("id")]
-    public int Id { get; set; }
-
-    [Column("nom")]
-    public string Name { get; set; } = string.Empty;
-
-    [Column("description")]
-    public string Description { get; set; } = string.Empty;
-
-    [Column("prix")]
-    public decimal Price { get; set; }
-
-    [Column("image")]
-    public string Image { get; set; } = string.Empty;
+    public int id { get; set; }
+    public string nom { get; set; } = string.Empty;
+    public string description { get; set; } = string.Empty;
+    public decimal prix { get; set; }
+    public string image { get; set; } = string.Empty;
 
     // Navigation property pour les ingrédients
-    public virtual ICollection<MocktailIngredient> MocktailIngredients { get; set; } = new List<MocktailIngredient>();
+    public virtual ICollection<mocktail_ingredient> MocktailIngredients { get; set; } = new List<mocktail_ingredient>();
 } 

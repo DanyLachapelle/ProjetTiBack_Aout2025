@@ -1,5 +1,6 @@
 ﻿using Application.Utils;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
+
 
 namespace Application.Ingredient.commands.UpdateLimitIngredient;
 

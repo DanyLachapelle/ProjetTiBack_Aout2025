@@ -1,5 +1,6 @@
 using System.Text;
 using Api.Services;
+using Application.DTOs;
 using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
@@ -8,13 +9,17 @@ using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
+using Application.Mocktails.query;
+using Application.Mocktails.query.getbyidMocktail;
+using Application.Mocktails.Query.GetByIdMocktail;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
 using Application.Services;
+using Infrastructure.Ingredient;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
-using Infrastructure.User.Ingredient;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -87,7 +92,8 @@ builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, Update
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 builder.Services.AddScoped<IMocktailService, MocktailService>();
-
+builder.Services.AddScoped<MocktailQueryProcessor>();
+builder.Services.AddScoped<IQueryHandler<getbyidMocktailQuery, MocktailDto>, GetByIdMocktailHandler>();
 builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

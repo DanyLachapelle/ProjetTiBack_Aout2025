@@ -1,5 +1,6 @@
 using Application.Services;
 using Application.DTOs;
+using Infrastructure.Mocktail;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers;
@@ -9,10 +10,12 @@ namespace Groupe7_Ti_Back_Aout2025.Controllers;
 public class MocktailController : ControllerBase
 {
     private readonly IMocktailService _mocktailService;
-
-    public MocktailController(IMocktailService mocktailService)
+    private readonly IMocktailRepository _mocktailRepository;
+    
+    public MocktailController(IMocktailService mocktailService, IMocktailRepository mocktailRepository)
     {
-        _mocktailService = mocktailService;
+        _mocktailService = mocktailService ?? throw new ArgumentNullException(nameof(mocktailService));
+        _mocktailRepository = mocktailRepository ?? throw new ArgumentNullException(nameof(mocktailRepository));
     }
 
     [HttpGet]
@@ -29,17 +32,50 @@ public class MocktailController : ControllerBase
         }
     }
 
+    // [HttpGet("{id}")]
+    // public async Task<IActionResult> GetById(int id)
+    // {
+    //     try
+    //     {
+    //         var mocktail = await _mocktailService.GetMocktailById(id);
+    //         if (mocktail == null)
+    //         {
+    //             return NotFound(new { message = "Mocktail non trouvé" });
+    //         }
+    //         return Ok(mocktail);
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
+    
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    public IActionResult GetById(int id)
     {
         try
         {
-            var mocktail = await _mocktailService.GetByIdAsync(id);
+            var mocktail = _mocktailRepository.GetMocktailById(id);
             if (mocktail == null)
-            {
                 return NotFound(new { message = "Mocktail non trouvé" });
-            }
-            return Ok(mocktail);
+
+            var dto = new MocktailDto
+            {
+                Id = mocktail.id,
+                Name = mocktail.nom,
+                Description = mocktail.description,
+                Price = mocktail.prix,
+                Available = IsAvailable(mocktail),  // Ta méthode dispo côté contrôleur
+                Image = mocktail.image,
+                Ingredients = mocktail.MocktailIngredients.Select(mi => new MocktailIngredientDto
+                {
+                    Name = mi.Ingredient.name,
+                    Quantity = mi.quantite,
+                    Unit = mi.unite
+                }).ToList()
+            };
+
+            return Ok(dto);
         }
         catch (Exception ex)
         {
@@ -47,6 +83,12 @@ public class MocktailController : ControllerBase
         }
     }
 
+    private bool IsAvailable(Domain.mocktail mocktail)
+    {
+        return mocktail.MocktailIngredients.All(mi => 
+            mi.Ingredient.quantity >= mi.quantite
+        );
+    }
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateMocktailRequest request)
     {
@@ -70,28 +112,28 @@ public class MocktailController : ControllerBase
         }
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateMocktailRequest request)
-    {
-        try
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new { message = "Données invalides", errors = ModelState });
-            }
-
-            var updatedMocktail = await _mocktailService.UpdateAsync(id, request);
-            return Ok(updatedMocktail);
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
-        }
-    }
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> Update(int id, [FromBody] UpdateMocktailRequest request)
+    // {
+    //     try
+    //     {
+    //         if (!ModelState.IsValid)
+    //         {
+    //             return BadRequest(new { message = "Données invalides", errors = ModelState });
+    //         }
+    //
+    //         var updatedMocktail = await _mocktailService.UpdateAsync(id, request);
+    //         return Ok(updatedMocktail);
+    //     }
+    //     catch (ArgumentException ex)
+    //     {
+    //         return BadRequest(new { message = ex.Message });
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return StatusCode(500, new { message = "Erreur interne du serveur", error = ex.Message });
+    //     }
+    // }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)

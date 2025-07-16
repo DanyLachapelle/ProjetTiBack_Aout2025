@@ -1,7 +1,9 @@
 ﻿using Application.DTOs;
 using Application.Utils;
 using Domain;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
+
+
 
 namespace Application.Ingredient.query.getAllIngredient;
 

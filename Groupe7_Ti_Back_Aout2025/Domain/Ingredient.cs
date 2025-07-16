@@ -14,7 +14,7 @@ public class ingredient
     public DateTime? last_modified_at { get; set; }
 
     // Navigation property pour les mocktails
-    public virtual ICollection<MocktailIngredient> MocktailIngredients { get; set; } = new List<MocktailIngredient>();
+    public virtual ICollection<mocktail_ingredient> MocktailIngredients { get; set; } = new List<mocktail_ingredient>();
     
     // Méthode métier pour ajouter de la quantité
     public void AddQuantity(decimal amount)

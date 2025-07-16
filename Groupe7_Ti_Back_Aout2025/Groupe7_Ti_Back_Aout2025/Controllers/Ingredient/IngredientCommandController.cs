@@ -1,9 +1,10 @@
-﻿using Application.Ingredient.commands;
+﻿using System;
+using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers.Ingredient;

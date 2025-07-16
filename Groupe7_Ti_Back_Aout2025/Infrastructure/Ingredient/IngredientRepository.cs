@@ -1,6 +1,8 @@
 ﻿using Domain;
+using Infrastructure.Ingredient;
+using Infrastructure.User;
 
-namespace Infrastructure.User.Ingredient;
+namespace Infrastructure.Ingredient;
 
 public class IngredientRepository:IIngredientRepository
 {

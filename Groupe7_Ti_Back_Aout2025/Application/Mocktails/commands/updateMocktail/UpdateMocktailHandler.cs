@@ -24,9 +24,9 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
         }
 
         // Mise à jour des propriétés classiques
-        mocktail.name = command.nom;
+        mocktail.name = command.name;
         mocktail.description = command.description;
-        mocktail.price = command.prix;
+        mocktail.price = command.price;
         mocktail.image = command.image;
 
         // --- Mise à jour des ingrédients ---

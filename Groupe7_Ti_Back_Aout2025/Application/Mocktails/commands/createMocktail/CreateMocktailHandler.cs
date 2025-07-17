@@ -20,9 +20,9 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
         // Création du mocktail
         var mocktail = new mocktail
         {
-            name = command.nom,
+            name = command.name,
             description = command.description,
-            price = command.prix,
+            price = command.price,
             image = command.image
         };
 

@@ -5,6 +5,7 @@ using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
 using Application.Services;
+using Application.User.commands.changePassword;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,6 +54,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     {
         OnMessageReceived = context =>
         {
+            if (context.Request.Headers.ContainsKey("Authorization"))
+            {
+                // Ne rien faire, JWT est lu automatiquement depuis l’en-tête
+                return Task.CompletedTask;
+            }
+
+            // Sinon, chercher dans les cookies si nécessaire
             context.Token = context.Request.Cookies["cookie"];
             return Task.CompletedTask;
         }
@@ -64,6 +72,7 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<UserLoginQuery, UserLoginOutput>, UserLoginHandler>();
+builder.Services.AddScoped<ICommandHandler<UserChangePasswordCommand,UserChangePasswordOutput>, UserChangePasswordHandler>();
 
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();

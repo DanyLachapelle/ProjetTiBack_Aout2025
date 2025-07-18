@@ -16,6 +16,7 @@ public class TokenService
         var claims = new[]
         {
             new Claim(ClaimTypes.Name, user.pseudo),
+            new Claim(ClaimTypes.Role, user.role),
             new Claim(ClaimTypes.NameIdentifier,
                 Guid.NewGuid().ToString())
         };

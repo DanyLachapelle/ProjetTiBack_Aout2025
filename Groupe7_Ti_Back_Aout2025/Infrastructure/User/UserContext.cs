@@ -28,11 +28,11 @@ public class UserContext:DbContext
     {
         modelBuilder.Entity<Domain.User>(builder =>
         {
-            builder.ToTable("utilisateur"); 
+            builder.ToTable("user_account"); 
             builder.HasKey(x => x.id); 
             builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.pseudo).HasColumnName("login").IsRequired();
-            builder.Property(x => x.password).HasColumnName("mot_passe");
+            builder.Property(x => x.pseudo).HasColumnName("username").IsRequired();
+            builder.Property(x => x.password).HasColumnName("password");
             builder.Property(x => x.role).HasColumnName("role");
         });
 
@@ -41,10 +41,10 @@ public class UserContext:DbContext
             builder.ToTable("mocktail");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.Name).HasColumnName("nom").IsRequired();
+            builder.Property(x => x.Name).HasColumnName("name").IsRequired();
             builder.Property(x => x.Description).HasColumnName("description");
-            builder.Property(x => x.Price).HasColumnName("prix").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Image).HasColumnName("image");
+            builder.Property(x => x.Price).HasColumnName("price").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Image).HasColumnName("image"); //Need explication
         });
 
         modelBuilder.Entity<Domain.Ingredient>(builder =>
@@ -52,10 +52,10 @@ public class UserContext:DbContext
             builder.ToTable("ingredient");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.Name).HasColumnName("nom").IsRequired();
-            builder.Property(x => x.Stock).HasColumnName("quantite_disponible").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Limit).HasColumnName("seuil_restock").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Unit).HasColumnName("unite").HasMaxLength(10);
+            builder.Property(x => x.Name).HasColumnName("name").IsRequired();
+            builder.Property(x => x.Stock).HasColumnName("quantity").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Limit).HasColumnName("restock_threshold").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Unit).HasColumnName("unit").HasMaxLength(10);
         });
 
         modelBuilder.Entity<Domain.MocktailIngredient>(builder =>
@@ -65,8 +65,8 @@ public class UserContext:DbContext
             builder.Property(x => x.Id).HasColumnName("id");
             builder.Property(x => x.MocktailId).HasColumnName("mocktail_id");
             builder.Property(x => x.IngredientId).HasColumnName("ingredient_id");
-            builder.Property(x => x.Quantity).HasColumnName("quantite").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.Unit).HasColumnName("unite").HasMaxLength(10);
+            builder.Property(x => x.Quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Unit).HasColumnName("unit").HasMaxLength(10);
 
             // Relations
             builder.HasOne(x => x.Mocktail)

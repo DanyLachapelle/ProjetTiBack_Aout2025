@@ -1,6 +1,9 @@
-﻿using Application.User.commands;
+﻿using System.Security.Claims;
+using Application.User.commands;
+using Application.User.commands.changePassword;
 using Application.User.commands.login;
 using Infrastructure.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers.User;
@@ -44,6 +47,42 @@ public class UserCommandController: ControllerBase
         catch (Exception ex)
         {
             //_logger.LogError(ex, "Unexpected error during login.");
+            return StatusCode(500, new { message = "An unexpected error occurred." });
+        }
+    }
+    
+    //Changing Password
+    [Authorize]
+    [HttpPost("change-password")]
+    [ProducesResponseType(typeof(UserChangePasswordOutput), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(UserChangePasswordOutput), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
+    public IActionResult ChangePassword([FromBody] UserChangePasswordCommand command)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var pseudo = User.FindFirst(ClaimTypes.Name)?.Value;
+            if (string.IsNullOrEmpty(pseudo))
+            {
+                return Unauthorized(new { message = "User not authenticated" });
+            }
+
+            command.pseudo = pseudo;
+
+            _userCommandsProcessor.ChangePassword(command);
+            return Ok(new { message = "Password updated successfully." });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
             return StatusCode(500, new { message = "An unexpected error occurred." });
         }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m0cwr3ItVIE=",
+  "dgSpecHash": "cP0g8zJ7mB8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AsusT\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\AsusT\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bhKTPcdoRTQ=",
+  "dgSpecHash": "siJabfU//2k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AsusT\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\AsusT\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

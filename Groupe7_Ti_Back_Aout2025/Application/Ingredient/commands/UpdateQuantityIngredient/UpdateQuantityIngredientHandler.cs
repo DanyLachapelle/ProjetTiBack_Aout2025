@@ -1,6 +1,6 @@
-﻿using System;
-using Application.Utils;
-using Infrastructure.User.Ingredient;
+﻿using Application.Utils;
+using Infrastructure.Ingredient;
+
 
 namespace Application.Ingredient.commands.UpdateQuantityIngredient;
 

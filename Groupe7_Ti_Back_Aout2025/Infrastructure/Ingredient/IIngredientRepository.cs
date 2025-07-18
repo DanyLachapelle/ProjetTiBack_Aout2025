@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Domain;
 
-namespace Infrastructure.User.Ingredient;
+namespace Infrastructure.Ingredient;
 
 public interface IIngredientRepository
 {

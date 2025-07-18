@@ -1,8 +1,6 @@
-﻿using System;
-using Application.Ingredient.query;
+﻿using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
-using Infrastructure.User.Ingredient;
-using Microsoft.AspNetCore.Http;
+using Infrastructure.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers.Ingredient;

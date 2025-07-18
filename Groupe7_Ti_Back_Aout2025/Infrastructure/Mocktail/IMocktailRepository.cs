@@ -6,11 +6,19 @@ namespace Infrastructure.Mocktail;
 
 public interface IMocktailRepository
 {
-    Task<IEnumerable<Domain.Mocktail>> GetAllAsync();
-    Task<Domain.Mocktail?> GetByIdAsync(int id);
-    Task<Domain.Mocktail> CreateAsync(Domain.Mocktail mocktail);
-    Task<Domain.Mocktail> UpdateAsync(Domain.Mocktail mocktail);
-    Task DeleteAsync(int id);
+    //Task<IEnumerable<Domain.mocktail>> GetAllAsync();
+    IEnumerable<Domain.mocktail> GetAllMocktails();
+    // Task<Domain.mocktail?> GetByIdAsync(int id);
+    Domain.mocktail? GetMocktailById(int id);
+    //Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail);
+    Domain.mocktail CreateMocktail(Domain.mocktail mocktail);
+    //Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail);
+    Domain.mocktail UpdateMocktail(Domain.mocktail mocktail);
+    //Task DeleteAsync(int id);
+    void DeleteMocktail(mocktail mocktail);
+
     Task<bool> ExistsAsync(int id);
+    ingredient? GetIngredientByName(string name);
+    ingredient AddIngredient(ingredient ingredient);
     Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync();
 } 

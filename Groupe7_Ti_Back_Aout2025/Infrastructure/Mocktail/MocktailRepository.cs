@@ -16,53 +16,102 @@ public class MocktailRepository : IMocktailRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<Domain.Mocktail>> GetAllAsync()
+    // public async Task<IEnumerable<Domain.mocktail>> GetAllAsync()
+    // {
+    //     return await _context.Mocktails
+    //         .Include(m => m.MocktailIngredients)
+    //         .ThenInclude(mi => mi.Ingredient)
+    //         .ToListAsync();
+    // }
+
+    public IEnumerable<Domain.mocktail> GetAllMocktails()
     {
-        return await _context.Mocktails
+        return _context.Mocktails
             .Include(m => m.MocktailIngredients)
             .ThenInclude(mi => mi.Ingredient)
-            .ToListAsync();
+            .ToList();
     }
 
-    public async Task<Domain.Mocktail?> GetByIdAsync(int id)
+    // public async Task<Domain.mocktail?> GetByIdAsync(int id)
+    // {
+    //     return await _context.Mocktails
+    //         .Include(m => m.MocktailIngredients)
+    //         .ThenInclude(mi => mi.Ingredient)
+    //         .FirstOrDefaultAsync(m => m.id == id);
+    // }
+    public Domain.mocktail? GetMocktailById(int id)
     {
-        return await _context.Mocktails
+        return _context.Mocktails
             .Include(m => m.MocktailIngredients)
             .ThenInclude(mi => mi.Ingredient)
-            .FirstOrDefaultAsync(m => m.Id == id);
+            .FirstOrDefault(m => m.id == id);
     }
 
-    public async Task<Domain.Mocktail> CreateAsync(Domain.Mocktail mocktail)
+    // public async Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail)
+    // {
+    //     _context.Mocktails.Add(mocktail);
+    //     await _context.SaveChangesAsync();
+    //     return mocktail;
+    // }
+
+    public Domain.mocktail CreateMocktail(Domain.mocktail mocktail)
     {
         _context.Mocktails.Add(mocktail);
-        await _context.SaveChangesAsync();
+        _context.SaveChanges();
         return mocktail;
     }
 
-    public async Task<Domain.Mocktail> UpdateAsync(Domain.Mocktail mocktail)
+
+    // public async Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail)
+    // {
+    //     _context.Mocktails.Update(mocktail);
+    //     await _context.SaveChangesAsync();
+    //     return mocktail;
+    // }
+    public Domain.mocktail UpdateMocktail(Domain.mocktail mocktail)
     {
         _context.Mocktails.Update(mocktail);
-        await _context.SaveChangesAsync();
+        _context.SaveChanges();
         return mocktail;
     }
 
-    public async Task DeleteAsync(int id)
+
+    // public async Task DeleteAsync(int id)
+    // {
+    //     var mocktail = await _context.Mocktails.FindAsync(id);
+    //     if (mocktail != null)
+    //     {
+    //         _context.Mocktails.Remove(mocktail);
+    //         await _context.SaveChangesAsync();
+    //     }
+    // }
+    public void DeleteMocktail(mocktail mocktail)
     {
-        var mocktail = await _context.Mocktails.FindAsync(id);
-        if (mocktail != null)
-        {
-            _context.Mocktails.Remove(mocktail);
-            await _context.SaveChangesAsync();
-        }
+        _context.Mocktails.Remove(mocktail);
+        _context.SaveChanges();
     }
+
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.Mocktails.AnyAsync(m => m.Id == id);
+        return await _context.Mocktails.AnyAsync(m => m.id == id);
     }
 
     public async Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync()
     {
         return await _context.Ingredients.ToListAsync();
     }
+    
+    public ingredient? GetIngredientByName(string name)
+    {
+        return _context.Ingredients.FirstOrDefault(i => i.name == name);
+    }
+
+    public ingredient AddIngredient(ingredient ingredient)
+    {
+        _context.Ingredients.Add(ingredient);
+        _context.SaveChanges();
+        return ingredient;
+    }
+
 } 

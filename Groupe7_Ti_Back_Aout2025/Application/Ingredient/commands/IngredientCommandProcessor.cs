@@ -13,6 +13,7 @@ public class IngredientCommandProcessor
     private readonly ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> _deleteIngredientHandler;
     private readonly ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> _updateLimitIngredientHandler;
     private readonly ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput> _updateQuantityIngredientHandler;
+    private readonly ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> _createIngredientQueryHandler;
     
     public IngredientCommandProcessor(
         ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> createIngredientHandler,
@@ -25,21 +26,6 @@ public class IngredientCommandProcessor
         _updateLimitIngredientHandler = updateLimitIngredientHandler;
         _updateQuantityIngredientHandler = updateQuantityIngredientHandler;
     }
-    public object? CreateIngredient(CreateIngredientQuery command)
-    {
-        if (command == null)
-        {
-            throw new ArgumentNullException(nameof(command), "Command cannot be null");
-        }
-
-        if (string.IsNullOrWhiteSpace(command.name) || command.quantity <= 0 || command.restock_threshold < 0)
-        {
-            throw new ArgumentException("Invalid ingredient data provided");
-        }
-
-        return _createIngredientHandler.Handle(command);
-    }
-    
     public DeleteIngredientOutput DeleteIngredient(int id)
     {
         var command = new DeleteIngredientQuery { id = id };
@@ -84,6 +70,21 @@ public class IngredientCommandProcessor
         };
 
         return _updateQuantityIngredientHandler.Handle(command);
+    }
+    
+    public CreateIngredientOutput CreateIngredient(CreateIngredientQuery query)
+    {
+        if (query == null)
+        {
+            throw new ArgumentNullException(nameof(query), "Query cannot be null");
+        }
+
+        if (string.IsNullOrWhiteSpace(query.name) || query.quantity <= 0 || query.restock_threshold < 0)
+        {
+            throw new ArgumentException("Invalid ingredient data provided");
+        }
+
+        return _createIngredientHandler.Handle(query);
     }
 
 

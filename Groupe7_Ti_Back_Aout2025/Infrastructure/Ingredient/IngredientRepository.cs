@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Domain;
+﻿using Domain;
+using Infrastructure.Ingredient;
+using Infrastructure.User;
 
-namespace Infrastructure.User.Ingredient;
+namespace Infrastructure.Ingredient;
 
 public class IngredientRepository:IIngredientRepository
 {
@@ -20,7 +19,6 @@ public class IngredientRepository:IIngredientRepository
 
     public void CreateIngredient(ingredient ingredient)
     {
-        ingredient.last_modified_at = DateTime.Now; 
         _context.Ingredients.Add(ingredient);
         _context.SaveChanges();
     }

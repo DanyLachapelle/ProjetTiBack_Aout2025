@@ -1,6 +1,7 @@
 using System.Text;
 using System.Threading.Tasks;
 using Api.Services;
+using Application.DTOs;
 using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
@@ -9,13 +10,22 @@ using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
 using Application.MappingProfile;
+using Application.Mocktails.commands;
+using Application.Mocktails.commands.createMocktail;
+using Application.Mocktails.commands.deleteMocktail;
+using Application.Mocktails.commands.updateMocktail;
+using Application.Mocktails.query;
+using Application.Mocktails.query.getAllMocktail;
+using Application.Mocktails.query.getbyidMocktail;
+using Application.Mocktails.Query.GetByIdMocktail;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
 using Application.Services;
+using Infrastructure.Ingredient;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
-using Infrastructure.User.Ingredient;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -91,7 +101,15 @@ builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, Update
 
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
-builder.Services.AddScoped<IMocktailService, MocktailService>();
+//builder.Services.AddScoped<IMocktailService, MocktailService>();
+builder.Services.AddScoped<MocktailQueryProcessor>();
+builder.Services.AddScoped<MocktailCommandProcessor>();
+builder.Services.AddScoped<IQueryHandler<GetbyidMocktailQuery, MocktailDto>, GetbyidMocktailHandler>();
+builder.Services.AddScoped<ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput>, DeleteMocktailHandler>();
+builder.Services.AddScoped<ICommandHandler<CreateMocktailCommand, CreateMocktailOutput>, CreateMocktailHandler>();
+builder.Services.AddScoped<ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput>, UpdateMocktailHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllMocktailQuery, List<MocktailDto>>, GetAllMocktailHandler>();
+
 
 builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {

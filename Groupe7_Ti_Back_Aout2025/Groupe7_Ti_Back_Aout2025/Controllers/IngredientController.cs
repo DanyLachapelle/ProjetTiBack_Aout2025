@@ -1,8 +1,10 @@
 using Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class IngredientController : ControllerBase

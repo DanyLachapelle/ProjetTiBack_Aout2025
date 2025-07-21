@@ -10,12 +10,12 @@ public class UserRepository:IUserRepository
         _dbContext = dbContext;
     }
     
-    public Domain.UserAccount GetUserByPseudo(string pseudo)
+    public Domain.User_account GetUserByPseudo(string pseudo)
     { 
         return _dbContext.Users.FirstOrDefault(u => u.username == pseudo); 
     }
 
-    public void Save(Domain.UserAccount userAccount)
+    public void Save(Domain.User_account userAccount)
     {
         _dbContext.Users.Update(userAccount);
         _dbContext.SaveChanges();

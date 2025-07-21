@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain;
 
 
-public class UserAccount
+public class User_account
 {
     public int id { get; set; }
 
     
     public string username { get; set; } = string.Empty;
 
-    
+    public string email { get; set; } = string.Empty;
     public string password { get; set; } = string.Empty;
 
     

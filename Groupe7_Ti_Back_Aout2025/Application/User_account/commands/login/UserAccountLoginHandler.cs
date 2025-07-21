@@ -59,9 +59,6 @@ public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginQuery, User
 
     private bool VerifyPassword(string providedPassword, string storedPasswordHash)
     {
-        // _logger.LogInformation("Mot de passe fourni : {Provided}", providedPassword);
-        // _logger.LogInformation("Hash stocké : {Hash}", storedPasswordHash);
-        // Utiliser bcrypt pour vérifier le mot de passe
         return BCrypt.Net.BCrypt.Verify(providedPassword, storedPasswordHash);
     }
 }

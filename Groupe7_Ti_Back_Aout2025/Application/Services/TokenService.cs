@@ -12,7 +12,7 @@ public class TokenService
 {
     private const double EXPIRY_DURATION_MINUTES = 30;
 
-    public string BuildToken(string key, string issuer, UserAccount userAccount)
+    public string BuildToken(string key, string issuer, User_account userAccount)
     {
         var claims = new[]
         {
@@ -54,7 +54,7 @@ public class TokenService
         return true;
     }
 
-    public string GenerateToken(UserAccount userAccount)
+    public string GenerateToken(User_account userAccount)
     {
         var userLoginQuery = new UserAccountLoginQuery
         {

@@ -5,7 +5,7 @@ namespace Infrastructure.User;
 
 public class DbContext:Microsoft.EntityFrameworkCore.DbContext
 {
-    public DbSet<Domain.UserAccount> Users { get; set; }
+    public DbSet<Domain.User_account> Users { get; set; }
     public DbSet<Domain.mocktail> Mocktails { get; set; }
     public DbSet<Domain.ingredient> Ingredients { get; set; }
     public DbSet<Domain.mocktail_ingredient> MocktailIngredients { get; set; }
@@ -26,12 +26,13 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Domain.UserAccount>(builder =>
+        modelBuilder.Entity<Domain.User_account>(builder =>
         {
-            builder.ToTable("user_account"); 
+            builder.ToTable("User_account"); 
             builder.HasKey(x => x.id); 
             builder.Property(x => x.id).HasColumnName("id");
             builder.Property(x => x.username).HasColumnName("username").IsRequired();
+            builder.Property(x => x.email).HasColumnName("email").IsRequired();
             builder.Property(x => x.password).HasColumnName("password").IsRequired();
             builder.Property(x => x.role).HasColumnName("role");
         });

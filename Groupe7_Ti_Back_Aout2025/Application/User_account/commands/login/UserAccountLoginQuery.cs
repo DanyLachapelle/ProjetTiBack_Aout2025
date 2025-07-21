@@ -1,5 +1,6 @@
 ﻿namespace Application.User.commands.login;
 
+
 public class UserAccountLoginQuery
 {
     public string username { get; set; } = string.Empty; 

@@ -17,7 +17,7 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, Crea
     
     public CreateIngredientOutput Handle(CreateIngredientQuery command)
     {
-        var ingredient = new ingredient()
+        var ingredient = new Domain.Ingredient()
         {
             name = command.name,
             quantity = command.quantity,

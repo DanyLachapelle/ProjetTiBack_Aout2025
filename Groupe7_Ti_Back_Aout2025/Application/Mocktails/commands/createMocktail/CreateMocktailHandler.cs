@@ -33,11 +33,11 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             // Vérifie si l'ingrédient existe déjà
             var existingIngredient = _mocktailRepository.GetIngredientByName(ingredientDto.Name);
 
-            ingredient ingredientEntity;
+            Domain.Ingredient ingredientEntity;
             if (existingIngredient == null)
             {
                 // Si pas trouvé, on le crée
-                var newIngredient = new ingredient
+                var newIngredient = new Domain.Ingredient
                 {
                     name = ingredientDto.Name,
                     quantity = 0, // ou une autre logique si nécessaire

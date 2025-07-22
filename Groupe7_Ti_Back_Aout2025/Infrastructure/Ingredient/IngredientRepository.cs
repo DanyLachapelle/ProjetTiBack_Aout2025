@@ -15,24 +15,24 @@ public class IngredientRepository:IIngredientRepository
     {
         _context = context;
     }
-    public List<ingredient> GetAllIngredient()
+    public List<Domain.Ingredient> GetAllIngredient()
     {
         return _context.Ingredients.ToList();
     }
 
-    public void CreateIngredient(ingredient ingredient)
+    public void CreateIngredient(Domain.Ingredient ingredient)
     {
         _context.Ingredients.Add(ingredient);
         _context.SaveChanges();
     }
 
-    public void DeleteIngredient(ingredient ingredient)
+    public void DeleteIngredient(Domain.Ingredient ingredient)
     {
         _context.Ingredients.Remove(ingredient);
         _context.SaveChanges();
     }
 
-    public ingredient GetIngredientById(int commandId)
+    public Domain.Ingredient GetIngredientById(int commandId)
     {
         return _context.Ingredients.FirstOrDefault(i => i.id == commandId);
     }
@@ -48,7 +48,7 @@ public class IngredientRepository:IIngredientRepository
         return true;
     }
 
-    public void UpdateQuantityIngredient(ingredient ingredient)
+    public void UpdateQuantityIngredient(Domain.Ingredient ingredient)
     {
         var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredient.id);
         if (existingIngredient != null)

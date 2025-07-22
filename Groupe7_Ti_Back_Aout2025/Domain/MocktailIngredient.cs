@@ -15,5 +15,5 @@ public class mocktail_ingredient
     // Navigation properties
     [JsonIgnore]
     public virtual mocktail Mocktail { get; set; } = null!;
-    public virtual ingredient Ingredient { get; set; } = null!;
+    public virtual Ingredient Ingredient { get; set; } = null!;
 } 

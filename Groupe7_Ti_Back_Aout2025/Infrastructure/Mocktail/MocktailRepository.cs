@@ -98,17 +98,17 @@ public class MocktailRepository : IMocktailRepository
         return await _context.Mocktails.AnyAsync(m => m.id == id);
     }
 
-    public async Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync()
+    public async Task<IEnumerable<Domain.Ingredient>> GetAllIngredientsAsync()
     {
         return await _context.Ingredients.ToListAsync();
     }
     
-    public ingredient? GetIngredientByName(string name)
+    public Domain.Ingredient? GetIngredientByName(string name)
     {
         return _context.Ingredients.FirstOrDefault(i => i.name == name);
     }
 
-    public ingredient AddIngredient(ingredient ingredient)
+    public Domain.Ingredient AddIngredient(Domain.Ingredient ingredient)
     {
         _context.Ingredients.Add(ingredient);
         _context.SaveChanges();

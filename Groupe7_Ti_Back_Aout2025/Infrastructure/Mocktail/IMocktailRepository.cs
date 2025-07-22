@@ -18,7 +18,7 @@ public interface IMocktailRepository
     void DeleteMocktail(mocktail mocktail);
 
     Task<bool> ExistsAsync(int id);
-    ingredient? GetIngredientByName(string name);
-    ingredient AddIngredient(ingredient ingredient);
-    Task<IEnumerable<Domain.ingredient>> GetAllIngredientsAsync();
+    Domain.Ingredient? GetIngredientByName(string name);
+    Domain.Ingredient AddIngredient(Domain.Ingredient ingredient);
+    Task<IEnumerable<Domain.Ingredient>> GetAllIngredientsAsync();
 } 

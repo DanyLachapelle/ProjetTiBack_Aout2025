@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain;
 
 
-public class ingredient
+public class Ingredient
 { 
     public int id { get; set; }
     public string name { get; set; } = string.Empty;
@@ -13,6 +13,7 @@ public class ingredient
     public decimal restock_threshold { get; set; }
     public string unit { get; set; } = string.Empty;
     
+    public string allergen { get; set; } = "none";
     public DateTime? last_modified_at { get; set; }
 
     // Navigation property pour les mocktails
@@ -29,4 +30,20 @@ public class ingredient
         quantity += amount;
         last_modified_at = DateTime.Now;
     }
+    
+    public bool NeedsRestock()
+    {
+        return quantity <= restock_threshold;
+    }
+
+    // Validation des valeurs possibles pour Unit
+    public static readonly string[] ValidUnits = { "g", "l", "cl" };
+
+    // Validation des valeurs possibles pour Allergen
+    public static readonly string[] ValidAllergens = 
+    {
+        "none", "gluten", "crustaceans", "eggs", "fish", "peanuts",
+        "soybeans", "milk", "nuts", "celery", "mustard", "sesame",
+        "sulphites", "lupin", "molluscs"
+    };
 } 

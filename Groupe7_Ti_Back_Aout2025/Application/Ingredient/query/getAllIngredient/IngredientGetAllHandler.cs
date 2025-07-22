@@ -28,6 +28,7 @@ public class IngredientGetAllHandler: IQueryHandler<IngredientGetAllQuery, Ingre
             quantity = i.quantity,
             restock_threshold = i.restock_threshold,
             unit = i.unit,
+            allergen = i.allergen ?? "none", 
             last_modified_at = i.last_modified_at
         }).ToList();
 

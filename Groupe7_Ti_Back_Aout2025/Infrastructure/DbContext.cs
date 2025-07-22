@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.User;
@@ -7,7 +9,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Domain.User_account> Users { get; set; }
     public DbSet<Domain.mocktail> Mocktails { get; set; }
-    public DbSet<Domain.ingredient> Ingredients { get; set; }
+    public DbSet<Domain.Ingredient> Ingredients { get; set; }
     public DbSet<Domain.mocktail_ingredient> MocktailIngredients { get; set; }
     
     private readonly ILoggerFactory _loggerFactory;
@@ -48,22 +50,70 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.image).HasColumnName("image");
         });
 
-        modelBuilder.Entity<Domain.ingredient>(builder =>
-        {
-            builder.ToTable("ingredient");
-            builder.HasKey(x => x.id);
-            builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.name).HasColumnName("name").IsRequired();
-            builder.Property(x => x.quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.restock_threshold).HasColumnName("restock_threshold").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.unit).HasColumnName("unit").HasMaxLength(10);
+        modelBuilder.Entity<Domain.Ingredient>(builder =>
+{
+    
+    builder.ToTable("Ingredient");
+    
+    // Configuration de la clé primaire
+    builder.HasKey(x => x.id);
+    builder.Property(x => x.id)
+        .HasColumnName("id")
+        .ValueGeneratedOnAdd();
 
-            builder.Property(x => x.last_modified_at)
-                .HasColumnName("last_modified_at")
-                .HasColumnType("DATETIME2")
-                .HasDefaultValueSql("SYSUTCDATETIME()")
-                .ValueGeneratedOnAdd();
-        });
+    // Configuration des colonnes de base
+    builder.Property(x => x.name)
+        .HasColumnName("name")
+        .HasColumnType("VARCHAR(100)")
+        .IsRequired()
+        .HasMaxLength(100);
+        
+    builder.Property(x => x.quantity)
+        .HasColumnName("quantity")
+        .HasColumnType("DECIMAL(10,2)")
+        .IsRequired();
+        
+    builder.Property(x => x.restock_threshold)
+        .HasColumnName("restock_threshold")
+        .HasColumnType("DECIMAL(10,2)")
+        .IsRequired();
+        
+    builder.Property(x => x.unit)
+        .HasColumnName("unit")
+        .HasColumnType("VARCHAR(10)")
+        .IsRequired()
+        .HasMaxLength(10);
+
+    // Configuration de la colonne allergen avec check constraint
+    builder.Property(x => x.allergen)
+        .HasColumnName("allergen")
+        .HasColumnType("VARCHAR(20)")
+        .HasDefaultValue("none")
+        .IsRequired()
+        .HasMaxLength(20)
+        .HasConversion(
+            v => v.ToLower(), // Supprime le check null car IsRequired() garantit déjà non-null
+            v => v);
+
+    // Configuration du timestamp de modification
+    builder.Property(x => x.last_modified_at)
+        .HasColumnName("last_modified_at")
+        .HasColumnType("DATETIME2")
+        .HasDefaultValueSql("CURRENT_TIMESTAMP")
+        .ValueGeneratedOnAddOrUpdate();
+
+    // Configuration de l'index unique sur le nom
+    builder.HasIndex(x => x.name)
+        .IsUnique();
+
+    // Configuration des contraintes CHECK via Fluent API
+    builder.ToTable(t => t.HasCheckConstraint("CK_Ingredient_Unit", "unit IN ('g', 'l', 'cl')"));
+    
+    builder.ToTable(t => t.HasCheckConstraint("CK_Ingredient_Allergen", 
+        "allergen IN ('none', 'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', " +
+        "'soybeans', 'milk', 'nuts', 'celery', 'mustard', 'sesame', " +
+        "'sulphites', 'lupin', 'molluscs')"));
+});
 
 
         modelBuilder.Entity<Domain.mocktail_ingredient>(builder =>

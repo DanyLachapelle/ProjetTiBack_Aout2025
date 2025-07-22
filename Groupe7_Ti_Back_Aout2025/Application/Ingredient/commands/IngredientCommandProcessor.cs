@@ -9,17 +9,17 @@ namespace Application.Ingredient.commands;
 
 public class IngredientCommandProcessor
 {
-    private readonly ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> _createIngredientHandler;
-    private readonly ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> _deleteIngredientHandler;
+    private readonly ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> _createIngredientHandler;
+    private readonly ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> _deleteIngredientHandler;
     private readonly ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> _updateLimitIngredientHandler;
-    private readonly ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput> _updateQuantityIngredientHandler;
-    private readonly ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> _createIngredientQueryHandler;
+    private readonly ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput> _updateQuantityIngredientHandler;
+    private readonly ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> _createIngredientQueryHandler;
     
     public IngredientCommandProcessor(
-        ICommandHandler<CreateIngredientQuery, CreateIngredientOutput> createIngredientHandler,
-        ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput> deleteIngredientHandler,
+        ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> createIngredientHandler,
+        ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> deleteIngredientHandler,
         ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> updateLimitIngredientHandler,
-        ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput> updateQuantityIngredientHandler)
+        ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput> updateQuantityIngredientHandler)
     {
         _createIngredientHandler = createIngredientHandler;
         _deleteIngredientHandler = deleteIngredientHandler;
@@ -28,7 +28,7 @@ public class IngredientCommandProcessor
     }
     public DeleteIngredientOutput DeleteIngredient(int id)
     {
-        var command = new DeleteIngredientQuery { id = id };
+        var command = new DeleteIngredientCommand { id = id };
 
         if (id <= 0)
         {
@@ -55,36 +55,36 @@ public class IngredientCommandProcessor
         return _updateLimitIngredientHandler.Handle(command);
     }
     
-    public UpdateQuantityIngredientOutput UpdateQuantityIngredient(int id, UpdateQuantityIngredientQuery query)
+    public UpdateQuantityIngredientOutput UpdateQuantityIngredient(int id, UpdateQuantityIngredientCommand command)
     {
-        if (query == null)
-            throw new ArgumentNullException(nameof(query));
+        if (command == null)
+            throw new ArgumentNullException(nameof(command));
 
         if (id <= 0)
             throw new ArgumentException("Invalid ingredient ID");
 
-        var command = new UpdateQuantityIngredientQuery
+        var commands = new UpdateQuantityIngredientCommand
         {
             Id = id,
-            Amount = query.Amount
+            Amount = command.Amount
         };
 
         return _updateQuantityIngredientHandler.Handle(command);
     }
     
-    public CreateIngredientOutput CreateIngredient(CreateIngredientQuery query)
+    public CreateIngredientOutput CreateIngredient(CreateIngredientCommand command)
     {
-        if (query == null)
+        if (command == null)
         {
-            throw new ArgumentNullException(nameof(query), "Query cannot be null");
+            throw new ArgumentNullException(nameof(command), "Query cannot be null");
         }
 
-        if (string.IsNullOrWhiteSpace(query.name) || query.quantity <= 0 || query.restock_threshold < 0)
+        if (string.IsNullOrWhiteSpace(command.name) || command.quantity <= 0 || command.restock_threshold < 0)
         {
             throw new ArgumentException("Invalid ingredient data provided");
         }
 
-        return _createIngredientHandler.Handle(query);
+        return _createIngredientHandler.Handle(command);
     }
 
 

@@ -40,7 +40,7 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
     }
 
 
-    private bool IsAvailable(mocktail mocktail)
+    private bool IsAvailable(Mocktail mocktail)
     {
         return true;
     }

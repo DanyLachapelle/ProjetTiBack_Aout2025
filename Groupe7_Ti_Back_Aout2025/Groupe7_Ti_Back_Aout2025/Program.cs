@@ -88,17 +88,17 @@ builder.Services.AddScoped<DbContext>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserAccountCommandProcessor>();
-builder.Services.AddScoped<ICommandHandler<UserAccountLoginQuery, UserAccountLoginOutput>, UserAccountLoginHandler>();
+builder.Services.AddScoped<ICommandHandler<UserAccountLoginCommand, UserAccountLoginOutput>, UserAccountLoginHandler>();
 
 // ingredient
 builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
 builder.Services.AddScoped<IngredientQueryProcessor>();
 builder.Services.AddScoped<IngredientCommandProcessor>();
 builder.Services.AddScoped<IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput>, IngredientGetAllHandler>();
-builder.Services.AddScoped<ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>, CreateIngredientHandler>();
-builder.Services.AddScoped<ICommandHandler<DeleteIngredientQuery, DeleteIngredientOutput>, DeleteIngredientHandler>();
+builder.Services.AddScoped<ICommandHandler<CreateIngredientCommand, CreateIngredientOutput>, CreateIngredientHandler>();
+builder.Services.AddScoped<ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput>, DeleteIngredientHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput>, UpdateLimitIngredientHandler>();    
-builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput>, UpdateQuantityIngredientHandler>();
+builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput>, UpdateQuantityIngredientHandler>();
 
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();

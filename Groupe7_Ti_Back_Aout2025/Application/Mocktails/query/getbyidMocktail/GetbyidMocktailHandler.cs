@@ -40,7 +40,7 @@ namespace Application.Mocktails.Query.GetByIdMocktail
             };
         }
 
-        private bool IsAvailable(mocktail mocktail)
+        private bool IsAvailable(Mocktail mocktail)
         {
             // ta logique de disponibilité ici
             return true;

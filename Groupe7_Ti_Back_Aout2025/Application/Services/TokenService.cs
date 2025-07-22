@@ -56,7 +56,7 @@ public class TokenService
 
     public string GenerateToken(User_account userAccount)
     {
-        var userLoginQuery = new UserAccountLoginQuery
+        var userLoginQuery = new UserAccountLoginCommand
         {
             username = userAccount.username
         };

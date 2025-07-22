@@ -5,7 +5,7 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.UpdateQuantityIngredient;
 
-public class UpdateQuantityIngredientHandler:ICommandHandler<UpdateQuantityIngredientQuery, UpdateQuantityIngredientOutput>
+public class UpdateQuantityIngredientHandler:ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput>
 {
     private readonly IIngredientRepository _ingredientRepository;
     
@@ -13,7 +13,7 @@ public UpdateQuantityIngredientHandler(IIngredientRepository ingredientRepositor
     {
         _ingredientRepository = ingredientRepository;
     }
-    public UpdateQuantityIngredientOutput Handle(UpdateQuantityIngredientQuery command)
+    public UpdateQuantityIngredientOutput Handle(UpdateQuantityIngredientCommand command)
     {
         if (command.Amount <= 0)
             throw new ArgumentException("Amount to add must be positive");

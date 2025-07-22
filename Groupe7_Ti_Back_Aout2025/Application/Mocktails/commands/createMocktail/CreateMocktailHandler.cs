@@ -19,7 +19,7 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             throw new ArgumentNullException(nameof(command));
 
         // Création du mocktail
-        var mocktail = new mocktail
+        var mocktail = new Mocktail
         {
             name = command.name,
             description = command.description,

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Domain;
 
-public class mocktail
+public class Mocktail
 {
     public int id { get; set; }
     public string name { get; set; } = string.Empty;

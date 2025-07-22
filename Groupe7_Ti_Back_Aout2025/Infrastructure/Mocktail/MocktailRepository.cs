@@ -25,7 +25,7 @@ public class MocktailRepository : IMocktailRepository
     //         .ToListAsync();
     // }
 
-    public IEnumerable<Domain.mocktail> GetAllMocktails()
+    public IEnumerable<Domain.Mocktail> GetAllMocktails()
     {
         return _context.Mocktails
             .Include(m => m.MocktailIngredients)
@@ -40,7 +40,7 @@ public class MocktailRepository : IMocktailRepository
     //         .ThenInclude(mi => mi.Ingredient)
     //         .FirstOrDefaultAsync(m => m.id == id);
     // }
-    public Domain.mocktail? GetMocktailById(int id)
+    public Domain.Mocktail? GetMocktailById(int id)
     {
         return _context.Mocktails
             .Include(m => m.MocktailIngredients)
@@ -55,7 +55,7 @@ public class MocktailRepository : IMocktailRepository
     //     return mocktail;
     // }
 
-    public Domain.mocktail CreateMocktail(Domain.mocktail mocktail)
+    public Domain.Mocktail CreateMocktail(Domain.Mocktail mocktail)
     {
         _context.Mocktails.Add(mocktail);
         _context.SaveChanges();
@@ -69,7 +69,7 @@ public class MocktailRepository : IMocktailRepository
     //     await _context.SaveChangesAsync();
     //     return mocktail;
     // }
-    public Domain.mocktail UpdateMocktail(Domain.mocktail mocktail)
+    public Domain.Mocktail UpdateMocktail(Domain.Mocktail mocktail)
     {
         _context.Mocktails.Update(mocktail);
         _context.SaveChanges();
@@ -86,7 +86,7 @@ public class MocktailRepository : IMocktailRepository
     //         await _context.SaveChangesAsync();
     //     }
     // }
-    public void DeleteMocktail(mocktail mocktail)
+    public void DeleteMocktail(Domain.Mocktail mocktail)
     {
         _context.Mocktails.Remove(mocktail);
         _context.SaveChanges();

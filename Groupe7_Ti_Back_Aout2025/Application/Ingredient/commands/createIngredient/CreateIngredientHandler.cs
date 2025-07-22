@@ -5,7 +5,7 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.createIngredient;
 
-public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>
+public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, CreateIngredientOutput>
 {
     
     private readonly IIngredientRepository _ingredientRepository;
@@ -15,7 +15,7 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, Crea
         _ingredientRepository = ingredientRepository;
     }
     
-    public CreateIngredientOutput Handle(CreateIngredientQuery command)
+    public CreateIngredientOutput Handle(CreateIngredientCommand command)
     {
         var ingredient = new Domain.Ingredient()
         {

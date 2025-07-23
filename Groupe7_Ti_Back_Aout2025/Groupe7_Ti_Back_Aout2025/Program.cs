@@ -118,21 +118,37 @@ builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 });
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = "swagger";
+});
 // CORS doit être appelé avant les autres middlewares
 app.UseCors("AllowAngularApp");
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+
 app.MapControllers();
 
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/")
+    {
+        context.Response.Redirect("/swagger");
+        return;
+    }
+    await next();
+});
 app.Run();
+app.UseCors(policy =>
+    policy.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod());

@@ -49,3 +49,20 @@ C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_T
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\refint\Application.dll
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.pdb
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\ref\Application.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Application.deps.json
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Application.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Application.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Domain.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Infrastructure.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Domain.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\bin\Debug\net7.0\Infrastructure.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.csproj.CopyComplete
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\refint\Application.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\Application.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Application\obj\Debug\net7.0\ref\Application.dll

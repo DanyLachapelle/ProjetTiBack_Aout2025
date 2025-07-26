@@ -6,4 +6,6 @@ public class CreateIngredientCommand
     public decimal quantity { get; set; }
     public decimal restock_threshold { get; set; }
     public string unit { get; set; } = string.Empty;
+    
+    public string allergen { get; set; } = "none";
 }

@@ -22,7 +22,8 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, Cr
             name = command.name,
             quantity = command.quantity,
             restock_threshold = command.restock_threshold,
-            unit = command.unit
+            unit = command.unit,
+            allergen = command.allergen
         };
 
         _ingredientRepository.CreateIngredient(ingredient);
@@ -32,7 +33,8 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, Cr
             name = ingredient.name,
             quantity = ingredient.quantity,
             restock_threshold = ingredient.restock_threshold,
-            unit = ingredient.unit
+            unit = ingredient.unit,
+            allergen = ingredient.allergen
         };
     }
 

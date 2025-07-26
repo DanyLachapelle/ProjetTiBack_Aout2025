@@ -11,6 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientOutput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" afterDir="false" />
@@ -20,13 +23,14 @@
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" afterDir="false" />
@@ -38,6 +42,8 @@
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
@@ -45,8 +51,6 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +177,9 @@
       <workItem from="1752959200646" duration="674000" />
       <workItem from="1753133408348" duration="7062000" />
       <workItem from="1753192396486" duration="11279000" />
-      <workItem from="1753285426235" duration="6261000" />
+      <workItem from="1753285426235" duration="7452000" />
+      <workItem from="1753469676274" duration="1223000" />
+      <workItem from="1753545056350" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="getAllIngredient fonctionnel">
       <option name="closed" value="true" />
@@ -319,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753144986149</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="mise a jour pour docker">
+      <option name="closed" value="true" />
+      <created>1753313960693</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1753313960694</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +383,7 @@
     <MESSAGE value="Correction modification bd user" />
     <MESSAGE value="Ingredient db modifier" />
     <MESSAGE value="correction mocktail et ingredient" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction mocktail et ingredient" />
+    <MESSAGE value="mise a jour pour docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise a jour pour docker" />
   </component>
 </project>

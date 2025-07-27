@@ -5,15 +5,15 @@ namespace Application.User.commands;
 
 public class UserAccountCommandProcessor
 {
-    private readonly ICommandHandler<UserAccountLoginQuery,UserAccountLoginOutput> _userLoginHandler;
+    private readonly ICommandHandler<UserAccountLoginCommand,UserAccountLoginOutput> _userLoginHandler;
     
-    public UserAccountCommandProcessor(ICommandHandler<UserAccountLoginQuery, UserAccountLoginOutput> userLoginHandler)
+    public UserAccountCommandProcessor(ICommandHandler<UserAccountLoginCommand, UserAccountLoginOutput> userLoginHandler)
     {
         _userLoginHandler = userLoginHandler;
     }
     
-    public UserAccountLoginOutput Login(UserAccountLoginQuery query)
+    public UserAccountLoginOutput Login(UserAccountLoginCommand command)
     {
-        return _userLoginHandler.Handle(query);
+        return _userLoginHandler.Handle(command);
     }
 }

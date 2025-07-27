@@ -10,7 +10,7 @@ namespace Application.MappingProfile
     {
         public MappingProfile()
         {
-            CreateMap<Domain.UserAccount,UserAccountLoginOutput>();
+            CreateMap<Domain.User_account,UserAccountLoginOutput>();
         }
     }
 }

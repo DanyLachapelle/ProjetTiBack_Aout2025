@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Domain;
 
-namespace Infrastructure.User.Ingredient;
+namespace Infrastructure.Ingredient;
 
 public interface IIngredientRepository
 {
-    List<ingredient> GetAllIngredient();
-    void CreateIngredient(ingredient ingredient);
-    void DeleteIngredient(ingredient ingredient);
-    ingredient GetIngredientById(int commandId);
+    List<Domain.Ingredient> GetAllIngredient();
+    void CreateIngredient(Domain.Ingredient ingredient);
+    void DeleteIngredient(Domain.Ingredient ingredient);
+    Domain.Ingredient GetIngredientById(int commandId);
     bool UpdateRestockThreshold(int ingredientId, decimal restockThreshold);
-    void UpdateQuantityIngredient(ingredient ingredient);
+    void UpdateQuantityIngredient(Domain.Ingredient ingredient);
 }

@@ -23,10 +23,10 @@ public class UserCommandController: ControllerBase
     }
     
     [HttpPost("login")]
-    [ProducesResponseType(typeof(UserAccountLoginQuery), StatusCodes.Status201Created)]
-    [ProducesResponseType(typeof(UserAccountLoginQuery), StatusCodes.Status409Conflict)]
+    [ProducesResponseType(typeof(UserAccountLoginCommand), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(UserAccountLoginCommand), StatusCodes.Status409Conflict)]
     [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
-    public ActionResult<UserAccountLoginQuery> Login([FromBody] UserAccountLoginQuery query)
+    public ActionResult<UserAccountLoginCommand> Login([FromBody] UserAccountLoginCommand command)
     {
         if (!ModelState.IsValid)
         {
@@ -35,7 +35,7 @@ public class UserCommandController: ControllerBase
 
         try
         {
-            var result = _userAccountCommandsProcessor.Login(query);
+            var result = _userAccountCommandsProcessor.Login(command);
             return Ok(result);
         }
         catch (InvalidOperationException ex)

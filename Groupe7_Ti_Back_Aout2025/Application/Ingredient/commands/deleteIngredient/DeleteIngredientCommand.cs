@@ -1,6 +1,6 @@
 ﻿namespace Application.Ingredient.commands.deleteIngredient;
 
-public class DeleteIngredientQuery
+public class DeleteIngredientCommand
 {
     public int id { get; set; }
 }

@@ -1,9 +1,10 @@
 ﻿using Application.Utils;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
+
 
 namespace Application.Ingredient.commands.deleteIngredient;
 
-public class DeleteIngredientHandler:ICommandHandler<DeleteIngredientQuery,DeleteIngredientOutput> 
+public class DeleteIngredientHandler:ICommandHandler<DeleteIngredientCommand,DeleteIngredientOutput> 
 {
     private readonly IIngredientRepository _ingredientRepository;
     
@@ -11,7 +12,7 @@ public class DeleteIngredientHandler:ICommandHandler<DeleteIngredientQuery,Delet
     {
         _ingredientRepository = ingredientRepository;
     }
-    public DeleteIngredientOutput Handle(DeleteIngredientQuery command)
+    public DeleteIngredientOutput Handle(DeleteIngredientCommand command)
     {
         var ingredient = _ingredientRepository.GetIngredientById(command.id);
         if (ingredient == null)

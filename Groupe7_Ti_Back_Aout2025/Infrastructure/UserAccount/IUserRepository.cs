@@ -2,6 +2,6 @@
 
 public interface IUserRepository
 {
-    Domain.UserAccount GetUserByPseudo(string pseudo);
-    void Save(Domain.UserAccount userAccount);
+    Domain.User_account GetUserByPseudo(string pseudo);
+    void Save(Domain.User_account userAccount);
 }

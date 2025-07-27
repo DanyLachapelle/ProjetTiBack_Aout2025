@@ -4,7 +4,7 @@ using Application.Ingredient.commands.createIngredient;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +26,7 @@ public class IngredientCommandController:ControllerBase
     [HttpPost("createIngredient")]
     [ProducesResponseType(typeof(CreateIngredientOutput), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
-    public ActionResult<CreateIngredientOutput> CreateIngredient([FromBody] CreateIngredientQuery command)
+    public ActionResult<CreateIngredientOutput> CreateIngredient([FromBody] CreateIngredientCommand command)
     {
         if (!ModelState.IsValid)
         {
@@ -101,7 +101,7 @@ public class IngredientCommandController:ControllerBase
     {
         try
         {
-            var command = new UpdateQuantityIngredientQuery() { Id = id, Amount = amount };
+            var command = new UpdateQuantityIngredientCommand() { Id = id, Amount = amount };
             var result = _ingredientCommandsProcessor.UpdateQuantityIngredient(id, command);
 
             return Ok(result);

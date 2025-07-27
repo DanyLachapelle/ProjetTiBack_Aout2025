@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.User.commands.login;
 
-public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginQuery, UserAccountLoginOutput>
+public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginCommand, UserAccountLoginOutput>
 {
     public readonly IUserRepository _userRepository;
     public readonly IMapper _mapper;
@@ -22,30 +22,30 @@ public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginQuery, User
         _logger = logger;
     }
     
-   public UserAccountLoginOutput Handle(UserAccountLoginQuery query)
+   public UserAccountLoginOutput Handle(UserAccountLoginCommand command)
 {
-    _logger.LogInformation("Login attempt with username: {Pseudo}", query.username);
+    _logger.LogInformation("Login attempt with username: {Pseudo}", command.username);
 
     // Find the user by pseudo
-    var user = _userRepository.GetUserByPseudo(query.username);
+    var user = _userRepository.GetUserByPseudo(command.username);
 
     if (user == null)
     {
-        _logger.LogWarning("No user found with pseudo: {Pseudo}", query.username);
+        _logger.LogWarning("No user found with pseudo: {Pseudo}", command.username);
         throw new InvalidOperationException("Invalid pseudo");
     }
 
-    _logger.LogInformation("Provided password: {Password}", query.password);
+    _logger.LogInformation("Provided password: {Password}", command.password);
     _logger.LogInformation("Stored password hash: {StoredHash}", user.password);
 
     // Verify password using bcrypt
-    if (!VerifyPassword(query.password, user.password))
+    if (!VerifyPassword(command.password, user.password))
     {
-        _logger.LogWarning("Incorrect password for user: {Pseudo}", query.username);
+        _logger.LogWarning("Incorrect password for user: {Pseudo}", command.username);
         throw new InvalidOperationException("Invalid password");
     }
 
-    _logger.LogInformation("Login successful for: {Pseudo}", query.username);
+    _logger.LogInformation("Login successful for: {Pseudo}", command.username);
 
     _userRepository.Save(user);
 
@@ -59,9 +59,6 @@ public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginQuery, User
 
     private bool VerifyPassword(string providedPassword, string storedPasswordHash)
     {
-        // _logger.LogInformation("Mot de passe fourni : {Provided}", providedPassword);
-        // _logger.LogInformation("Hash stocké : {Hash}", storedPasswordHash);
-        // Utiliser bcrypt pour vérifier le mot de passe
         return BCrypt.Net.BCrypt.Verify(providedPassword, storedPasswordHash);
     }
 }

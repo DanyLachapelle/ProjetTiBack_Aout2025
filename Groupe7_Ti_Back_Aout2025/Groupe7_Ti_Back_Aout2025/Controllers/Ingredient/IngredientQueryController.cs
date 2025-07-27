@@ -1,7 +1,7 @@
 ﻿using System;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

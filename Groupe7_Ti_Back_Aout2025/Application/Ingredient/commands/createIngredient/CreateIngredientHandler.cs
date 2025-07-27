@@ -1,11 +1,11 @@
 ﻿using Application.DTOs;
 using Application.Utils;
 using Domain;
-using Infrastructure.User.Ingredient;
+using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.createIngredient;
 
-public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, CreateIngredientOutput>
+public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, CreateIngredientOutput>
 {
     
     private readonly IIngredientRepository _ingredientRepository;
@@ -15,14 +15,15 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, Crea
         _ingredientRepository = ingredientRepository;
     }
     
-    public CreateIngredientOutput Handle(CreateIngredientQuery command)
+    public CreateIngredientOutput Handle(CreateIngredientCommand command)
     {
-        var ingredient = new ingredient()
+        var ingredient = new Domain.Ingredient()
         {
             name = command.name,
             quantity = command.quantity,
             restock_threshold = command.restock_threshold,
-            unit = command.unit
+            unit = command.unit,
+            allergen = command.allergen
         };
 
         _ingredientRepository.CreateIngredient(ingredient);
@@ -32,7 +33,8 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientQuery, Crea
             name = ingredient.name,
             quantity = ingredient.quantity,
             restock_threshold = ingredient.restock_threshold,
-            unit = ingredient.unit
+            unit = ingredient.unit,
+            allergen = ingredient.allergen
         };
     }
 

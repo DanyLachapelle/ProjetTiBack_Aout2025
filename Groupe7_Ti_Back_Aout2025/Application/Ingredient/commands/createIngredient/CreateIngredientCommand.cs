@@ -1,9 +1,11 @@
 ﻿namespace Application.Ingredient.commands.createIngredient;
 
-public class CreateIngredientQuery
+public class CreateIngredientCommand
 {
     public string name { get; set; } = string.Empty;
     public decimal quantity { get; set; }
     public decimal restock_threshold { get; set; }
     public string unit { get; set; } = string.Empty;
+    
+    public string allergen { get; set; } = "none";
 }

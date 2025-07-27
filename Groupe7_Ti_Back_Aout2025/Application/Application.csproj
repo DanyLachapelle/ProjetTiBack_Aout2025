@@ -8,8 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Mocktail\commands\" />
-      <Folder Include="Mocktail\query\" />
+      <Folder Include="SalesItem\commands\AddItemToSale\" />
+      <Folder Include="SalesItem\commands\RemoveItemFromSale\" />
+      <Folder Include="SalesItem\commands\UpdateSaleItem\" />
+      <Folder Include="SalesItem\query\GetItemBySale\" />
+      <Folder Include="SalesItem\query\GetItemDetails\" />
       <Folder Include="User_account\query\" />
     </ItemGroup>
 

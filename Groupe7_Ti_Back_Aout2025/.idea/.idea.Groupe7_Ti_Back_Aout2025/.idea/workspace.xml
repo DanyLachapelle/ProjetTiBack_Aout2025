@@ -9,72 +9,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/DTOs/CreateSaleItemRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/DTOs/UpdateSaleRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/DeleteSale/DeleteSaleCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/DeleteSale/DeleteSaleHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/DeleteSale/DeleteSaleOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdOutput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Sale.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/SaleItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Sale/ISaleItemRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Sale/ISaleRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Sale/SaleItemRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Sale/SaleRepository.cs" afterDir="false" />
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="sales updates">
+      <change afterPath="$PROJECT_DIR$/Application/DTOs/SaleItemDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/RemoveItemFromSale/RemoveItemFromSaleCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/RemoveItemFromSale/RemoveItemFromSaleHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/RemoveItemFromSale/RemoveItemFromSaleOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdOutput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SalesItem/query/SaleItemQueryProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktail/MocktailQueryProcessor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktail/query/getAllMocktail/MocktailGetAllHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktail/query/getAllMocktail/MocktailGetAllOutput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktail/query/getAllMocktail/MocktailGetAllQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/SaleItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/SaleItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Sale/ISaleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Sale/ISaleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Sale/SaleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Sale/SaleRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753313960694</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="sales updates">
+      <option name="closed" value="true" />
+      <created>1753650850479</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1753650850480</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,6 +377,7 @@
     <MESSAGE value="Ingredient db modifier" />
     <MESSAGE value="correction mocktail et ingredient" />
     <MESSAGE value="mise a jour pour docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="sales updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="sales updates" />
   </component>
 </project>

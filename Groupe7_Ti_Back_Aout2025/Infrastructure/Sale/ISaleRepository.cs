@@ -25,5 +25,5 @@ public interface ISaleRepository
     
     Domain.Sale? GetByIdWithItems(int id);
 
-
+    Domain.Sale? GetSaleWithItems(int saleId);
 }

@@ -73,4 +73,17 @@ namespace Infrastructure.Sale;
                 .Where(si => si.Sale.SaleDate >= startDate && si.Sale.SaleDate <= endDate)
                 .ToList();
         }
-}
+        
+        public SaleItem GetByIdWithDetails(int id)
+        {
+            return _context.SaleItems
+                .Include(i => i.Mocktail)
+                .Include(i => i.Sale)
+                .FirstOrDefault(i => i.Id == id);
+        }
+
+        public SaleItem GetByIdWithItems(int commandItemId)
+        {
+            throw new NotImplementedException();
+        }
+    }

@@ -14,4 +14,5 @@ public class SaleItem
     [JsonIgnore]
     public virtual Sale Sale { get; set; } = null!;
     public virtual Mocktail Mocktail { get; set; }
+    public decimal TotalAmount { get; set; }
 }

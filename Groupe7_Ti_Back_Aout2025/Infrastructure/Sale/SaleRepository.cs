@@ -114,4 +114,13 @@ public class SaleRepository : ISaleRepository
             .ThenInclude(i => i.Mocktail)
             .FirstOrDefault(s => s.Id == id);
     }
+    
+    public Domain.Sale? GetSaleWithItems(int saleId)
+    {
+        return _context.Sales
+            .Include(s => s.SaleItems)
+            .ThenInclude(i => i.Mocktail)
+            .FirstOrDefault(s => s.Id == saleId);
+    }
+
 }

@@ -1,3 +1,5 @@
+using Application.DTOs;
+
 namespace Application.Sales.query.GetSalesByDate;
 
 public class GetSalesByDateOutput
@@ -17,11 +19,3 @@ public class SaleDto
     public List<SaleItemDto>? Items { get; set; }
 }
 
-public class SaleItemDto
-{
-    public int MocktailId { get; set; }
-    public string MocktailName { get; set; } = string.Empty;
-    public int Quantity { get; set; }
-    public decimal UnitPrice { get; set; }
-    public decimal ItemTotal { get; set; }
-}

@@ -12,4 +12,7 @@ public interface ISaleItemRepository
     void Remove(SaleItem saleItem);
     decimal GetTotalRevenueForMocktail(int mocktailId);
     IEnumerable<SaleItem> GetItemsByDateRange(DateTime startDate, DateTime endDate);
+    SaleItem GetByIdWithDetails(int id);
+
+    SaleItem GetByIdWithItems(int commandItemId);
 }

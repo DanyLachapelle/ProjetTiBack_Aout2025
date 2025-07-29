@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="GetSaleById fonctionelle">
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="getSaleByDate fonctionelle">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/SaleCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/SaleCommandProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753817719454</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="getSaleByDate fonctionelle">
+      <option name="closed" value="true" />
+      <created>1753818040919</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1753818040919</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +384,7 @@
     <MESSAGE value="sales updates" />
     <MESSAGE value="Create Sale fonctionelle" />
     <MESSAGE value="GetSaleById fonctionelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="GetSaleById fonctionelle" />
+    <MESSAGE value="getSaleByDate fonctionelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="getSaleByDate fonctionelle" />
   </component>
 </project>

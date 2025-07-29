@@ -84,6 +84,10 @@ namespace Infrastructure.Sale;
 
         public SaleItem GetByIdWithItems(int commandItemId)
         {
-            throw new NotImplementedException();
+            return _context.SaleItems
+                .Include(si => si.Mocktail)
+                .Include(si => si.Sale)
+                .FirstOrDefault(si => si.Id == commandItemId);
         }
+
     }

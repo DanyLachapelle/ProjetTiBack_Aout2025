@@ -34,7 +34,7 @@ public class RemoveItemFromSaleHandler : ICommandHandler<RemoveItemFromSaleComma
         if (item == null)
             throw new KeyNotFoundException($"Item with ID {command.ItemId} not found");
 
-        if (item.Id != command.SaleId)
+        if (item.SaleId != command.SaleId)
             throw new InvalidOperationException("Item does not belong to this sale");
 
         // Suppression

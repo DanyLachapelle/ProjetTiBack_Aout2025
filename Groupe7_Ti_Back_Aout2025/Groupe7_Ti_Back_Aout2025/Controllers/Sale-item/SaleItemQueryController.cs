@@ -1,5 +1,6 @@
 using Application.SalesItem.query;
 using Application.SalesItem.query.GetAllItemBySale;
+using Application.SalesItem.query.GetItemBySaleById;
 using Infrastructure.Sale;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,8 +19,39 @@ public class SaleItemQueryController:ControllerBase
         _saleItemRepository = saleItemRepository;
     }
     
-    [HttpGet("GetSaleItemById/{SaleId}")]
-    public IActionResult GetSaleItemById(int SaleId)
+    
+    
+     [HttpGet("GetSaleItemById/{SaleId}")]
+    public IActionResult GetSaleItemById(int SaleId, int ItemId)
+    {
+        if (SaleId <= 0 || ItemId <= 0)
+        {
+            return BadRequest(new { message = "ID de l'article de vente invalide." });
+        }
+
+        try
+        {
+            var query = new GetItemBySaleByIdQuery(SaleId, ItemId);
+            var saleItem = _saleItemQueryProcessor.GetItemBySaleId(query);
+
+            if (saleItem == null)
+            {
+                return NotFound(new { message = "Article de vente non trouvé." });
+            }
+            return Ok(saleItem);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur lors de la récupération de l'article de vente.", error = ex.Message });
+        }
+    }
+     
+     
+     
+     
+    
+    [HttpGet("GetSaleItemBySale/{SaleId}")]
+    public IActionResult GetSaleItemBySale(int SaleId)
     {
         if (SaleId <= 0)
         {
@@ -42,4 +74,6 @@ public class SaleItemQueryController:ControllerBase
             return StatusCode(500, new { message = "Erreur lors de la récupération de l'article de vente.", error = ex.Message });
         }
     }
+    
+    
 }

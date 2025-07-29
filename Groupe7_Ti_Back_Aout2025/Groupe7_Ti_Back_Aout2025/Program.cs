@@ -19,6 +19,8 @@ using Application.Mocktails.query;
 using Application.Mocktails.query.getAllMocktail;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
+using Application.Sales.commands;
+using Application.Sales.commands.CreateSale;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
@@ -26,7 +28,8 @@ using Application.Services;
 using Infrastructure.Ingredient;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
-
+using Infrastructure.Sale;
+using Infrastructure.User.Sale;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -116,6 +119,11 @@ builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Sale
+builder.Services.AddScoped<ISaleRepository, SaleRepository>();
+builder.Services.AddScoped<SaleCommandProcessor>();
+builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

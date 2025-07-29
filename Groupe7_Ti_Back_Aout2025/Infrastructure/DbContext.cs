@@ -157,7 +157,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
         
             builder.Property(x => x.SaleDate)
                 .HasColumnName("sale_date")
-                .HasColumnType("TIMESTAMP")
+                .HasColumnType("datetime2")
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
         
             builder.Property(x => x.TableNumber)

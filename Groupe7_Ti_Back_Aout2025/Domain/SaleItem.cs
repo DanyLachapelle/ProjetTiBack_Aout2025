@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Domain;
@@ -14,5 +15,7 @@ public class SaleItem
     [JsonIgnore]
     public virtual Sale Sale { get; set; } = null!;
     public virtual Mocktail Mocktail { get; set; }
+    
+    [NotMapped]
     public decimal TotalAmount { get; set; }
 }

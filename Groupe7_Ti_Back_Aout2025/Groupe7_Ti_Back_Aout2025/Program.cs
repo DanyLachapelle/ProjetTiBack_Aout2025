@@ -21,6 +21,9 @@ using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
 using Application.Sales.commands;
 using Application.Sales.commands.CreateSale;
+using Application.Sales.query;
+using Application.Sales.query.GetSalesByDate;
+using Application.Sales.query.GetSalesById;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
@@ -123,6 +126,9 @@ builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 // Sale
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<SaleCommandProcessor>();
+builder.Services.AddScoped<SalesQueryProcessor>();
+builder.Services.AddScoped<IQueryHandler<GetSalesByIdQuery, GetSalesByIdOutput>, GetSalesByIdHandler>();
+builder.Services.AddScoped<IQueryHandler<GetSalesByDateQuery, GetSalesByDateOutput>, GetSalesByDateHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
 
 var app = builder.Build();

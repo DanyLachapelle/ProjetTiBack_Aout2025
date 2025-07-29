@@ -1,9 +1,7 @@
 using Application.DTOs;
-using Application.Sales.query.GetSalesByDate;
+using Application.SalesItem.query.GetAllItemBySale;
 using Application.Utils;
 using Infrastructure.Sale;
-
-namespace Application.SalesItem.query.GetAllItemBySale;
 
 public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, GetAllItemsBySaleOutput>
 {
@@ -11,7 +9,7 @@ public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, Ge
 
     public GetAllItemsBySaleHandler(ISaleItemRepository saleItemRepository)
     {
-        _saleItemRepository = saleItemRepository;
+        _saleItemRepository = saleItemRepository ?? throw new ArgumentNullException(nameof(saleItemRepository));
     }
 
     public GetAllItemsBySaleOutput Handle(GetAllItemsBySaleQuery query)
@@ -19,7 +17,11 @@ public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, Ge
         if (query == null)
             throw new ArgumentNullException(nameof(query));
 
+        Console.WriteLine($"Handling GetAllItemsBySale for SaleId: {query.SaleId}");
+
         var items = _saleItemRepository.GetBySaleId(query.SaleId).ToList();
+
+        Console.WriteLine($"Items found: {items.Count}");
 
         return new GetAllItemsBySaleOutput
         {
@@ -36,4 +38,5 @@ public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, Ge
             TotalAmount = items.Sum(i => i.Quantity * (i.Mocktail?.price ?? 0))
         };
     }
+
 }

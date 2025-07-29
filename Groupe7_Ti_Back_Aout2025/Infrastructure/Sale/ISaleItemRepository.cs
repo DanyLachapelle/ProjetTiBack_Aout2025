@@ -5,6 +5,7 @@ namespace Infrastructure.Sale;
 public interface ISaleItemRepository
 {
     SaleItem GetById(int id);
+    
     IEnumerable<SaleItem> GetBySaleId(int saleId);
     IEnumerable<SaleItem> GetByMocktailId(int mocktailId);
     SaleItem Add(SaleItem saleItem);

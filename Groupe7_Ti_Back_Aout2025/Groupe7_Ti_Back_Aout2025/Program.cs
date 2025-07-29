@@ -26,6 +26,9 @@ using Application.Sales.commands.UpdateSale;
 using Application.Sales.query;
 using Application.Sales.query.GetSalesByDate;
 using Application.Sales.query.GetSalesById;
+using Application.SalesItem.query;
+using Application.SalesItem.query.GetAllItemBySale;
+using Application.SalesItem.query.GetItemBySaleById;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
@@ -134,6 +137,12 @@ builder.Services.AddScoped<IQueryHandler<GetSalesByDateQuery, GetSalesByDateOutp
 builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>, UpdateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<DeleteSaleCommand, DeleteSaleOutput>, DeleteSaleHandler>();
+
+// sale item
+builder.Services.AddScoped<ISaleItemRepository, SaleItemRepository>();
+builder.Services.AddScoped<SaleItemQueryProcessor>();
+builder.Services.AddScoped<IQueryHandler<GetAllItemsBySaleQuery, GetAllItemsBySaleOutput>, GetAllItemsBySaleHandler>();
+builder.Services.AddScoped<IQueryHandler<GetItemBySaleByIdQuery, GetItemBySaleByIdOutput>, GetItemBySaleByIdHandler>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

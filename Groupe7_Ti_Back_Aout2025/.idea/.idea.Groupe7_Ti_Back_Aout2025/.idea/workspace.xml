@@ -9,25 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="Create Sale fonctionelle">
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="GetSaleById fonctionelle">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753817144816</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="GetSaleById fonctionelle">
+      <option name="closed" value="true" />
+      <created>1753817719454</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1753817719454</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +373,7 @@
     <MESSAGE value="mise a jour pour docker" />
     <MESSAGE value="sales updates" />
     <MESSAGE value="Create Sale fonctionelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Sale fonctionelle" />
+    <MESSAGE value="GetSaleById fonctionelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="GetSaleById fonctionelle" />
   </component>
 </project>

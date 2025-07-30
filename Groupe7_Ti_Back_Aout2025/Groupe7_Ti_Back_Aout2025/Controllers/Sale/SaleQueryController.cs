@@ -4,6 +4,7 @@ using Application.Sales.query.GetSalesById;
 using Infrastructure.User.Sale;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Application.Sales.query.GetAllSales;
 
 
 namespace Groupe7_Ti_Back_Aout2025.Controllers.Sale;
@@ -63,6 +64,26 @@ public class SaleQueryController: ControllerBase
             if (sales == null || !sales.Sales.Any())
             {
                 return NotFound(new { message = "Aucune vente trouvée pour cette date." });
+            }
+            return Ok(sales);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message });
+        }
+    }
+    
+    [HttpGet("GetAllSales")]
+    public IActionResult GetAllSales()
+    {
+        try
+        {
+            var query = new GetAllSalesQuery();
+            var sales = _salesQueryProcessor.GetAllSales(query);
+
+            if (sales == null || !sales.Sales.Any())
+            {
+                return NotFound(new { message = "Aucune vente trouvée." });
             }
             return Ok(sales);
         }

@@ -24,6 +24,7 @@ using Application.Sales.commands.CreateSale;
 using Application.Sales.commands.DeleteSale;
 using Application.Sales.commands.UpdateSale;
 using Application.Sales.query;
+using Application.Sales.query.GetAllSales;
 using Application.Sales.query.GetSalesByDate;
 using Application.Sales.query.GetSalesById;
 using Application.SalesItem.commands;
@@ -138,9 +139,11 @@ builder.Services.AddScoped<SaleCommandProcessor>();
 builder.Services.AddScoped<SalesQueryProcessor>();
 builder.Services.AddScoped<IQueryHandler<GetSalesByIdQuery, GetSalesByIdOutput>, GetSalesByIdHandler>();
 builder.Services.AddScoped<IQueryHandler<GetSalesByDateQuery, GetSalesByDateOutput>, GetSalesByDateHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllSalesQuery, GetAllSalesOutput>, GetAllSalesHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>, UpdateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<DeleteSaleCommand, DeleteSaleOutput>, DeleteSaleHandler>();
+
 
 // sale item
 builder.Services.AddScoped<ISaleItemRepository, SaleItemRepository>();

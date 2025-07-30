@@ -1,6 +1,7 @@
 using Application.Utils;
 using Domain;
 using Infrastructure.Mocktail;
+using Infrastructure.Sale;
 using Infrastructure.User.Sale;
 
 namespace Application.SalesItem.commands.AddItemToSale;
@@ -9,13 +10,16 @@ public class AddItemToSaleHandler : ICommandHandler<AddItemToSaleCommand, AddIte
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMocktailRepository _mocktailRepository;
-
+    private readonly ISaleItemRepository _saleItemRepository;
+    
     public AddItemToSaleHandler(
         ISaleRepository saleRepository,
-        IMocktailRepository mocktailRepository)
+        IMocktailRepository mocktailRepository,
+        ISaleItemRepository saleItemRepository)
     {
         _saleRepository = saleRepository;
         _mocktailRepository = mocktailRepository;
+        _saleItemRepository = saleItemRepository;
     }
 
     public AddItemToSaleOutput Handle(AddItemToSaleCommand command)
@@ -41,13 +45,18 @@ public class AddItemToSaleHandler : ICommandHandler<AddItemToSaleCommand, AddIte
             ItemTotal = command.Quantity * mocktail.price
         };
 
-        // 3. Sauvegarde
+        // 3. Sauvegarde de l'item
         _saleRepository.AddSaleItem(item);
-        _saleRepository.UpdateSale(_saleRepository.GetSaleById(command.SaleId));
+
+        // 4. ➕ Recalcul et mise à jour du total de la vente
+        var allItems = _saleItemRepository.GetBySaleId(command.SaleId);
+        sale.TotalAmount = allItems.Sum(i => i.ItemTotal);
+        _saleRepository.UpdateSale(sale);
 
         return new AddItemToSaleOutput(
             ItemId: item.Id,
             NewTotalAmount: sale.TotalAmount
         );
     }
+
 }

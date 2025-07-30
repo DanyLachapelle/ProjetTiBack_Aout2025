@@ -56,7 +56,8 @@ public class SaleQueryController: ControllerBase
 
         try
         {
-            var query = new GetSalesByDateQuery(date);
+            // Toujours inclure les items dans la requête
+            var query = new GetSalesByDateQuery(date, includeItems: true);
             var sales = _salesQueryProcessor.GetSalesByDate(query);
 
             if (sales == null || !sales.Sales.Any())
@@ -70,6 +71,7 @@ public class SaleQueryController: ControllerBase
             return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message });
         }
     }
+
 
 
 

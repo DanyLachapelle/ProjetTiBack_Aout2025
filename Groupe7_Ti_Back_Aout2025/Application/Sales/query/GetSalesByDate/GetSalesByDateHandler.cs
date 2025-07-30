@@ -38,8 +38,10 @@ namespace Application.Sales.query.GetSalesByDate;
                     Id = s.Id,
                     TableNumber = s.TableNumber,
                     TotalAmount = s.TotalAmount,
+                    SaleDate = s.SaleDate,
                     Items = s.SaleItems?.Select(i => new SaleItemDto
                     {
+                        Id = i.Id,
                         MocktailId = i.MocktailId,
                         MocktailName = i.Mocktail?.name ?? "Inconnu",
                         Quantity = i.Quantity,

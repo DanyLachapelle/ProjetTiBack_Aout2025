@@ -4,7 +4,7 @@ public class Sale
 {
     public int Id { get; set; }
     public decimal TotalAmount { get; set; }
-    public DateTime SaleDate { get; set; } = DateTime.UtcNow;
+    public DateTime SaleDate { get; set; } = DateTime.Now;
     public string TableNumber { get; set; }
 
     // Navigation property

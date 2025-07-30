@@ -27,7 +27,7 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
         var sale = new Sale
         {
             TableNumber = command.TableNumber,
-            SaleDate = DateTime.UtcNow,
+            SaleDate = DateTime.Now,
         };
 
         // Ajout des items

@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="getAllSale fonctionnel">
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Sale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Sale.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,7 @@
       <workItem from="1753285426235" duration="7452000" />
       <workItem from="1753469676274" duration="1223000" />
       <workItem from="1753545056350" duration="2370000" />
-      <workItem from="1753907215094" duration="5612000" />
+      <workItem from="1753907215094" duration="6094000" />
     </task>
     <task id="LOCAL-00001" summary="getAllIngredient fonctionnel">
       <option name="closed" value="true" />
@@ -386,7 +384,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753911773623</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="modification time utc par now">
+      <option name="closed" value="true" />
+      <created>1753916378288</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1753916378288</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,6 +401,21 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/sean" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -405,7 +426,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev" />
+                        <option value="origin/sean" />
                       </list>
                     </value>
                   </entry>
@@ -420,7 +441,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Mis a jour de la limit des ingredients fonctionnel" />
     <MESSAGE value="Restock fonctionnelle" />
     <MESSAGE value="Ingredient Management fonctionnel" />
     <MESSAGE value="getbyidMocktail fonctionelle" />
@@ -445,6 +465,7 @@
     <MESSAGE value="correction AddItemToSaleHandler.cs" />
     <MESSAGE value="GetSalesByDate correction des items" />
     <MESSAGE value="getAllSale fonctionnel" />
-    <option name="LAST_COMMIT_MESSAGE" value="getAllSale fonctionnel" />
+    <MESSAGE value="modification time utc par now" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification time utc par now" />
   </component>
 </project>

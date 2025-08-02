@@ -27,6 +27,7 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
             TableNumber = sale.TableNumber,
             TotalAmount = sale.TotalAmount,
             SaleDate = sale.SaleDate,
+            
             Items = sale.SaleItems.Select(i => new SaleItemOutput
             {
                 Id = i.Id,

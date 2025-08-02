@@ -32,6 +32,10 @@ namespace Application.Sales.commands.UpdateSale;
         if (!string.IsNullOrWhiteSpace(command.TableNumber))
             sale.TableNumber = command.TableNumber;
 
+        // 2. Mise à jour du statut de la vente
+        if (!string.IsNullOrWhiteSpace(command.status))
+            sale.status = command.status;
+        
         // 3. Mise à jour des items
         if (command.UpdatedItems != null && command.UpdatedItems.Any())
         {

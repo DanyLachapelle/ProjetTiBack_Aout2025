@@ -165,6 +165,19 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
                 .HasColumnType("VARCHAR(10)")
                 .HasMaxLength(10);
         
+            builder.Property(x => x.status)
+                .HasColumnName("status")
+                .HasColumnType("VARCHAR(20)")
+                .HasDefaultValue("Pending")
+                .IsRequired()
+                .HasMaxLength(20);
+            
+            builder.Property(x => x.order_timer)
+                .HasColumnName("order_timer")
+                .HasColumnType("INT")
+                .HasDefaultValue(15)
+                .IsRequired();
+            
             // Relation avec SaleItems
             builder.HasMany(x => x.SaleItems)
                 .WithOne(x => x.Sale)

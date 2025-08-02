@@ -39,6 +39,8 @@ namespace Application.Sales.query.GetSalesByDate;
                     TableNumber = s.TableNumber,
                     TotalAmount = s.TotalAmount,
                     SaleDate = s.SaleDate,
+                    Status = s.status,
+                    order_timer = s.order_timer,
                     Items = s.SaleItems?.Select(i => new SaleItemDto
                     {
                         Id = i.Id,

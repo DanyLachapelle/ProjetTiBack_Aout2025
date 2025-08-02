@@ -16,6 +16,10 @@ public class SaleDto
     public string TableNumber { get; set; } = string.Empty;
     public decimal TotalAmount { get; set; }
     public DateTime SaleDate { get; set; }
+    
+    public string Status { get; set; } = string.Empty;
+    
+    public int order_timer { get; set; } = 0;
     public List<SaleItemDto>? Items { get; set; }
 }
 

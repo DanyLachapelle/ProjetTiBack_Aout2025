@@ -12,6 +12,9 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Domain.Ingredient> Ingredients { get; set; }
     public DbSet<Domain.mocktail_ingredient> MocktailIngredients { get; set; }
     
+    public DbSet<Domain.Sale> Sales { get; set; }
+    public DbSet<Domain.SaleItem> SaleItems { get; set; }
+    
     private readonly ILoggerFactory _loggerFactory;
     public DbContext(DbContextOptions<DbContext> options, ILoggerFactory loggerFactory) 
         : base(options)
@@ -136,6 +139,77 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
                 .WithMany(x => x.MocktailIngredients)
                 .HasForeignKey(x => x.ingredient_id)
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+        
+        modelBuilder.Entity<Domain.Sale>(builder =>
+        {
+            builder.ToTable("SALE");
+            builder.HasKey(x => x.Id);
+    
+            builder.Property(x => x.Id)
+                .HasColumnName("id")
+                .ValueGeneratedOnAdd();
+        
+            builder.Property(x => x.TotalAmount)
+                .HasColumnName("total_amount")
+                .HasColumnType("DECIMAL(10,2)")
+                .IsRequired();
+        
+            builder.Property(x => x.SaleDate)
+                .HasColumnName("sale_date")
+                .HasColumnType("datetime2")
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+        
+            builder.Property(x => x.TableNumber)
+                .HasColumnName("table_number")
+                .HasColumnType("VARCHAR(10)")
+                .HasMaxLength(10);
+        
+            // Relation avec SaleItems
+            builder.HasMany(x => x.SaleItems)
+                .WithOne(x => x.Sale)
+                .HasForeignKey(x => x.SaleId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<Domain.SaleItem>(builder =>
+        {
+            builder.ToTable("SALE_ITEM");
+            builder.HasKey(x => x.Id);
+    
+            builder.Property(x => x.Id)
+                .HasColumnName("id")
+                .ValueGeneratedOnAdd();
+        
+            builder.Property(x => x.SaleId)
+                .HasColumnName("sale_id")
+                .IsRequired();
+        
+            builder.Property(x => x.MocktailId)
+                .HasColumnName("mocktail_id");
+        
+            builder.Property(x => x.Quantity)
+                .HasColumnName("quantity")
+                .IsRequired();
+        
+            builder.Property(x => x.ItemTotal)
+                .HasColumnName("item_total")
+                .HasColumnType("DECIMAL(10,2)")
+                .IsRequired();
+        
+            // Contrainte CHECK pour quantity
+            builder.ToTable(t => t.HasCheckConstraint("CK_SaleItem_Quantity", "quantity > 0"));
+    
+            // Relations
+            builder.HasOne(x => x.Sale)
+                .WithMany(x => x.SaleItems)
+                .HasForeignKey(x => x.SaleId)
+                .OnDelete(DeleteBehavior.Cascade);
+        
+            builder.HasOne(x => x.Mocktail)
+                .WithMany()
+                .HasForeignKey(x => x.MocktailId)
+                .OnDelete(DeleteBehavior.SetNull);
         });
     }
 }

@@ -19,6 +19,21 @@ using Application.Mocktails.query;
 using Application.Mocktails.query.getAllMocktail;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
+using Application.Sales.commands;
+using Application.Sales.commands.CreateSale;
+using Application.Sales.commands.DeleteSale;
+using Application.Sales.commands.UpdateSale;
+using Application.Sales.query;
+using Application.Sales.query.GetAllSales;
+using Application.Sales.query.GetSalesByDate;
+using Application.Sales.query.GetSalesById;
+using Application.SalesItem.commands;
+using Application.SalesItem.commands.AddItemToSale;
+using Application.SalesItem.commands.RemoveItemFromSale;
+using Application.SalesItem.commands.UpdateSaleItem;
+using Application.SalesItem.query;
+using Application.SalesItem.query.GetAllItemBySale;
+using Application.SalesItem.query.GetItemBySaleById;
 using Application.User.commands;
 using Application.User.commands.login;
 using Application.Utils;
@@ -26,7 +41,8 @@ using Application.Services;
 using Infrastructure.Ingredient;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
-
+using Infrastructure.Sale;
+using Infrastructure.User.Sale;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -116,6 +132,29 @@ builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Sale
+builder.Services.AddScoped<ISaleRepository, SaleRepository>();
+builder.Services.AddScoped<SaleCommandProcessor>();
+builder.Services.AddScoped<SalesQueryProcessor>();
+builder.Services.AddScoped<IQueryHandler<GetSalesByIdQuery, GetSalesByIdOutput>, GetSalesByIdHandler>();
+builder.Services.AddScoped<IQueryHandler<GetSalesByDateQuery, GetSalesByDateOutput>, GetSalesByDateHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllSalesQuery, GetAllSalesOutput>, GetAllSalesHandler>();
+builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
+builder.Services.AddScoped<ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>, UpdateSaleHandler>();
+builder.Services.AddScoped<ICommandHandler<DeleteSaleCommand, DeleteSaleOutput>, DeleteSaleHandler>();
+
+
+// sale item
+builder.Services.AddScoped<ISaleItemRepository, SaleItemRepository>();
+builder.Services.AddScoped<SaleItemQueryProcessor>();
+builder.Services.AddScoped<SaleItemCommandProcessor>();
+builder.Services.AddScoped<ICommandHandler<AddItemToSaleCommand, AddItemToSaleOutput>, AddItemToSaleHandler>();
+builder.Services.AddScoped<ICommandHandler<RemoveItemFromSaleCommand, RemoveItemFromSaleOutput>, RemoveItemFromSaleHandler>();
+builder.Services.AddScoped<ICommandHandler<UpdateSaleItemCommand, UpdateSaleItemOutput>, UpdateSaleItemHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllItemsBySaleQuery, GetAllItemsBySaleOutput>, GetAllItemsBySaleHandler>();
+builder.Services.AddScoped<IQueryHandler<GetItemBySaleByIdQuery, GetItemBySaleByIdOutput>, GetItemBySaleByIdHandler>();
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

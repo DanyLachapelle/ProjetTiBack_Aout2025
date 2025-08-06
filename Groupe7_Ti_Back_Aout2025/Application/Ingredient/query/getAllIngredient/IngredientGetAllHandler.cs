@@ -29,7 +29,8 @@ public class IngredientGetAllHandler: IQueryHandler<IngredientGetAllQuery, Ingre
             restock_threshold = i.restock_threshold,
             unit = i.unit,
             allergen = i.allergen ?? "none", 
-            last_modified_at = i.last_modified_at
+            last_modified_at = i.last_modified_at,
+            // plus besoin de StockStatus ici, c’est calculé dans le DTO
         }).ToList();
 
         return new IngredientGetAllOutput
@@ -37,6 +38,7 @@ public class IngredientGetAllHandler: IQueryHandler<IngredientGetAllQuery, Ingre
             Ingredients = ingredientDtos
         };
     }
+
 
     
 }

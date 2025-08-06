@@ -5,6 +5,7 @@ using Api.Services;
 using Application.DTOs;
 using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.DecreaseIngredientQuantity;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
@@ -115,7 +116,7 @@ builder.Services.AddScoped<ICommandHandler<CreateIngredientCommand, CreateIngred
 builder.Services.AddScoped<ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput>, DeleteIngredientHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput>, UpdateLimitIngredientHandler>();    
 builder.Services.AddScoped<ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput>, UpdateQuantityIngredientHandler>();
-
+builder.Services.AddScoped<ICommandHandler<DecreaseIngredientQuantityCommand, DecreaseIngredientQuantityOutput>, DecreaseIngredientQuantityHandler>();
 // MOCKTAIL
 builder.Services.AddScoped<IMocktailRepository, MocktailRepository>();
 //builder.Services.AddScoped<IMocktailService, MocktailService>();

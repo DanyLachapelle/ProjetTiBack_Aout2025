@@ -63,4 +63,24 @@ public class IngredientRepository:IIngredientRepository
             throw new ArgumentException("Ingredient not found");
         }
     }
+
+    public void DecreaseQuantity(Domain.Ingredient ingredient)
+    {
+        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredient.id);
+        if (existingIngredient != null)
+        {
+            // Pas de décrément ici !
+            existingIngredient.quantity = ingredient.quantity;
+            existingIngredient.last_modified_at = ingredient.last_modified_at;
+
+            Console.WriteLine($"Decreasing ingredient id={ingredient.id} new quantity={ingredient.quantity} last_modified_at={existingIngredient.last_modified_at}");
+
+            _context.SaveChanges();
+        }
+        else
+        {
+            throw new ArgumentException("Ingredient not found");
+        }
+    }
+
 }

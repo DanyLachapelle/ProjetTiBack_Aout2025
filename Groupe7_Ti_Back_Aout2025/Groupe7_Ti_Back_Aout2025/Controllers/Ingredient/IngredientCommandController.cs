@@ -1,6 +1,7 @@
 ﻿using System;
 using Application.Ingredient.commands;
 using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.DecreaseIngredientQuantity;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
@@ -116,6 +117,25 @@ public class IngredientCommandController:ControllerBase
         }
     }
 
+    [HttpPut("decreaseQuantity/{id}")]
+    public ActionResult<DecreaseIngredientQuantityOutput> DecreaseQuantity(int id, [FromBody] decimal command)
+    {
+
+        try
+        {
+            var commands = new DecreaseIngredientQuantityCommand() {Id = id, quantity = command};
+            var result = _ingredientCommandsProcessor.DecreaseIngredientQuantity(id, commands);
+            return Ok(result);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
+        }
+    }
 
 
     

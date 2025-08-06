@@ -31,6 +31,23 @@ public class Ingredient
         last_modified_at = DateTime.Now;
     }
     
+    public void DecreaseQuantity(decimal amount)
+    {
+        if (amount <= 0)
+        {
+            throw new ArgumentException("Amount to decrease must be positive", nameof(amount));
+        }
+
+        if (quantity < amount)
+        {
+            throw new InvalidOperationException("Insufficient quantity to decrease");
+        }
+
+        quantity -= amount;
+        last_modified_at = DateTime.Now;
+    }
+
+    
     public bool NeedsRestock()
     {
         return quantity <= restock_threshold;
@@ -46,4 +63,6 @@ public class Ingredient
         "soybeans", "milk", "nuts", "celery", "mustard", "sesame",
         "sulphites", "lupin", "molluscs"
     };
+
+    
 } 

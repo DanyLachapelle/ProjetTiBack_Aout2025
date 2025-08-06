@@ -1,5 +1,6 @@
 ﻿using System;
 using Application.Ingredient.commands.createIngredient;
+using Application.Ingredient.commands.DecreaseIngredientQuantity;
 using Application.Ingredient.commands.deleteIngredient;
 using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
@@ -14,18 +15,25 @@ public class IngredientCommandProcessor
     private readonly ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> _updateLimitIngredientHandler;
     private readonly ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput> _updateQuantityIngredientHandler;
     private readonly ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> _createIngredientQueryHandler;
+    private readonly ICommandHandler<DecreaseIngredientQuantityCommand, DecreaseIngredientQuantityOutput> _decreaseIngredientQuantityHandler;
+    
     
     public IngredientCommandProcessor(
         ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> createIngredientHandler,
         ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> deleteIngredientHandler,
         ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> updateLimitIngredientHandler,
-        ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput> updateQuantityIngredientHandler)
+        ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput> updateQuantityIngredientHandler,
+        ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> createIngredientQueryHandler,
+        ICommandHandler<DecreaseIngredientQuantityCommand, DecreaseIngredientQuantityOutput> decreaseIngredientQuantityHandler)
     {
         _createIngredientHandler = createIngredientHandler;
         _deleteIngredientHandler = deleteIngredientHandler;
         _updateLimitIngredientHandler = updateLimitIngredientHandler;
         _updateQuantityIngredientHandler = updateQuantityIngredientHandler;
+        _createIngredientQueryHandler = createIngredientQueryHandler;
+        _decreaseIngredientQuantityHandler = decreaseIngredientQuantityHandler;
     }
+    
     public DeleteIngredientOutput DeleteIngredient(int id)
     {
         var command = new DeleteIngredientCommand { id = id };
@@ -85,6 +93,29 @@ public class IngredientCommandProcessor
         }
 
         return _createIngredientHandler.Handle(command);
+    }
+    
+    public DecreaseIngredientQuantityOutput DecreaseIngredientQuantity(int id,DecreaseIngredientQuantityCommand command)
+    {
+        if (command == null)
+        {
+            throw new ArgumentNullException(nameof(command), "Command cannot be null");
+        }
+
+        if (id <= 0)
+            throw new ArgumentException("Invalid ingredient ID");
+
+        var commands = new DecreaseIngredientQuantityCommand()
+        {
+            Id = id,
+            quantity = command.quantity
+        };
+        if (command.quantity <= 0 || command.Id <= 0)
+        {
+            throw new ArgumentException("Invalid ingredient ID or quantity provided");
+        }
+
+        return _decreaseIngredientQuantityHandler.Handle(command);
     }
 
 

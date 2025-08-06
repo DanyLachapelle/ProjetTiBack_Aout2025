@@ -11,4 +11,6 @@ public interface IIngredientRepository
     Domain.Ingredient GetIngredientById(int commandId);
     bool UpdateRestockThreshold(int ingredientId, decimal restockThreshold);
     void UpdateQuantityIngredient(Domain.Ingredient ingredient);
+    
+    void DecreaseQuantity(Domain.Ingredient commandQuantity);
 }

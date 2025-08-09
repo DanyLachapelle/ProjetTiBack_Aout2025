@@ -19,16 +19,40 @@ public class SaleRepository : ISaleRepository
 
     public IEnumerable<Domain.Sale> GetAllSales()
     {
-        return _context.Sales
-            .Include(s => s.SaleItems)
-            .ThenInclude(si => si.Mocktail)
-            .ToList();
+        try
+        {
+            // Approche plus simple : charger d'abord les sales, puis les items séparément
+            var sales = _context.Sales.ToList();
+            
+            foreach (var sale in sales)
+            {
+                // Charger les SaleItems pour chaque sale
+                sale.SaleItems = _context.SaleItems
+                    .Where(si => si.SaleId == sale.Id)
+                    .ToList();
+                
+                // Charger les Mocktails pour chaque item qui a un MocktailId
+                foreach (var item in sale.SaleItems.Where(si => si.MocktailId.HasValue))
+                {
+                    item.Mocktail = _context.Mocktails.FirstOrDefault(m => m.id == item.MocktailId.Value);
+                }
+            }
+            
+            return sales;
+        }
+        catch (Exception ex)
+        {
+            // Log l'exception pour debug
+            Console.WriteLine($"Error in GetAllSales: {ex.Message}");
+            // En cas d'erreur, retourner une liste vide plutôt que de crash
+            return new List<Domain.Sale>();
+        }
     }
 
     public Domain.Sale? GetSaleById(int id)
     {
         return _context.Sales
-            .Include(s => s.SaleItems)
+            .Include(s => s.SaleItems.Where(si => si.MocktailId != null))
             .ThenInclude(si => si.Mocktail)
             .FirstOrDefault(s => s.Id == id);
     }
@@ -92,7 +116,7 @@ public class SaleRepository : ISaleRepository
 
         if (includeItems)
         {
-            query = query.Include(s => s.SaleItems)
+            query = query.Include(s => s.SaleItems.Where(si => si.MocktailId != null))
                 .ThenInclude(i => i.Mocktail);
         }
 
@@ -102,7 +126,7 @@ public class SaleRepository : ISaleRepository
     public Domain.Sale? GetSaleByIdWithItemsAndMocktails(int id)
     {
         return _context.Sales
-            .Include(s => s.SaleItems)
+            .Include(s => s.SaleItems.Where(si => si.MocktailId != null))
             .ThenInclude(i => i.Mocktail) // Chargement des mocktails
             .FirstOrDefault(s => s.Id == id);
     }
@@ -110,7 +134,7 @@ public class SaleRepository : ISaleRepository
     public Domain.Sale? GetByIdWithItems(int id)
     {
         return _context.Sales
-            .Include(s => s.SaleItems)
+            .Include(s => s.SaleItems.Where(si => si.MocktailId != null))
             .ThenInclude(i => i.Mocktail)
             .FirstOrDefault(s => s.Id == id);
     }
@@ -118,7 +142,7 @@ public class SaleRepository : ISaleRepository
     public Domain.Sale? GetSaleWithItems(int saleId)
     {
         return _context.Sales
-            .Include(s => s.SaleItems)
+            .Include(s => s.SaleItems.Where(si => si.MocktailId != null))
             .ThenInclude(i => i.Mocktail)
             .FirstOrDefault(s => s.Id == saleId);
     }

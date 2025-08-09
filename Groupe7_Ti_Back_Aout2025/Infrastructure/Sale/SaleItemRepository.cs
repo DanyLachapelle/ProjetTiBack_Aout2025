@@ -25,7 +25,7 @@ namespace Infrastructure.Sale;
         {
             return _context.SaleItems
                 .Include(si => si.Mocktail)
-                .Where(si => si.SaleId == saleId)
+                .Where(si => si.SaleId == saleId && si.MocktailId != null)
                 .ToList();
         }
 
@@ -70,7 +70,7 @@ namespace Infrastructure.Sale;
             return _context.SaleItems
                 .Include(si => si.Sale)
                 .Include(si => si.Mocktail)
-                .Where(si => si.Sale.SaleDate >= startDate && si.Sale.SaleDate <= endDate)
+                .Where(si => si.Sale.SaleDate >= startDate && si.Sale.SaleDate <= endDate && si.MocktailId != null)
                 .ToList();
         }
         

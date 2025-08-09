@@ -44,11 +44,11 @@ namespace Application.Sales.query.GetSalesByDate;
                     Items = s.SaleItems?.Select(i => new SaleItemDto
                     {
                         Id = i.Id,
-                        MocktailId = i.MocktailId,
+                        MocktailId = i.MocktailId, // Maintenant nullable
                         MocktailName = i.Mocktail?.name ?? "Inconnu",
                         Quantity = i.Quantity,
                         UnitPrice = i.Mocktail?.price ?? 0,
-                        ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
+                        ItemTotal = i.ItemTotal // Utiliser la valeur de la base
                     }).ToList()
                 }).ToList();
             }

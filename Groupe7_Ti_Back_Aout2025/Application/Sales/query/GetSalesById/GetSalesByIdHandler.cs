@@ -31,11 +31,11 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
             Items = sale.SaleItems.Select(i => new SaleItemOutput
             {
                 Id = i.Id,
-                MocktailId = i.MocktailId,
+                MocktailId = i.MocktailId ?? 0, // Gérer les valeurs null
                 MocktailName = i.Mocktail?.name ?? "Inconnu",
                 Quantity = i.Quantity,
                 UnitPrice = i.Mocktail?.price ?? 0,
-                ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
+                ItemTotal = i.ItemTotal // Utiliser la valeur stockée
             }).ToList()
         };
     }

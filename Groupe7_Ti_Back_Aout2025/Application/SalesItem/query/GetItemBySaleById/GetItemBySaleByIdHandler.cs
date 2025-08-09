@@ -29,11 +29,11 @@ public class GetItemBySaleByIdHandler : IQueryHandler<GetItemBySaleByIdQuery, Ge
         return new GetItemBySaleByIdOutput
         {
             Id = item.Id,
-            MocktailId = item.MocktailId,
+            MocktailId = item.MocktailId ?? 0, // Gérer les valeurs null
             MocktailName = item.Mocktail?.name ?? "Unknown",
             Quantity = item.Quantity,
             UnitPrice = item.Mocktail?.price ?? 0,
-            ItemTotal = item.Quantity * (item.Mocktail?.price ?? 0),
+            ItemTotal = item.ItemTotal, // Utiliser la valeur stockée
             SaleId = item.SaleId,
             SaleDate = item.Sale?.SaleDate ?? DateTime.MinValue
         };

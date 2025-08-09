@@ -17,13 +17,22 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, Cr
     
     public CreateIngredientOutput Handle(CreateIngredientCommand command)
     {
+        // Valider et nettoyer l'allergène
+        var allergen = string.IsNullOrWhiteSpace(command.allergen) ? "none" : command.allergen.ToLower().Trim();
+        
+        // Vérifier que l'allergène est valide
+        if (!Domain.Ingredient.ValidAllergens.Contains(allergen))
+        {
+            allergen = "none"; // Valeur par défaut si invalide
+        }
+
         var ingredient = new Domain.Ingredient()
         {
             name = command.name,
             quantity = command.quantity,
             restock_threshold = command.restock_threshold,
             unit = command.unit,
-            allergen = command.allergen
+            allergen = allergen
         };
 
         _ingredientRepository.CreateIngredient(ingredient);

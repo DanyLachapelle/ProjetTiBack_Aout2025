@@ -92,6 +92,19 @@ public class IngredientCommandProcessor
             throw new ArgumentException("Invalid ingredient data provided");
         }
 
+        // Valider l'unité
+        if (!Domain.Ingredient.ValidUnits.Contains(command.unit))
+        {
+            throw new ArgumentException($"Invalid unit '{command.unit}'. Valid units are: {string.Join(", ", Domain.Ingredient.ValidUnits)}");
+        }
+
+        // Nettoyer et valider l'allergène
+        var allergen = string.IsNullOrWhiteSpace(command.allergen) ? "none" : command.allergen.ToLower().Trim();
+        if (!Domain.Ingredient.ValidAllergens.Contains(allergen))
+        {
+            throw new ArgumentException($"Invalid allergen '{command.allergen}'. Valid allergens are: {string.Join(", ", Domain.Ingredient.ValidAllergens)}");
+        }
+
         return _createIngredientHandler.Handle(command);
     }
     

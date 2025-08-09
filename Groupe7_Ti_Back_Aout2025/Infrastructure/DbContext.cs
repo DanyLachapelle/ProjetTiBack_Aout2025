@@ -222,7 +222,8 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.HasOne(x => x.Mocktail)
                 .WithMany()
                 .HasForeignKey(x => x.MocktailId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.SetNull)
+                .IsRequired(false); // Permet les valeurs null
         });
     }
 }

@@ -32,11 +32,11 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 Items = s.SaleItems?.Select(i => new SaleItemDto
                 {
                     Id = i.Id,
-                    MocktailId = i.MocktailId,
+                    MocktailId = i.MocktailId, // Maintenant nullable dans le DTO aussi
                     MocktailName = i.Mocktail?.name ?? "Inconnu",
                     Quantity = i.Quantity,
                     UnitPrice = i.Mocktail?.price ?? 0,
-                    ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
+                    ItemTotal = i.ItemTotal // Utiliser la valeur calculée depuis la base
                 }).ToList()
             }).ToList()
         };

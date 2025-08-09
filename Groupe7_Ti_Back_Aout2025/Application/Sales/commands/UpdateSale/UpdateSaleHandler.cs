@@ -82,15 +82,18 @@ namespace Application.Sales.commands.UpdateSale;
         foreach (var item in sale.SaleItems)
         {
             // Récupération du prix via le mocktail associé
-            if (item.Mocktail == null)
+            if (item.Mocktail == null && item.MocktailId.HasValue)
             {
-                item.Mocktail = _mocktailRepository.GetMocktailById(item.MocktailId);
+                item.Mocktail = _mocktailRepository.GetMocktailById(item.MocktailId.Value);
                 if (item.Mocktail == null)
                     throw new Exception($"Mocktail {item.MocktailId} not found for item {item.Id}");
             }
 
-            item.ItemTotal = item.Quantity * item.Mocktail.price;
-            total += item.ItemTotal;
+            if (item.Mocktail != null)
+            {
+                item.ItemTotal = item.Quantity * item.Mocktail.price;
+                total += item.ItemTotal;
+            }
         }
 
         sale.TotalAmount = total;

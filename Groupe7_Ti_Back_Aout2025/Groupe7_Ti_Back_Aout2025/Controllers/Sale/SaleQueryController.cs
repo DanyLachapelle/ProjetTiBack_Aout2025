@@ -83,13 +83,13 @@ public class SaleQueryController: ControllerBase
 
             if (sales == null || !sales.Sales.Any())
             {
-                return NotFound(new { message = "Aucune vente trouvée." });
+                return Ok(new { Sales = new List<object>(), message = "Aucune vente trouvée." });
             }
             return Ok(sales);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message });
+            return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message, stackTrace = ex.StackTrace });
         }
     }
 

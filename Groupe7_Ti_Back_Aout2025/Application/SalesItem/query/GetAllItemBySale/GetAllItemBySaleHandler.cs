@@ -29,11 +29,11 @@ public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, Ge
             Items = items.Select(i => new SaleItemDto
             {
                 Id = i.Id,
-                MocktailId = i.MocktailId,
+                MocktailId = i.MocktailId, // Maintenant nullable
                 MocktailName = i.Mocktail?.name ?? "Unknown",
                 Quantity = i.Quantity,
                 UnitPrice = i.Mocktail?.price ?? 0,
-                ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
+                ItemTotal = i.ItemTotal // Utiliser la valeur de la base
             }).ToList(),
             TotalAmount = items.Sum(i => i.Quantity * (i.Mocktail?.price ?? 0))
         };

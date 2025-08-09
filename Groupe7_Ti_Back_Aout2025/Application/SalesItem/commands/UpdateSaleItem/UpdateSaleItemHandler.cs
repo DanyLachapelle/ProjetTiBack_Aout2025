@@ -36,8 +36,12 @@ public class UpdateSaleItemHandler : ICommandHandler<UpdateSaleItemCommand, Upda
             throw new KeyNotFoundException($"Item {command.ItemId} not found in sale {command.SaleId}");
 
         // Récupération du mocktail pour le prix
-        var mocktail = _mocktailRepository.GetMocktailById(item.MocktailId);
-        var unitPrice = mocktail?.price ?? 0;
+        var unitPrice = 0m;
+        if (item.MocktailId.HasValue)
+        {
+            var mocktail = _mocktailRepository.GetMocktailById(item.MocktailId.Value);
+            unitPrice = mocktail?.price ?? 0;
+        }
 
         // Mise à jour
         item.Quantity = command.NewQuantity;

@@ -31,3 +31,14 @@ C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_T
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\ref\Domain.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.deps.json
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\refint\Domain.dll
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.pdb
+W:\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\ref\Domain.dll

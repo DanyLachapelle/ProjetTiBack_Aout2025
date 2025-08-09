@@ -163,7 +163,8 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.TableNumber)
                 .HasColumnName("table_number")
                 .HasColumnType("VARCHAR(10)")
-                .HasMaxLength(10);
+                .HasMaxLength(10)
+                .IsRequired(false); // Allow NULL values
         
             builder.Property(x => x.status)
                 .HasColumnName("status")
@@ -176,7 +177,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
                 .HasColumnName("order_timer")
                 .HasColumnType("INT")
                 .HasDefaultValue(15)
-                .IsRequired();
+                .IsRequired(false); // Allow NULL values
             
             // Relation avec SaleItems
             builder.HasMany(x => x.SaleItems)

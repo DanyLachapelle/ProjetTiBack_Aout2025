@@ -29,26 +29,30 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
             TableNumber = command.TableNumber,
             SaleDate = DateTime.Now,
             status = "Pending", 
-            order_timer = 15
+            order_timer = 15,
+            TotalAmount = 0 // Initialisé à 0
         };
 
-        // Ajout des items
-        foreach (var itemDto in command.Items)
+        // 🔧 Ajout des items si ils sont fournis
+        if (command.Items != null && command.Items.Any())
         {
-            // Vérification que le mocktail existe
-            var mocktail = _mocktailRepository.GetMocktailById(itemDto.MocktailId);
-            if (mocktail == null)
-                throw new Exception($"Mocktail {itemDto.MocktailId} introuvable");
-
-            var saleItem = new SaleItem
+            foreach (var itemDto in command.Items)
             {
-                MocktailId = itemDto.MocktailId,
-                Quantity = itemDto.Quantity,
-                ItemTotal = itemDto.Quantity * itemDto.UnitPrice
-            };
+                // Vérification que le mocktail existe
+                var mocktail = _mocktailRepository.GetMocktailById(itemDto.MocktailId);
+                if (mocktail == null)
+                    throw new Exception($"Mocktail {itemDto.MocktailId} introuvable");
 
-            sale.SaleItems.Add(saleItem);
-            sale.TotalAmount += saleItem.ItemTotal;
+                var saleItem = new SaleItem
+                {
+                    MocktailId = itemDto.MocktailId,
+                    Quantity = itemDto.Quantity,
+                    ItemTotal = itemDto.Quantity * mocktail.price // Utiliser le prix du mocktail
+                };
+
+                sale.SaleItems.Add(saleItem);
+                sale.TotalAmount += saleItem.ItemTotal;
+            }
         }
 
         // Enregistrement

@@ -1,4 +1,4 @@
-using Application.Sales.query.GetSalesByDate;
+using Application.DTOs;
 
 namespace Application.Sales.query.GetAllSales;
 

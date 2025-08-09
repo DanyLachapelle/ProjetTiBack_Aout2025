@@ -1,5 +1,4 @@
 using Application.DTOs;
-using Application.Sales.query.GetSalesByDate;
 using Application.Utils;
 using Infrastructure.User.Sale;
 
@@ -28,17 +27,22 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 TotalAmount = s.TotalAmount,
                 SaleDate = s.SaleDate,
                 Status = s.status,
-                order_timer = s.order_timer,
-                Items = s.SaleItems?.Select(i => new SaleItemDto
-                {
-                    Id = i.Id,
-                    MocktailId = i.MocktailId, // Maintenant nullable dans le DTO aussi
-                    MocktailName = i.Mocktail?.name ?? "Inconnu",
-                    Quantity = i.Quantity,
-                    UnitPrice = i.Mocktail?.price ?? 0,
-                    ItemTotal = i.ItemTotal // Utiliser la valeur calculée depuis la base
-                }).ToList()
-            }).ToList()
+                                    order_timer = s.order_timer ?? 15,
+                Items = s.SaleItems?
+                    .Where(si => si.MocktailId.HasValue && si.Mocktail != null)
+                    .Select(i => new SaleItemDto
+                    {
+                        Id = i.Id,
+                        MocktailId = i.MocktailId,
+                        MocktailName = i.Mocktail?.name ?? "Inconnu",
+                        Quantity = i.Quantity,
+                        UnitPrice = i.Mocktail?.price ?? 0,
+                        ItemTotal = i.ItemTotal
+                    })
+                    .ToList() ?? new List<SaleItemDto>()
+            })
+            .OrderByDescending(s => s.SaleDate)
+            .ToList()
         };
 
         return output;

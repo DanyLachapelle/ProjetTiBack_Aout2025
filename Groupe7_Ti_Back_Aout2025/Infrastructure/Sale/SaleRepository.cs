@@ -21,29 +21,48 @@ public class SaleRepository : ISaleRepository
     {
         try
         {
-            // Approche plus simple : charger d'abord les sales, puis les items séparément
-            var sales = _context.Sales.ToList();
+            Console.WriteLine("🔍 GetAllSales: Début de la requête...");
             
+            // D'abord, comptons les ventes sans Include
+            var totalSales = _context.Sales.Count();
+            Console.WriteLine($"🔢 Total ventes dans la DB: {totalSales}");
+            
+            // Approche simplifiée avec gestion explicite des NULLs
+            var sales = _context.Sales
+                .Select(s => new Domain.Sale
+                {
+                    Id = s.Id,
+                    TotalAmount = s.TotalAmount,
+                    SaleDate = s.SaleDate,
+                    TableNumber = s.TableNumber ?? "UNKNOWN", // Gérer les NULL
+                    status = s.status ?? "Pending", // Gérer les NULL  
+                    order_timer = s.order_timer ?? 15 // Gérer les NULL avec valeur par défaut
+                })
+                .OrderByDescending(s => s.SaleDate)
+                .ToList();
+                
+            Console.WriteLine($"🔄 Chargement des SaleItems pour {sales.Count} ventes...");
+            
+            // Pour chaque vente, charger ses items avec mocktails
             foreach (var sale in sales)
             {
-                // Charger les SaleItems pour chaque sale
                 sale.SaleItems = _context.SaleItems
-                    .Where(si => si.SaleId == sale.Id)
+                    .Where(si => si.SaleId == sale.Id && si.MocktailId != null)
+                    .Include(si => si.Mocktail)
                     .ToList();
-                
-                // Charger les Mocktails pour chaque item qui a un MocktailId
-                foreach (var item in sale.SaleItems.Where(si => si.MocktailId.HasValue))
-                {
-                    item.Mocktail = _context.Mocktails.FirstOrDefault(m => m.id == item.MocktailId.Value);
-                }
+                    
+                Console.WriteLine($"📦 Vente {sale.Id}: {sale.SaleItems.Count} items chargés");
             }
+                
+            Console.WriteLine($"✅ GetAllSales: {sales.Count} ventes récupérées avec succès");
             
             return sales;
         }
         catch (Exception ex)
         {
             // Log l'exception pour debug
-            Console.WriteLine($"Error in GetAllSales: {ex.Message}");
+            Console.WriteLine($"❌ Error in GetAllSales: {ex.Message}");
+            Console.WriteLine($"❌ StackTrace: {ex.StackTrace}");
             // En cas d'erreur, retourner une liste vide plutôt que de crash
             return new List<Domain.Sale>();
         }

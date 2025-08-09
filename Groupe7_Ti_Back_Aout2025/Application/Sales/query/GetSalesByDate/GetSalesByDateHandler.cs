@@ -40,7 +40,7 @@ namespace Application.Sales.query.GetSalesByDate;
                     TotalAmount = s.TotalAmount,
                     SaleDate = s.SaleDate,
                     Status = s.status,
-                    order_timer = s.order_timer,
+                                            order_timer = s.order_timer ?? 15,
                     Items = s.SaleItems?.Select(i => new SaleItemDto
                     {
                         Id = i.Id,
@@ -59,7 +59,10 @@ namespace Application.Sales.query.GetSalesByDate;
                 {
                     Id = s.Id,
                     TableNumber = s.TableNumber,
-                    TotalAmount = s.TotalAmount
+                    TotalAmount = s.TotalAmount,
+                    SaleDate = s.SaleDate,
+                    Status = s.status,
+                    order_timer = s.order_timer ?? 15
                 }).ToList();
             }
 

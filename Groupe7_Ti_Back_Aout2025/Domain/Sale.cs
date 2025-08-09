@@ -5,9 +5,9 @@ public class Sale
     public int Id { get; set; }
     public decimal TotalAmount { get; set; }
     public DateTime SaleDate { get; set; } = DateTime.Now;
-    public string TableNumber { get; set; }
+    public string? TableNumber { get; set; }
     public string status { get; set; } = "Pending"; 
-    public int order_timer { get; set; } = 15; 
+    public int? order_timer { get; set; } = 15; 
     // Navigation property
     public virtual ICollection<SaleItem> SaleItems { get; set; } = new List<SaleItem>();
 }

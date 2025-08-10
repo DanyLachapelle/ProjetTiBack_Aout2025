@@ -2,6 +2,7 @@ using Application.Sales.commands;
 using Application.Sales.commands.CreateSale;
 using Application.Sales.commands.DeleteSale;
 using Application.Sales.commands.UpdateSale;
+using Application.Sales.commands.AdvanceSaleStatus;
 using Infrastructure.User.Sale;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,6 +37,25 @@ public class SaleCommandController: ControllerBase
         catch (Exception ex)
         {
             return StatusCode(500, new { message = "Erreur lors de la création de la vente.", error = ex.Message });
+        }
+    }
+
+    [HttpPost("AdvanceStatus/{id}")]
+    public IActionResult AdvanceStatus(int id)
+    {
+        if (id <= 0)
+        {
+            return BadRequest(new { message = "ID de vente invalide." });
+        }
+
+        try
+        {
+            var output = _saleCommandProcessor.AdvanceSaleStatus(new AdvanceSaleStatusCommand { SaleId = id });
+            return Ok(output);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur lors de l'avancement du statut.", error = ex.Message });
         }
     }
     

@@ -28,7 +28,7 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
         {
             TableNumber = command.TableNumber,
             SaleDate = DateTime.Now,
-            status = "Pending", 
+            status = "PENDING", 
             order_timer = 15,
             TotalAmount = 0 // Initialisé à 0
         };

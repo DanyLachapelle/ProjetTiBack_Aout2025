@@ -168,10 +168,15 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
         
             builder.Property(x => x.status)
                 .HasColumnName("status")
-                .HasColumnType("VARCHAR(20)")
-                .HasDefaultValue("Pending")
+                .HasColumnType("VARCHAR(15)")
+                .HasDefaultValue("PENDING")
                 .IsRequired()
-                .HasMaxLength(20);
+                .HasMaxLength(15);
+
+            // Contrainte CHECK sur le statut de la vente
+            builder.ToTable(t => t.HasCheckConstraint(
+                "CK_Sale_Status",
+                "status IN ('PENDING','IN_PREPARATION','READY','DELIVERED')"));
             
             builder.Property(x => x.order_timer)
                 .HasColumnName("order_timer")

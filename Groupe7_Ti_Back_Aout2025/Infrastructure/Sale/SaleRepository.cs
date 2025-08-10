@@ -35,7 +35,7 @@ public class SaleRepository : ISaleRepository
                     TotalAmount = s.TotalAmount,
                     SaleDate = s.SaleDate,
                     TableNumber = s.TableNumber ?? "UNKNOWN", // Gérer les NULL
-                    status = s.status ?? "Pending", // Gérer les NULL  
+                    status = s.status ?? "PENDING", // Gérer les NULL  
                     order_timer = s.order_timer ?? 15 // Gérer les NULL avec valeur par défaut
                 })
                 .OrderByDescending(s => s.SaleDate)

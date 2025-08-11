@@ -31,3 +31,14 @@ C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_T
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\AsusT\OneDrive - Haute Ecole Louvain en Hainaut\Bloc_3\Projet\groupe7_TI_Aout2025\Backend\Groupe7_TI_BackAout2025\Groupe7_TI_BackAout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\Ravends\RiderProjects\ProjetTiBack_Aout2025\Groupe7_Ti_Back_Aout2025\Domain\obj\Debug\net7.0\ref\Domain.dll

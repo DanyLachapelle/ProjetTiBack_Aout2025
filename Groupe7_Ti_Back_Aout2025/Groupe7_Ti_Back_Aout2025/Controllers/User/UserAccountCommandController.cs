@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Security.Claims;
 using Application.User_account.commands.resetPassword;
 using Application.User.commands;
@@ -15,13 +15,13 @@ namespace Groupe7_Ti_Back_Aout2025.Controllers.User;
 
 [ApiController]
 [Route("api/users")]
-public class UserCommandController: ControllerBase
+public class UserAccountCommandController: ControllerBase
 {
     private readonly UserAccountCommandProcessor _userAccountCommandsProcessor;
     private readonly IUserRepository _userRepository;
     //private readonly ILogger<UserLoginHandler> _logger;
     
-    public UserCommandController(UserAccountCommandProcessor userAccountCommandsProcessor, IUserRepository userRepository)
+    public UserAccountCommandController(UserAccountCommandProcessor userAccountCommandsProcessor, IUserRepository userRepository)
     {
         _userAccountCommandsProcessor = userAccountCommandsProcessor;
         _userRepository = userRepository;
@@ -143,3 +143,4 @@ public class UserCommandController: ControllerBase
         }
     }
 }
+*/

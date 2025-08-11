@@ -11,6 +11,7 @@ using Application.Ingredient.commands.UpdateLimitIngredient;
 using Application.Ingredient.commands.UpdateQuantityIngredient;
 using Application.Ingredient.query;
 using Application.Ingredient.query.getAllIngredient;
+using Application.DTOs;
 using Application.MappingProfile;
 using Application.Mocktails.commands;
 using Application.Mocktails.commands.createMocktail;
@@ -40,6 +41,10 @@ using Application.User.commands.login;
 using Application.Utils;
 using Application.Services;
 using Infrastructure.Ingredient;
+using Application.User_account.commands.resetPassword;
+using Application.User.commands.changePassword;
+using Application.User.commands.forgotPassword;
+using Application.User.commands.resetPassword;
 using Infrastructure.User;
 using Infrastructure.Mocktail;
 using Infrastructure.Sale;
@@ -106,6 +111,9 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserAccountCommandProcessor>();
 builder.Services.AddScoped<ICommandHandler<UserAccountLoginCommand, UserAccountLoginOutput>, UserAccountLoginHandler>();
+builder.Services.AddScoped<ICommandHandler<UserAccountChangePasswordCommand,UserAccountChangePasswordOutput>, UserAccountChangePasswordHandler>();
+builder.Services.AddScoped<ICommandHandler<UserAccountForgotPasswordCommand, UserAccountForgotPasswordOutput>, UserAccountForgotPasswordHandler>();
+builder.Services.AddScoped<ICommandHandler<UserAccountResetPasswordCommand, UserAccountResetPasswordOutput>, UserAccountResetPasswordHandler>();
 
 // ingredient
 builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
@@ -133,6 +141,9 @@ builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
 {
     dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Email service (Gmail SMTP)
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Sale
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();

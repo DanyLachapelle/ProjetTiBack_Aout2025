@@ -1,5 +1,8 @@
 ﻿using System.Linq;
 
+using Domain;
+using Microsoft.EntityFrameworkCore;
+
 namespace Infrastructure.User;
 
 public class UserRepository:IUserRepository
@@ -19,5 +22,20 @@ public class UserRepository:IUserRepository
     {
         _dbContext.Users.Update(userAccount);
         _dbContext.SaveChanges();
+    }
+    
+    public async Task<User_account?> GetUserByEmailAsync(string email)
+    {
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.email == email);
+    }
+
+    public async Task UpdatePasswordAsync(int userId, string newPassword)
+    {
+        var user = await _dbContext.Users.FindAsync(userId);
+        if (user != null)
+        {
+            user.password = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

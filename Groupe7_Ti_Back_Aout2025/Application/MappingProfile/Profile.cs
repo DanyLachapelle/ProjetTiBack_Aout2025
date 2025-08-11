@@ -1,6 +1,4 @@
-﻿
-
-using Application.User.commands.login;
+﻿using Application.User.commands.login;
 using AutoMapper;
 
 
@@ -10,7 +8,7 @@ namespace Application.MappingProfile
     {
         public MappingProfile()
         {
-            CreateMap<Domain.User,UserLoginOutput>();
+            CreateMap<Domain.User_account,UserAccountLoginOutput>();
         }
     }
 }

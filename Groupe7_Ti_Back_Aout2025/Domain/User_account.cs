@@ -3,17 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain;
 
 [Table("utilisateur")]
-public class User
+public class User_account
 {
-    [Column("id")]
     public int id { get; set; }
 
-    [Column("login")]
-    public string pseudo { get; set; } = string.Empty;
+    
+    public string username { get; set; } = string.Empty;
 
-    [Column("mot_passe")]
+    public string email { get; set; } = string.Empty;
     public string password { get; set; } = string.Empty;
 
-    [Column("role")]
+    
     public string role { get; set; } = string.Empty;
 } 

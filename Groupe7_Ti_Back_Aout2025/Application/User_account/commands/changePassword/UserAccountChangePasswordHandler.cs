@@ -5,18 +5,18 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.User.commands.changePassword;
 
-public class UserChangePasswordHandler : ICommandHandler<UserChangePasswordCommand, UserChangePasswordOutput>
+public class UserAccountChangePasswordHandler : ICommandHandler<UserAccountChangePasswordCommand, UserAccountChangePasswordOutput>
 {
     private readonly IUserRepository _userRepository;
-    private readonly ILogger<UserChangePasswordHandler> _logger;
+    private readonly ILogger<UserAccountChangePasswordHandler> _logger;
 
-    public UserChangePasswordHandler(IUserRepository userRepository, IMapper mapper, ILogger<UserChangePasswordHandler> logger)
+    public UserAccountChangePasswordHandler(IUserRepository userRepository, IMapper mapper, ILogger<UserAccountChangePasswordHandler> logger)
     {
         _userRepository = userRepository;
         _logger = logger;
     }
 
-    public UserChangePasswordOutput Handle(UserChangePasswordCommand command)
+    public UserAccountChangePasswordOutput Handle(UserAccountChangePasswordCommand command)
     {
         _logger.LogInformation("Password change request for user id : {Pseudo}", command.pseudo);
 
@@ -40,7 +40,7 @@ public class UserChangePasswordHandler : ICommandHandler<UserChangePasswordComma
         _userRepository.Save(user);
         
         _logger.LogInformation("Password changed for user id : {Pseudo}", command.pseudo);
-        return new UserChangePasswordOutput("password changed");
+        return new UserAccountChangePasswordOutput("password changed");
         
     }
 }

@@ -1,26 +1,19 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Domain;
 
 [Table("mocktail_ingredient")]
-public class MocktailIngredient
+public class mocktail_ingredient
 {
-    [Column("id")]
-    public int Id { get; set; }
-
-    [Column("mocktail_id")]
-    public int MocktailId { get; set; }
-
-    [Column("ingredient_id")]
-    public int IngredientId { get; set; }
-
-    [Column("quantite")]
-    public decimal Quantity { get; set; }
-
-    [Column("unite")]
-    public string Unit { get; set; } = string.Empty;
+    public int id { get; set; }
+    public int mocktail_id { get; set; }
+    public int ingredient_id { get; set; }
+    public decimal quantity { get; set; }
+    public string unit { get; set; } = string.Empty;
 
     // Navigation properties
+    [JsonIgnore]
     public virtual Mocktail Mocktail { get; set; } = null!;
     public virtual Ingredient Ingredient { get; set; } = null!;
 } 

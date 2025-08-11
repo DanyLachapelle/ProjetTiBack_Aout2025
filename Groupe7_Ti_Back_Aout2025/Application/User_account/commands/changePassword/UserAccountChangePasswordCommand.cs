@@ -1,8 +1,8 @@
 namespace Application.User.commands.changePassword;
 
-public class UserChangePasswordCommand
+public class UserAccountChangePasswordCommand
 {
-    public UserChangePasswordCommand(string oldPassword, string newPassword)
+    public UserAccountChangePasswordCommand(string oldPassword, string newPassword)
     {
         this.oldPassword = oldPassword;
         this.newPassword = newPassword;

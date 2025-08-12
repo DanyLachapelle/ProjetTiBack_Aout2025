@@ -202,8 +202,7 @@ app.Use(async (context, next) =>
     }
     await next();
 });
-app.Run();
-app.UseCors(policy =>
+app.Run();app.UseCors(policy =>
     policy.AllowAnyOrigin()
         .AllowAnyHeader()
         .AllowAnyMethod());

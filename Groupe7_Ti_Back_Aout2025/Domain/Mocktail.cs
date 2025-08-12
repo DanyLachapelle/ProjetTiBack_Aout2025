@@ -11,6 +11,7 @@ public class Mocktail
     public string description { get; set; } = string.Empty;
     public decimal price { get; set; }
     public string? image { get; set; }
+    public bool? forceAvailable { get; set; } = false; // Champ pour forcer la disponibilité (nullable)
 
     // Navigation property pour les ingrédients
     public virtual ICollection<mocktail_ingredient> MocktailIngredients { get; set; } = new List<mocktail_ingredient>();

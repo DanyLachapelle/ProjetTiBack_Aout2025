@@ -51,6 +51,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             builder.Property(x => x.description).HasColumnName("description");
             builder.Property(x => x.price).HasColumnName("price").HasColumnType("decimal(10,2)");
             builder.Property(x => x.image).HasColumnName("image");
+            builder.Property(x => x.forceAvailable).HasColumnName("force_available").HasDefaultValue(false);
         });
 
         modelBuilder.Entity<Domain.Ingredient>(builder =>

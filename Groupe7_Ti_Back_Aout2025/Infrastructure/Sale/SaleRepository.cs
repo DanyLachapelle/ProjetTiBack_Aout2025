@@ -19,10 +19,65 @@ public class SaleRepository : ISaleRepository
 
     public IEnumerable<Domain.Sale> GetAllSales()
     {
-        return _context.Sales
-            .Include(s => s.SaleItems)
-            .ThenInclude(si => si.Mocktail)
-            .ToList();
+        try
+        {
+            Console.WriteLine("SaleRepository.GetAllSales: Début de la récupération");
+            
+            // Utiliser une requête SQL brute pour gérer les valeurs NULL
+            var sales = _context.Sales
+                .FromSqlRaw(@"
+                    SELECT 
+                        id,
+                        ISNULL(total_amount, 0) as total_amount,
+                        ISNULL(sale_date, GETDATE()) as sale_date,
+                        ISNULL(table_number, '') as table_number,
+                        ISNULL(status, 'Pending') as status,
+                        ISNULL(order_timer, 15) as order_timer
+                    FROM SALE
+                ")
+                .ToList();
+            
+            Console.WriteLine($"SaleRepository.GetAllSales: {sales.Count} ventes récupérées avec succès");
+            return sales;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur dans SaleRepository.GetAllSales: {ex.Message}");
+            Console.WriteLine($"StackTrace: {ex.StackTrace}");
+            throw;
+        }
+    }
+
+    public IEnumerable<Domain.Sale> GetAllSalesWithItems()
+    {
+        try
+        {
+            Console.WriteLine("SaleRepository.GetAllSalesWithItems: Début de la récupération");
+            
+            // D'abord récupérer toutes les ventes (sans items)
+            var sales = GetAllSales().ToList();
+            
+            Console.WriteLine($"SaleRepository.GetAllSalesWithItems: {sales.Count} ventes récupérées, chargement des items...");
+            
+            // Puis charger explicitement les items pour chaque vente
+            foreach (var sale in sales)
+            {
+                _context.Entry(sale)
+                    .Collection(s => s.SaleItems)
+                    .Query()
+                    .Include(si => si.Mocktail)
+                    .Load();
+            }
+            
+            Console.WriteLine($"SaleRepository.GetAllSalesWithItems: Items chargés pour {sales.Count} ventes");
+            return sales;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur dans SaleRepository.GetAllSalesWithItems: {ex.Message}");
+            Console.WriteLine($"StackTrace: {ex.StackTrace}");
+            throw;
+        }
     }
 
     public Domain.Sale? GetSaleById(int id)
@@ -87,40 +142,94 @@ public class SaleRepository : ISaleRepository
 
     public List<Domain.Sale> GetSalesByDateRange(DateTime startDate, DateTime endDate, bool includeItems)
     {
-        var query = _context.Sales
-            .Where(s => s.SaleDate >= startDate && s.SaleDate <= endDate);
-
-        if (includeItems)
+        try
         {
-            query = query.Include(s => s.SaleItems)
-                .ThenInclude(i => i.Mocktail);
-        }
+            var query = _context.Sales
+                .Where(s => s.SaleDate >= startDate && s.SaleDate <= endDate);
 
-        return query.ToList();
+            if (includeItems)
+            {
+                // Récupérer d'abord les ventes sans les items
+                var sales = query.ToList();
+                
+                // Ensuite, charger les items pour chaque vente séparément
+                foreach (var sale in sales)
+                {
+                    _context.Entry(sale)
+                        .Collection(s => s.SaleItems)
+                        .Query()
+                        .Include(si => si.Mocktail)
+                        .Load();
+                }
+                
+                return sales;
+            }
+
+            return query.ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erreur dans GetSalesByDateRange: {ex.Message}");
+            throw;
+        }
     }
-    
+
     public Domain.Sale? GetSaleByIdWithItemsAndMocktails(int id)
     {
         return _context.Sales
             .Include(s => s.SaleItems)
-            .ThenInclude(i => i.Mocktail) // Chargement des mocktails
+            .ThenInclude(si => si.Mocktail)
             .FirstOrDefault(s => s.Id == id);
     }
-    
+
     public Domain.Sale? GetByIdWithItems(int id)
     {
         return _context.Sales
             .Include(s => s.SaleItems)
-            .ThenInclude(i => i.Mocktail)
+            .ThenInclude(si => si.Mocktail)
             .FirstOrDefault(s => s.Id == id);
     }
-    
+
     public Domain.Sale? GetSaleWithItems(int saleId)
     {
         return _context.Sales
             .Include(s => s.SaleItems)
-            .ThenInclude(i => i.Mocktail)
+            .ThenInclude(si => si.Mocktail)
             .FirstOrDefault(s => s.Id == saleId);
     }
 
+    public IEnumerable<string> GetAllTables()
+    {
+        // Récupérer toutes les tables distinctes depuis les ventes
+        var existingTables = _context.Sales
+            .Where(s => !string.IsNullOrEmpty(s.TableNumber))
+            .Select(s => s.TableNumber)
+            .Distinct()
+            .OrderBy(t => t) // Tri alphabétique simple
+            .ToList();
+
+        // Si aucune table n'existe, retourner les tables par défaut
+        if (!existingTables.Any())
+        {
+            return Enumerable.Range(1, 20)
+                .Select(i => $"T{i:D2}")
+                .ToList();
+        }
+
+        // Trier les tables par numéro (T01, T02, T03, etc.)
+        return existingTables
+            .OrderBy(t => {
+                // Extraire le numéro après "T" et le convertir en entier pour un tri numérique
+                if (t.StartsWith("T", StringComparison.OrdinalIgnoreCase))
+                {
+                    var numberPart = t.Substring(1);
+                    if (int.TryParse(numberPart, out int number))
+                    {
+                        return number;
+                    }
+                }
+                return int.MaxValue; // Placer les tables non numériques à la fin
+            })
+            .ToList();
+    }
 }

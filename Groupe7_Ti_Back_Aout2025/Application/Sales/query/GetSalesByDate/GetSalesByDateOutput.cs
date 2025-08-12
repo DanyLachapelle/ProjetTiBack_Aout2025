@@ -7,19 +7,19 @@ public class GetSalesByDateOutput
     public DateTime Date { get; set; }
     public int TotalSales { get; set; }
     public decimal TotalRevenue { get; set; }
-    public List<SaleDto> Sales { get; set; } = new();
+    public List<SaleDto> sales { get; set; } = new();
 }
 
 public class SaleDto
 {
-    public int Id { get; set; }
-    public string TableNumber { get; set; } = string.Empty;
-    public decimal TotalAmount { get; set; }
-    public DateTime SaleDate { get; set; }
+    public int id { get; set; }
+    public string tableNumber { get; set; } = string.Empty;
+    public decimal totalAmount { get; set; }
+    public string saleDate { get; set; } = string.Empty;
     
-    public string Status { get; set; } = string.Empty;
+    public string status { get; set; } = string.Empty;
     
     public int order_timer { get; set; } = 0;
-    public List<SaleItemDto>? Items { get; set; }
+    public List<SaleItemDto>? items { get; set; }
 }
 

@@ -11,6 +11,7 @@ public class UpdateMocktailCommand
     public string description { get; set; } = string.Empty;
     public decimal price { get; set; }
     public string image { get; set; } = string.Empty;
+    public bool? forceAvailable { get; set; } = false;
     public List<UpdateMocktailIngredientRequest> Ingredients { get; set; } = new();
     
     [JsonIgnore]

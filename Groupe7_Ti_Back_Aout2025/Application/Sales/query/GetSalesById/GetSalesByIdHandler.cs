@@ -23,20 +23,22 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
 
         return new GetSalesByIdOutput
         {
-            Id = sale.Id,
-            TableNumber = sale.TableNumber,
-            TotalAmount = sale.TotalAmount,
-            SaleDate = sale.SaleDate,
+            id = sale.Id,
+            tableNumber = sale.TableNumber ?? string.Empty,
+            totalAmount = sale.TotalAmount,
+            saleDate = sale.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+            status = sale.status ?? "Pending",
+            order_timer = sale.order_timer,
             
-            Items = sale.SaleItems.Select(i => new SaleItemOutput
+            items = sale.SaleItems?.Select(i => new SaleItemOutput
             {
-                Id = i.Id,
-                MocktailId = i.MocktailId,
-                MocktailName = i.Mocktail?.name ?? "Inconnu",
-                Quantity = i.Quantity,
-                UnitPrice = i.Mocktail?.price ?? 0,
-                ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
-            }).ToList()
+                id = i.Id,
+                mocktailId = i.MocktailId,
+                mocktailName = i.Mocktail?.name ?? "Unknown",
+                quantity = i.Quantity,
+                unitPrice = i.Mocktail?.price ?? 0,
+                itemTotal = i.ItemTotal
+            }).ToList() ?? new List<SaleItemOutput>()
         };
     }
 

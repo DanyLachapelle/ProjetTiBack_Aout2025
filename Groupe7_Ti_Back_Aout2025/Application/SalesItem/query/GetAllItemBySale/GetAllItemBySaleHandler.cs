@@ -28,14 +28,14 @@ public class GetAllItemsBySaleHandler : IQueryHandler<GetAllItemsBySaleQuery, Ge
             SaleId = query.SaleId,
             Items = items.Select(i => new SaleItemDto
             {
-                Id = i.Id,
-                MocktailId = i.MocktailId,
-                MocktailName = i.Mocktail?.name ?? "Unknown",
-                Quantity = i.Quantity,
-                UnitPrice = i.Mocktail?.price ?? 0,
-                ItemTotal = i.Quantity * (i.Mocktail?.price ?? 0)
+                id = i.Id,
+                mocktailId = i.MocktailId,
+                mocktailName = i.Mocktail?.name ?? "Unknown",
+                quantity = i.Quantity,
+                unitPrice = i.Mocktail?.price ?? 0,
+                itemTotal = i.ItemTotal
             }).ToList(),
-            TotalAmount = items.Sum(i => i.Quantity * (i.Mocktail?.price ?? 0))
+            TotalAmount = items.Sum(i => i.ItemTotal)
         };
     }
 

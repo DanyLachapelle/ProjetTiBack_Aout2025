@@ -56,8 +56,8 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
 
         return new CreateSaleOutput
         {
-            Id = createdSale.Id,
-            TotalAmount = createdSale.TotalAmount
+            id = createdSale.Id,
+            totalAmount = createdSale.TotalAmount
         };
     }
 }

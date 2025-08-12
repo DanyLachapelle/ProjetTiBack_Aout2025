@@ -29,6 +29,7 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
         mocktail.description = command.description;
         mocktail.price = command.price;
         mocktail.image = command.image;
+        mocktail.forceAvailable = command.forceAvailable;
 
         // --- Mise à jour des ingrédients ---
 

@@ -1,9 +1,12 @@
+using Domain;
+
 namespace Infrastructure.User.Sale;
 
 public interface ISaleRepository
 {
     // Méthodes synchrones
     IEnumerable<Domain.Sale> GetAllSales();
+    IEnumerable<Domain.Sale> GetAllSalesWithItems();
     Domain.Sale? GetSaleById(int id);
     Domain.Sale CreateSale(Domain.Sale sale);
     Domain.Sale UpdateSale(Domain.Sale sale);
@@ -26,4 +29,5 @@ public interface ISaleRepository
     Domain.Sale? GetByIdWithItems(int id);
 
     Domain.Sale? GetSaleWithItems(int saleId);
+    IEnumerable<string> GetAllTables(); // Nouvelle méthode pour récupérer toutes les tables
 }

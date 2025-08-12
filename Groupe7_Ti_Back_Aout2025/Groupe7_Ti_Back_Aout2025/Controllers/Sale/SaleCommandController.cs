@@ -1,4 +1,5 @@
 using Application.Sales.commands;
+using Application.Sales.commands.AdvanceSaleStatus;
 using Application.Sales.commands.CreateSale;
 using Application.Sales.commands.DeleteSale;
 using Application.Sales.commands.UpdateSale;
@@ -75,6 +76,26 @@ public class SaleCommandController: ControllerBase
         catch (Exception ex)
         {
             return StatusCode(500, new { message = "Erreur lors de la suppression de la vente.", error = ex.Message });
+        }
+    }
+    
+    [HttpPost("AdvanceStatus/{id}")]
+    public IActionResult AdvanceStatus(int id)
+    {
+        if (id <= 0)
+        {
+            return BadRequest(new { message = "Invalid sale ID." });
+        }
+
+        try
+        {
+            var command = new AdvanceSaleStatusCommand { saleId = id };
+            var result = _saleCommandProcessor.AdvanceSaleStatus(command);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error advancing sale status.", error = ex.Message });
         }
     }
 }

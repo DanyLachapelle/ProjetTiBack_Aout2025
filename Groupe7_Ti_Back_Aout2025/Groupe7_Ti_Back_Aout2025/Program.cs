@@ -22,11 +22,13 @@ using Application.Mocktails.query.getAllMocktail;
 using Application.Mocktails.query.getbyidMocktail;
 using Application.Mocktails.Query.GetByIdMocktail;
 using Application.Sales.commands;
+using Application.Sales.commands.AdvanceSaleStatus;
 using Application.Sales.commands.CreateSale;
 using Application.Sales.commands.DeleteSale;
 using Application.Sales.commands.UpdateSale;
 using Application.Sales.query;
 using Application.Sales.query.GetAllSales;
+using Application.Sales.query.GetAllTables;
 using Application.Sales.query.GetSalesByDate;
 using Application.Sales.query.GetSalesById;
 using Application.SalesItem.commands;
@@ -152,9 +154,11 @@ builder.Services.AddScoped<SalesQueryProcessor>();
 builder.Services.AddScoped<IQueryHandler<GetSalesByIdQuery, GetSalesByIdOutput>, GetSalesByIdHandler>();
 builder.Services.AddScoped<IQueryHandler<GetSalesByDateQuery, GetSalesByDateOutput>, GetSalesByDateHandler>();
 builder.Services.AddScoped<IQueryHandler<GetAllSalesQuery, GetAllSalesOutput>, GetAllSalesHandler>();
+builder.Services.AddScoped<IQueryHandler<GetAllTablesQuery, GetAllTablesOutput>, GetAllTablesHandler>();
 builder.Services.AddScoped<ICommandHandler<CreateSaleCommand, CreateSaleOutput>, CreateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>, UpdateSaleHandler>();
 builder.Services.AddScoped<ICommandHandler<DeleteSaleCommand, DeleteSaleOutput>, DeleteSaleHandler>();
+builder.Services.AddScoped<ICommandHandler<AdvanceSaleStatusCommand, AdvanceSaleStatusOutput>, AdvanceSaleStatusHandler>();
 
 
 // sale item

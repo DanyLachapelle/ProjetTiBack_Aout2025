@@ -1,4 +1,5 @@
 using Application.Sales.query;
+using Application.Sales.query.GetAllTables;
 using Application.Sales.query.GetSalesByDate;
 using Application.Sales.query.GetSalesById;
 using Infrastructure.User.Sale;
@@ -22,8 +23,8 @@ public class SaleQueryController: ControllerBase
         _saleRepository = saleRepository;
     }
     
-    [HttpGet("GetSaleById/{id}")]
-    public IActionResult GetSaleById(int id)
+    [HttpGet("GetSaleById")]
+    public IActionResult GetSaleById([FromQuery] int id)
     {
         if (id <= 0)
         {
@@ -61,7 +62,7 @@ public class SaleQueryController: ControllerBase
             var query = new GetSalesByDateQuery(date, includeItems: true);
             var sales = _salesQueryProcessor.GetSalesByDate(query);
 
-            if (sales == null || !sales.Sales.Any())
+            if (sales == null || !sales.sales.Any())
             {
                 return NotFound(new { message = "Aucune vente trouvée pour cette date." });
             }
@@ -81,10 +82,7 @@ public class SaleQueryController: ControllerBase
             var query = new GetAllSalesQuery();
             var sales = _salesQueryProcessor.GetAllSales(query);
 
-            if (sales == null || !sales.Sales.Any())
-            {
-                return NotFound(new { message = "Aucune vente trouvée." });
-            }
+            // Retourner toujours un objet avec un tableau (vide ou non)
             return Ok(sales);
         }
         catch (Exception ex)
@@ -93,7 +91,23 @@ public class SaleQueryController: ControllerBase
         }
     }
 
+    [HttpGet("GetAllTables")]
+    public IActionResult GetAllTables()
+    {
+        try
+        {
+            var query = new GetAllTablesQuery();
+            var tables = _salesQueryProcessor.GetAllTables(query);
 
-
-
+            if (tables == null || !tables.Tables.Any())
+            {
+                return NotFound(new { message = "Aucune table trouvée." });
+            }
+            return Ok(tables);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erreur lors de la récupération des tables.", error = ex.Message });
+        }
+    }
 }

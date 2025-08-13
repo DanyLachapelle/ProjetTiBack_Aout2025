@@ -45,7 +45,7 @@ namespace Application.Sales.query.GetSalesByDate;
                     {
                         Id = i.Id,
                         MocktailId = i.MocktailId,
-                        MocktailName = i.Mocktail?.Name ?? "Mocktail supprimé",
+                        MocktailName = i.Mocktail?.Name ?? "Mocktail deleted",
                         Quantity = i.Quantity,
                         UnitPrice = i.Mocktail?.Price ?? 0,
                         ItemTotal = i.ItemTotal

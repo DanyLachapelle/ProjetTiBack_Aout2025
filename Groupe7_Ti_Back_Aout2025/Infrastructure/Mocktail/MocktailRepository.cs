@@ -17,13 +17,7 @@ public class MocktailRepository : IMocktailRepository
         _context = context;
     }
 
-    // public async Task<IEnumerable<Domain.mocktail>> GetAllAsync()
-    // {
-    //     return await _context.Mocktails
-    //         .Include(m => m.MocktailIngredients)
-    //         .ThenInclude(mi => mi.Ingredient)
-    //         .ToListAsync();
-    // }
+    
 
     public IEnumerable<Domain.Mocktail> GetAllMocktails()
     {
@@ -32,14 +26,7 @@ public class MocktailRepository : IMocktailRepository
             .ThenInclude(mi => mi.Ingredient)
             .ToList();
     }
-
-    // public async Task<Domain.mocktail?> GetByIdAsync(int id)
-    // {
-    //     return await _context.Mocktails
-    //         .Include(m => m.MocktailIngredients)
-    //         .ThenInclude(mi => mi.Ingredient)
-    //         .FirstOrDefaultAsync(m => m.id == id);
-    // }
+    
     public Domain.Mocktail? GetMocktailById(int id)
     {
         return _context.Mocktails
@@ -48,12 +35,7 @@ public class MocktailRepository : IMocktailRepository
             .FirstOrDefault(m => m.Id == id);
     }
 
-    // public async Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail)
-    // {
-    //     _context.Mocktails.Add(mocktail);
-    //     await _context.SaveChangesAsync();
-    //     return mocktail;
-    // }
+   
 
     public Domain.Mocktail CreateMocktail(Domain.Mocktail mocktail)
     {
@@ -63,12 +45,7 @@ public class MocktailRepository : IMocktailRepository
     }
 
 
-    // public async Task<Domain.mocktail> UpdateAsync(Domain.mocktail mocktail)
-    // {
-    //     _context.Mocktails.Update(mocktail);
-    //     await _context.SaveChangesAsync();
-    //     return mocktail;
-    // }
+    
     public Domain.Mocktail UpdateMocktail(Domain.Mocktail mocktail)
     {
         _context.Mocktails.Update(mocktail);
@@ -77,15 +54,7 @@ public class MocktailRepository : IMocktailRepository
     }
 
 
-    // public async Task DeleteAsync(int id)
-    // {
-    //     var mocktail = await _context.Mocktails.FindAsync(id);
-    //     if (mocktail != null)
-    //     {
-    //         _context.Mocktails.Remove(mocktail);
-    //         await _context.SaveChangesAsync();
-    //     }
-    // }
+    
     public void DeleteMocktail(Domain.Mocktail mocktail)
     {
         _context.Mocktails.Remove(mocktail);

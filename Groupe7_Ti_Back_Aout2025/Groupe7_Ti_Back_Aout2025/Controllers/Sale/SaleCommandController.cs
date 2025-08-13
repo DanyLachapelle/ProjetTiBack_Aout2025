@@ -22,23 +22,23 @@ public class SaleCommandController: ControllerBase
     }
     
     [HttpPost("CreateSale")]
-    public IActionResult Create([FromBody] CreateSaleCommand command)
-    {
-        if (command == null)
-        {
-            return BadRequest(new { message = "Commande invalide." });
-        }
-
-        try
-        {
-            var result = _saleCommandProcessor.CreateSale(command);
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, new { message = "Erreur lors de la création de la vente.", error = ex.Message });
-        }
-    }
+ public IActionResult Create([FromBody] CreateSaleCommand command)
+ {
+     if (command == null)
+     {
+         return BadRequest(new { message = "Invalid command." });
+     }
+ 
+     try
+     {
+         var result = _saleCommandProcessor.CreateSale(command);
+         return Ok(result);
+     }
+     catch (Exception ex)
+     {
+         return StatusCode(500, new { message = "Error while creating the sale.", error = ex.Message });
+     }
+ }
     
     [HttpPut("UpdateSale")]
     public IActionResult Update([FromBody] UpdateSaleCommand command)
@@ -64,7 +64,7 @@ public class SaleCommandController: ControllerBase
     {
         if (id <= 0)
         {
-            return BadRequest(new { message = "ID de vente invalide." });
+            return BadRequest(new { message = "Invalid sale ID." });
         }
 
         try
@@ -75,7 +75,7 @@ public class SaleCommandController: ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la suppression de la vente.", error = ex.Message });
+            return StatusCode(500, new { message = "Error while deleting the sale.", error = ex.Message });
         }
     }
     

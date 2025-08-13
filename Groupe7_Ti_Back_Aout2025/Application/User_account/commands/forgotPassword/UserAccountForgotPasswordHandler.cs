@@ -27,9 +27,9 @@ public class UserAccountForgotPasswordHandler : ICommandHandler<UserAccountForgo
             var token = _tokenService.GeneratePasswordResetToken(command.Email);
             var resetLink = $"http://localhost:4200/reset-password?token={token}";
 
-            _emailService.SendEmailAsync(user.Email, "Réinitialisez votre mot de passe", $"Cliquez ici: {resetLink}").GetAwaiter().GetResult();;
+            _emailService.SendEmailAsync(user.Email, "Reset your password", $"Click here: {resetLink}").GetAwaiter().GetResult();
         }
 
-        return new UserAccountForgotPasswordOutput("Si votre email est associé à un compte, vous recevrez un lien de réinitialisation.");
+        return new UserAccountForgotPasswordOutput("If your email is associated with an account, you will receive a reset link.");
     }
 }

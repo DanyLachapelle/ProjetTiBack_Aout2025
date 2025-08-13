@@ -29,7 +29,7 @@ public class IngredientDto
     
     public override string ToString() 
     {
-        return $"{Name} - {Quantity}{Unit} {(NeedsRestock ? "(Besoin réappro)" : "")}";
+        return $"{Name} - {Quantity}{Unit} {(NeedsRestock ? "(Needs restock)" : "")}";
     }
     
    

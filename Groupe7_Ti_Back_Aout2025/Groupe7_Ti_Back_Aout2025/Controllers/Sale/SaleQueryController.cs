@@ -28,7 +28,7 @@ public class SaleQueryController: ControllerBase
     {
         if (id <= 0)
         {
-            return BadRequest(new { message = "ID de vente invalide." });
+            return BadRequest(new { message = "Invalid sale ID." });
         }
 
         try
@@ -38,13 +38,13 @@ public class SaleQueryController: ControllerBase
 
             if (sale == null)
             {
-                return NotFound(new { message = "Vente non trouvée." });
+                return NotFound(new { message = "Sale not found." });
             }
             return Ok(sale);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération de la vente.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving the sale.", error = ex.Message });
         }
     }
     
@@ -53,7 +53,7 @@ public class SaleQueryController: ControllerBase
     {
         if (date == default)
         {
-            return BadRequest(new { message = "Date invalide." });
+            return BadRequest(new { message = "Invalid date." });
         }
 
         try
@@ -64,13 +64,13 @@ public class SaleQueryController: ControllerBase
 
             if (sales == null || !sales.Sales.Any())
             {
-                return NotFound(new { message = "Aucune vente trouvée pour cette date." });
+                return NotFound(new { message = "No sales found for this date." });
             }
             return Ok(sales);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving sales.", error = ex.Message });
         }
     }
     
@@ -87,7 +87,7 @@ public class SaleQueryController: ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération des ventes.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving sales.", error = ex.Message });
         }
     }
 
@@ -101,13 +101,13 @@ public class SaleQueryController: ControllerBase
 
             if (tables == null || !tables.Tables.Any())
             {
-                return NotFound(new { message = "Aucune table trouvée." });
+                return NotFound(new { message = "No tables found." });
             }
             return Ok(tables);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération des tables.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving tables.", error = ex.Message });
         }
     }
 }

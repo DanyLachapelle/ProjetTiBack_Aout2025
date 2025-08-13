@@ -55,7 +55,7 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 }
                 catch (Exception itemEx)
                 {
-                    Console.WriteLine($"Erreur lors du chargement des items pour la vente {sale.Id}: {itemEx.Message}");
+                    Console.WriteLine($"Error loading items for sale {sale.Id}: {itemEx.Message}");
                     // Créer la vente sans items en cas d'erreur
                     var saleDto = new SaleDto
                     {
@@ -78,12 +78,12 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 Sales = salesWithItems
             };
 
-            Console.WriteLine($"GetAllSalesHandler: {output.Sales.Count} ventes dans la réponse");
+            Console.WriteLine($"GetAllSalesHandler: {output.Sales.Count} sale in response");
             return output;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Erreur dans GetAllSalesHandler: {ex.Message}");
+            Console.WriteLine($"error in GetAllSalesHandler: {ex.Message}");
             Console.WriteLine($"StackTrace: {ex.StackTrace}");
             throw;
         }

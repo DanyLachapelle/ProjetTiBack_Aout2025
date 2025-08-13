@@ -38,7 +38,7 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
             // Vérification que le mocktail existe
             var mocktail = _mocktailRepository.GetMocktailById(itemDto.MocktailId);
             if (mocktail == null)
-                throw new Exception($"Mocktail {itemDto.MocktailId} introuvable");
+                throw new Exception($"Mocktail {itemDto.MocktailId} not found");
 
             var saleItem = new SaleItem
             {

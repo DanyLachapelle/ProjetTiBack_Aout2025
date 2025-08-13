@@ -20,14 +20,14 @@ public class UserAccountResetPasswordHandler : ICommandHandler<UserAccountResetP
     {
         var email = _tokenService.GetEmailFromPasswordResetToken(command.Token);
         if (email == null)
-            return new UserAccountResetPasswordOutput("Token invalide ou expiré.");
-
-        var user = _userRepository.GetUserByEmailAsync(email).GetAwaiter().GetResult();;
+            return new UserAccountResetPasswordOutput("Invalid or expired token.");
+    
+        var user = _userRepository.GetUserByEmailAsync(email).GetAwaiter().GetResult();
         if (user == null)
-            return new UserAccountResetPasswordOutput("Utilisateur introuvable.");
-
+            return new UserAccountResetPasswordOutput("User not found.");
+    
         _userRepository.UpdatePasswordAsync(user.Id, command.NewPassword).GetAwaiter().GetResult();
-
-        return new UserAccountResetPasswordOutput("Mot de passe mis à jour avec succès.");
+    
+        return new UserAccountResetPasswordOutput("Password updated successfully.");
     }
 }

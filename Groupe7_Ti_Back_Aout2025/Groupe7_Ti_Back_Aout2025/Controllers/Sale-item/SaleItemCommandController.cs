@@ -25,7 +25,7 @@ public class SaleItemCommandController:ControllerBase
     {
         if (command == null || command.SaleId <= 0 || command.MocktailId <= 0 || command.Quantity <= 0)
         {
-            return BadRequest(new { message = "Données de l'article de vente invalides." });
+            return BadRequest(new { message = "Invalid sale item data." });
         }
 
         try
@@ -35,7 +35,7 @@ public class SaleItemCommandController:ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de l'ajout de l'article de vente.", error = ex.Message });
+            return StatusCode(500, new { message = "Error while adding sale item.", error = ex.Message });
         }
     }
     
@@ -44,7 +44,7 @@ public class SaleItemCommandController:ControllerBase
     {
         if (command == null || command.ItemId <= 0 || command.NewQuantity <= 0)
         {
-            return BadRequest(new { message = "Données de l'article de vente invalides." });
+            return BadRequest(new { message = "Invalid sale item data." });
         }
 
         try
@@ -56,7 +56,7 @@ public class SaleItemCommandController:ControllerBase
         {
             return StatusCode(500, new 
             { 
-                message = "Erreur lors de la mise à jour de l'article de vente.", 
+                message = "Error updating the sale item.", 
                 error = ex.Message, 
                 stackTrace = ex.StackTrace 
             });
@@ -69,7 +69,7 @@ public class SaleItemCommandController:ControllerBase
     {
         if (saleId <= 0 || itemId <= 0)
         {
-            return BadRequest(new { message = "ID de l'article de vente invalide." });
+            return BadRequest(new { message = "Invalid sale item ID." });
         }
 
         try
@@ -82,7 +82,7 @@ public class SaleItemCommandController:ControllerBase
         {
             return StatusCode(500, new 
             { 
-                message = "Erreur lors de la suppression de l'article de vente.", 
+                message = "Error removing the sale item.", 
                 error = ex.Message, 
                 stackTrace = ex.StackTrace 
             });

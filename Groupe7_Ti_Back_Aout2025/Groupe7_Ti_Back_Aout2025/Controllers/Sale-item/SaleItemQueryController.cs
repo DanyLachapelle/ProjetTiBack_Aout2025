@@ -26,7 +26,7 @@ public class SaleItemQueryController:ControllerBase
     {
         if (SaleId <= 0 || ItemId <= 0)
         {
-            return BadRequest(new { message = "ID de l'article de vente invalide." });
+            return BadRequest(new { message = "Invalid sale item ID." });
         }
 
         try
@@ -36,13 +36,13 @@ public class SaleItemQueryController:ControllerBase
 
             if (saleItem == null)
             {
-                return NotFound(new { message = "Article de vente non trouvé." });
+                return NotFound(new { message = "Sale item not found." });
             }
             return Ok(saleItem);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération de l'article de vente.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving the sale item.", error = ex.Message });
         }
     }
      
@@ -55,7 +55,7 @@ public class SaleItemQueryController:ControllerBase
     {
         if (SaleId <= 0)
         {
-            return BadRequest(new { message = "ID de l'article de vente invalide." });
+            return BadRequest(new { message = "Invalid sale item ID." });
         }
 
         try
@@ -65,13 +65,13 @@ public class SaleItemQueryController:ControllerBase
 
             if (saleItem == null)
             {
-                return NotFound(new { message = "Article de vente non trouvé." });
+                return NotFound(new { message = "Sale item not found." });
             }
             return Ok(saleItem);
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erreur lors de la récupération de l'article de vente.", error = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving the sale item.", error = ex.Message });
         }
     }
     

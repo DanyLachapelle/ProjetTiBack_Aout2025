@@ -21,7 +21,7 @@ public class SaleRepository : ISaleRepository
     {
         try
         {
-            Console.WriteLine("SaleRepository.GetAllSales: Début de la récupération");
+            Console.WriteLine("SaleRepository.GetAllSales: Beginning of retrieval");
             
             // Utiliser une requête SQL brute pour gérer les valeurs NULL
             var sales = _context.Sales
@@ -42,7 +42,7 @@ public class SaleRepository : ISaleRepository
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Erreur dans SaleRepository.GetAllSales: {ex.Message}");
+            Console.WriteLine($"Error in SaleRepository.GetAllSales: {ex.Message}");
             Console.WriteLine($"StackTrace: {ex.StackTrace}");
             throw;
         }
@@ -52,7 +52,7 @@ public class SaleRepository : ISaleRepository
     {
         try
         {
-            Console.WriteLine("SaleRepository.GetAllSalesWithItems: Début de la récupération");
+            Console.WriteLine("SaleRepository.GetAllSalesWithItems: Beginning of retrieval");
             
             // D'abord récupérer toutes les ventes (sans items)
             var sales = GetAllSales().ToList();

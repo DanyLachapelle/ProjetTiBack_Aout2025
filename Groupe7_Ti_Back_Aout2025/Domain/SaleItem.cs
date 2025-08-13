@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -27,4 +28,16 @@ public class SaleItem
     
     [NotMapped]
     public decimal TotalAmount { get; set; }
+    
+    public void CalculateTotal()
+    {
+        if (Mocktail == null)
+            throw new InvalidOperationException("Mocktail reference is required");
+
+        if (Quantity <= 0)
+            throw new ValidationException("Quantity must be positive");
+
+        ItemTotal = Mocktail.Price * Quantity;
+        TotalAmount = ItemTotal; // Synchronise les deux propriétés
+    }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {}
+    "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+    "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\laros\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\laros\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -37,12 +37,17 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\laros\\.dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

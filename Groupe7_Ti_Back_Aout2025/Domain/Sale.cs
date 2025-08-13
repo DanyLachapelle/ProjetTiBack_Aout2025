@@ -23,4 +23,6 @@ public class Sale
     public int OrderTimer { get; set; } = 15; 
     // Navigation property
     public virtual ICollection<SaleItem> SaleItems { get; set; } = new List<SaleItem>();
+    
+    
 }

@@ -13,18 +13,18 @@ public class UserRepository:IUserRepository
         _dbContext = dbContext;
     }
     
-    public Domain.User_account GetUserByPseudo(string pseudo)
+    public Domain.UserAccount GetUserByPseudo(string pseudo)
     { 
         return _dbContext.Users.FirstOrDefault(u => u.Username == pseudo); 
     }
 
-    public void Save(Domain.User_account userAccount)
+    public void Save(Domain.UserAccount userAccount)
     {
         _dbContext.Users.Update(userAccount);
         _dbContext.SaveChanges();
     }
     
-    public async Task<User_account?> GetUserByEmailAsync(string email)
+    public async Task<UserAccount?> GetUserByEmailAsync(string email)
     {
         return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
     }

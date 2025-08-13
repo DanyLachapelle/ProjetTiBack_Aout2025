@@ -4,8 +4,8 @@ namespace Infrastructure.User;
 
 public interface IUserRepository
 {
-    Domain.User_account GetUserByPseudo(string pseudo);
-    void Save(Domain.User_account userAccount);
-    Task<User_account?> GetUserByEmailAsync(string email);
+    Domain.UserAccount GetUserByPseudo(string pseudo);
+    void Save(Domain.UserAccount userAccount);
+    Task<UserAccount?> GetUserByEmailAsync(string email);
     Task UpdatePasswordAsync(int userId, string newPassword);
 }

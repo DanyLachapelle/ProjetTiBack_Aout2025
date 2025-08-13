@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {}
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
+    "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -32,11 +32,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "imports": [
             "net461",
             "net462",
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

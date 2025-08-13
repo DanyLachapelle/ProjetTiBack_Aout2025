@@ -28,7 +28,7 @@ public UpdateQuantityIngredientHandler(IIngredientRepository ingredientRepositor
         return new UpdateQuantityIngredientOutput
         {
             Success = true,
-            NewQuantity = ingredient.quantity,
+            NewQuantity = ingredient.Quantity,
             Message = "Quantity updated successfully"
         };
     }

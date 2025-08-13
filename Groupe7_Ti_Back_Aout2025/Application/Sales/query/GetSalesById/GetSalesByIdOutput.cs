@@ -2,21 +2,21 @@ namespace Application.Sales.query.GetSalesById;
 
 public class GetSalesByIdOutput
 {
-    public int id { get; set; }
-    public string tableNumber { get; set; } = string.Empty;
-    public decimal totalAmount { get; set; }
-    public string saleDate { get; set; } = string.Empty;
-    public string status { get; set; } = "Pending";
-    public int order_timer { get; set; } = 15;
-    public List<SaleItemOutput> items { get; set; } = new();
+    public int Id { get; set; }
+    public string TableNumber { get; set; } = string.Empty;
+    public decimal TotalAmount { get; set; }
+    public string SaleDate { get; set; } = string.Empty;
+    public string Status { get; set; } = "Pending";
+    public int OrderTimer { get; set; } = 15;
+    public List<SaleItemOutput> Items { get; set; } = new();
 }
 
 public class SaleItemOutput
 {
-    public int id { get; set; }
-    public int mocktailId { get; set; }
-    public string mocktailName { get; set; } = string.Empty;
-    public int quantity { get; set; }
-    public decimal unitPrice { get; set; }
-    public decimal itemTotal { get; set; }
+    public int Id { get; set; }
+    public int MocktailId { get; set; }
+    public string MocktailName { get; set; } = string.Empty;
+    public int Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+    public decimal ItemTotal { get; set; }
 }

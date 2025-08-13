@@ -18,12 +18,12 @@ public class DeleteMocktailHandler:ICommandHandler<DeleteMocktailCommand, Delete
         if (command == null)
             throw new ArgumentNullException(nameof(command), "Command cannot be null");
 
-        if (command.id <= 0)
-            throw new ArgumentException("Invalid mocktail ID provided", nameof(command.id));
+        if (command.Id <= 0)
+            throw new ArgumentException("Invalid mocktail ID provided", nameof(command.Id));
 
-        var mocktail = _mocktailRepository.GetMocktailById(command.id);
+        var mocktail = _mocktailRepository.GetMocktailById(command.Id);
         if (mocktail == null)
-            throw new KeyNotFoundException($"Mocktail with ID {command.id} not found");
+            throw new KeyNotFoundException($"Mocktail with ID {command.Id} not found");
 
         _mocktailRepository.DeleteMocktail(mocktail);
 

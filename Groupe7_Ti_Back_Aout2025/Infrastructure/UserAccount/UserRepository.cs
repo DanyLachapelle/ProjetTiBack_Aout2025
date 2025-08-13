@@ -15,7 +15,7 @@ public class UserRepository:IUserRepository
     
     public Domain.User_account GetUserByPseudo(string pseudo)
     { 
-        return _dbContext.Users.FirstOrDefault(u => u.username == pseudo); 
+        return _dbContext.Users.FirstOrDefault(u => u.Username == pseudo); 
     }
 
     public void Save(Domain.User_account userAccount)
@@ -26,7 +26,7 @@ public class UserRepository:IUserRepository
     
     public async Task<User_account?> GetUserByEmailAsync(string email)
     {
-        return await _dbContext.Users.FirstOrDefaultAsync(u => u.email == email);
+        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
     public async Task UpdatePasswordAsync(int userId, string newPassword)
@@ -34,7 +34,7 @@ public class UserRepository:IUserRepository
         var user = await _dbContext.Users.FindAsync(userId);
         if (user != null)
         {
-            user.password = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword);
             await _dbContext.SaveChangesAsync();
         }
     }

@@ -2,6 +2,6 @@
 
 public class CreateMocktailOutput
 {
-    public int id { get; set; }
-    public string nom { get; set; } = string.Empty;
+    public int Id { get; set; }
+    public string Nom { get; set; } = string.Empty;
 }

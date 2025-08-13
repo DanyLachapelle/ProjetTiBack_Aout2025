@@ -2,6 +2,6 @@ namespace Application.Sales.commands.CreateSale;
 
 public class CreateSaleOutput
 {
-    public int id { get; set; }
-    public decimal totalAmount { get; set; }
+    public int Id { get; set; }
+    public decimal TotalAmount { get; set; }
 }

@@ -5,14 +5,18 @@ namespace Domain;
 
 public class User_account
 {
-    public int id { get; set; }
-
+    [Column("id")]
+    public int Id { get; set; }
     
-    public string username { get; set; } = string.Empty;
+    [Column("username")]
+    public string Username { get; set; } = string.Empty;
 
-    public string email { get; set; } = string.Empty;
-    public string password { get; set; } = string.Empty;
-
+    [Column("email")]
+    public string Email { get; set; } = string.Empty;
     
-    public string role { get; set; } = string.Empty;
+    [Column("password")]
+    public string Password { get; set; } = string.Empty;
+
+    [Column("role")]
+    public string Role { get; set; } = string.Empty;
 } 

@@ -2,10 +2,10 @@ namespace Application.DTOs;
 
 public class SaleItemDto
 {
-    public int id { get; set; }
-    public int mocktailId { get; set; }
-    public string mocktailName { get; set; } = string.Empty;
-    public int quantity { get; set; }
-    public decimal unitPrice { get; set; }
-    public decimal itemTotal { get; set; }
+    public int Id { get; set; }
+    public int MocktailId { get; set; }
+    public string MocktailName { get; set; } = string.Empty;
+    public int Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+    public decimal ItemTotal { get; set; }
 }

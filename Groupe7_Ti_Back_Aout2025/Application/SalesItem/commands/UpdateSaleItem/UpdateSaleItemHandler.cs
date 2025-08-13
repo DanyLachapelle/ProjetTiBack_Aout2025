@@ -37,7 +37,7 @@ public class UpdateSaleItemHandler : ICommandHandler<UpdateSaleItemCommand, Upda
 
         // Récupération du mocktail pour le prix
         var mocktail = _mocktailRepository.GetMocktailById(item.MocktailId);
-        var unitPrice = mocktail?.price ?? 0;
+        var unitPrice = mocktail?.Price ?? 0;
 
         // Mise à jour
         item.Quantity = command.NewQuantity;

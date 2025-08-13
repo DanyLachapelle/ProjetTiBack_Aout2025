@@ -62,7 +62,7 @@ public class SaleQueryController: ControllerBase
             var query = new GetSalesByDateQuery(date, includeItems: true);
             var sales = _salesQueryProcessor.GetSalesByDate(query);
 
-            if (sales == null || !sales.sales.Any())
+            if (sales == null || !sales.Sales.Any())
             {
                 return NotFound(new { message = "Aucune vente trouvée pour cette date." });
             }

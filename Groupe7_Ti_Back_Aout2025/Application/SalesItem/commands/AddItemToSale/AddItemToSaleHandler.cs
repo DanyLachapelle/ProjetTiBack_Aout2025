@@ -42,7 +42,7 @@ public class AddItemToSaleHandler : ICommandHandler<AddItemToSaleCommand, AddIte
             SaleId = command.SaleId,
             MocktailId = command.MocktailId,
             Quantity = command.Quantity,
-            ItemTotal = command.Quantity * mocktail.price
+            ItemTotal = command.Quantity * mocktail.Price
         };
 
         // 3. Sauvegarde de l'item

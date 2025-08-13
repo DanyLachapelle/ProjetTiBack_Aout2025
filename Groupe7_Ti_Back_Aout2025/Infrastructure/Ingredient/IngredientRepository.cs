@@ -34,28 +34,28 @@ public class IngredientRepository:IIngredientRepository
 
     public Domain.Ingredient GetIngredientById(int commandId)
     {
-        return _context.Ingredients.FirstOrDefault(i => i.id == commandId);
+        return _context.Ingredients.FirstOrDefault(i => i.Id == commandId);
     }
 
     public bool UpdateRestockThreshold(int ingredientId, decimal restockThreshold)
     {
-        var ingredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredientId);
+        var ingredient = _context.Ingredients.FirstOrDefault(i => i.Id == ingredientId);
         if (ingredient == null)
             return false;
 
-        ingredient.restock_threshold = restockThreshold;
+        ingredient.RestockThreshold = restockThreshold;
         _context.SaveChanges();
         return true;
     }
 
     public void UpdateQuantityIngredient(Domain.Ingredient ingredient)
     {
-        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredient.id);
+        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.Id == ingredient.Id);
         if (existingIngredient != null)
         {
-            existingIngredient.quantity = ingredient.quantity;
-            existingIngredient.last_modified_at = ingredient.last_modified_at;
-            Console.WriteLine($"Updating ingredient id={ingredient.id} quantity={ingredient.quantity} last_modified_at={ingredient.last_modified_at}");
+            existingIngredient.Quantity = ingredient.Quantity;
+            existingIngredient.LastModifiedAt = DateTime.Now;
+            Console.WriteLine($"Updating ingredient id={ingredient.Id} quantity={ingredient.Quantity} last_modified_at={existingIngredient.LastModifiedAt}");
             _context.SaveChanges();
         }
         else
@@ -66,14 +66,14 @@ public class IngredientRepository:IIngredientRepository
 
     public void DecreaseQuantity(Domain.Ingredient ingredient)
     {
-        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.id == ingredient.id);
+        var existingIngredient = _context.Ingredients.FirstOrDefault(i => i.Id == ingredient.Id);
         if (existingIngredient != null)
         {
             // Pas de décrément ici !
-            existingIngredient.quantity = ingredient.quantity;
-            existingIngredient.last_modified_at = ingredient.last_modified_at;
+            existingIngredient.Quantity = ingredient.Quantity;
+            existingIngredient.LastModifiedAt = ingredient.LastModifiedAt;
 
-            Console.WriteLine($"Decreasing ingredient id={ingredient.id} new quantity={ingredient.quantity} last_modified_at={existingIngredient.last_modified_at}");
+            Console.WriteLine($"Decreasing ingredient id={ingredient.Id} new quantity={ingredient.Quantity} last_modified_at={existingIngredient.LastModifiedAt}");
 
             _context.SaveChanges();
         }

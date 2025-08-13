@@ -7,6 +7,6 @@ public class UpdateSaleCommand
     public int SaleId { get; set; }
     public string? TableNumber { get; set; }
     
-    public string? status { get; set; }
+    public string? Status { get; set; }
     public List<UpdateSaleRequest>? UpdatedItems { get; set; }
 }

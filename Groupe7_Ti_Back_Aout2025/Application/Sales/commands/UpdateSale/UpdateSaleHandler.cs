@@ -33,8 +33,8 @@ namespace Application.Sales.commands.UpdateSale;
             sale.TableNumber = command.TableNumber;
 
         // 2. Mise à jour du statut de la vente
-        if (!string.IsNullOrWhiteSpace(command.status))
-            sale.status = command.status;
+        if (!string.IsNullOrWhiteSpace(command.Status))
+            sale.Status = command.Status;
         
         // 3. Mise à jour des items
         if (command.UpdatedItems != null && command.UpdatedItems.Any())
@@ -51,7 +51,7 @@ namespace Application.Sales.commands.UpdateSale;
                     if (newMocktail == null)
                         throw new Exception($"Mocktail {itemDto.NewMocktailId} not found");
                     
-                    item.MocktailId = newMocktail.id;
+                    item.MocktailId = newMocktail.Id;
                     item.Mocktail = newMocktail; // Mise à jour de la référence
                 }
 
@@ -89,7 +89,7 @@ namespace Application.Sales.commands.UpdateSale;
                     throw new Exception($"Mocktail {item.MocktailId} not found for item {item.Id}");
             }
 
-            item.ItemTotal = item.Quantity * item.Mocktail.price;
+            item.ItemTotal = item.Quantity * item.Mocktail.Price;
             total += item.ItemTotal;
         }
 

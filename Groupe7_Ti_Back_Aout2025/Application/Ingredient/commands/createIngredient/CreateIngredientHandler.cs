@@ -19,22 +19,22 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, Cr
     {
         var ingredient = new Domain.Ingredient()
         {
-            name = command.name,
-            quantity = command.quantity,
-            restock_threshold = command.restock_threshold,
-            unit = command.unit,
-            allergen = command.allergen
+            Name = command.Name,
+            Quantity = command.Quantity,
+            RestockThreshold = command.RestockThreshold,
+            Unit = command.Unit,
+            Allergen = command.Allergen
         };
 
         _ingredientRepository.CreateIngredient(ingredient);
 
         return new CreateIngredientOutput
         {
-            name = ingredient.name,
-            quantity = ingredient.quantity,
-            restock_threshold = ingredient.restock_threshold,
-            unit = ingredient.unit,
-            allergen = ingredient.allergen
+            Name = ingredient.Name,
+            Quantity = ingredient.Quantity,
+            RestockThreshold = ingredient.RestockThreshold,
+            Unit = ingredient.Unit,
+            Allergen = ingredient.Allergen
         };
     }
 

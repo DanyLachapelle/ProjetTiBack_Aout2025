@@ -5,9 +5,9 @@ namespace Application.Mocktails.commands.createMocktail;
 
 public class CreateMocktailCommand
 {
-    public string name { get; set; } = string.Empty;
-    public string description { get; set; } = string.Empty;
-    public decimal price { get; set; }
-    public string image { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+    public string Image { get; set; } = string.Empty;
     public List<CreateMocktailIngredientRequest> Ingredients { get; set; } = new();
 }

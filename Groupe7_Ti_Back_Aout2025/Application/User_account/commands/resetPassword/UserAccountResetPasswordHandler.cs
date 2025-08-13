@@ -26,7 +26,7 @@ public class UserAccountResetPasswordHandler : ICommandHandler<UserAccountResetP
         if (user == null)
             return new UserAccountResetPasswordOutput("Utilisateur introuvable.");
 
-        _userRepository.UpdatePasswordAsync(user.id, command.NewPassword).GetAwaiter().GetResult();
+        _userRepository.UpdatePasswordAsync(user.Id, command.NewPassword).GetAwaiter().GetResult();
 
         return new UserAccountResetPasswordOutput("Mot de passe mis à jour avec succès.");
     }

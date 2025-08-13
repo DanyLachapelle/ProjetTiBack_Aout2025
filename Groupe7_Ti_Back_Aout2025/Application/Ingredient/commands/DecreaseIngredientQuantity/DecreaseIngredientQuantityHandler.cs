@@ -14,21 +14,21 @@ public DecreaseIngredientQuantityHandler(IIngredientRepository ingredientReposit
 
     public DecreaseIngredientQuantityOutput Handle(DecreaseIngredientQuantityCommand command)
     {
-        if (command.quantity <= 0)
+        if (command.Quantity <= 0)
             throw new ArgumentException("Amount to decrease must be positive");
 
         var ingredient = _ingredientRepository.GetIngredientById(command.Id);
         if (ingredient == null)
             throw new ArgumentException("Ingredient not found");
 
-        ingredient.DecreaseQuantity(command.quantity);
+        ingredient.DecreaseQuantity(command.Quantity);
         _ingredientRepository.DecreaseQuantity(ingredient);
        
 
         return new DecreaseIngredientQuantityOutput
         {
             Success = true,
-            quantity = ingredient.quantity,
+            Quantity = ingredient.Quantity,
             Message = "Quantity decreased successfully"
         };
     }

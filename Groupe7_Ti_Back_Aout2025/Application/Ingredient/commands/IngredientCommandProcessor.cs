@@ -36,7 +36,7 @@ public class IngredientCommandProcessor
     
     public DeleteIngredientOutput DeleteIngredient(int id)
     {
-        var command = new DeleteIngredientCommand { id = id };
+        var command = new DeleteIngredientCommand { Id = id };
 
         if (id <= 0)
         {
@@ -87,7 +87,7 @@ public class IngredientCommandProcessor
             throw new ArgumentNullException(nameof(command), "Query cannot be null");
         }
 
-        if (string.IsNullOrWhiteSpace(command.name) || command.quantity <= 0 || command.restock_threshold < 0)
+        if (string.IsNullOrWhiteSpace(command.Name) || command.Quantity <= 0 || command.RestockThreshold < 0)
         {
             throw new ArgumentException("Invalid ingredient data provided");
         }
@@ -108,9 +108,9 @@ public class IngredientCommandProcessor
         var commands = new DecreaseIngredientQuantityCommand()
         {
             Id = id,
-            quantity = command.quantity
+            Quantity = command.Quantity
         };
-        if (command.quantity <= 0 || command.Id <= 0)
+        if (command.Quantity <= 0 || command.Id <= 0)
         {
             throw new ArgumentException("Invalid ingredient ID or quantity provided");
         }

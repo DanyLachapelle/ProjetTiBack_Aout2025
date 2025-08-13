@@ -30,10 +30,10 @@ public class GetItemBySaleByIdHandler : IQueryHandler<GetItemBySaleByIdQuery, Ge
         {
             Id = item.Id,
             MocktailId = item.MocktailId,
-            MocktailName = item.Mocktail?.name ?? "Unknown",
+            MocktailName = item.Mocktail?.Name ?? "Unknown",
             Quantity = item.Quantity,
-            UnitPrice = item.Mocktail?.price ?? 0,
-            ItemTotal = item.Quantity * (item.Mocktail?.price ?? 0),
+            UnitPrice = item.Mocktail?.Price ?? 0,
+            ItemTotal = item.Quantity * (item.Mocktail?.Price ?? 0),
             SaleId = item.SaleId,
             SaleDate = item.Sale?.SaleDate ?? DateTime.MinValue
         };

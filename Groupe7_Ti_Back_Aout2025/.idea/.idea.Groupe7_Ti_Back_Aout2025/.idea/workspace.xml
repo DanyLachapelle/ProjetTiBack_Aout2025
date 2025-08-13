@@ -9,7 +9,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="">
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="mise a jour du back">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/DTOs/IngredientDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DTOs/IngredientDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/DTOs/SaleItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DTOs/SaleItemDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateQuantityIngredient/UpdateQuantityIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateQuantityIngredient/UpdateQuantityIngredientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Ingredient/query/getAllIngredient/IngredientGetAllHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/query/getAllIngredient/IngredientGetAllHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Mocktails/query/getbyidMocktail/GetbyidMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/query/getbyidMocktail/GetbyidMocktailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/IMocktailService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/MocktailService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginOutput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginOutput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/resetPassword/UserAccountResetPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/resetPassword/UserAccountResetPasswordHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Domain.dll" afterDir="false" />
@@ -18,19 +70,31 @@
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Ingredient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Mocktail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Mocktail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/MocktailIngredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/MocktailIngredient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Sale.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Sale.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/SaleItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/SaleItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/User_account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/User_account.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserAccountCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserAccountCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Ingredient/IngredientCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/IngredientController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Mocktail/MocktailCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Mocktail/MocktailCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/MocktailController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/Sale/SaleQueryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserAccountCommandController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Domain.dll" afterDir="false" />
@@ -41,24 +105,19 @@
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/Groupe7_Ti_Back_Aout2025.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/ref/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Debug/net7.0/refint/Groupe7_Ti_Back_Aout2025.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Ingredient/IngredientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Ingredient/IngredientRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Mocktail/MocktailRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/UserAccount/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/UserAccount/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +134,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -131,7 +191,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2zidksAd3Rc0ahJFBAgTnnS0IRt" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -530,7 +590,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754940079736</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="commit">
+      <option name="closed" value="true" />
+      <created>1755034908959</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1755034908959</updated>
+    </task>
+    <task id="LOCAL-00039" summary="mise a jour du back">
+      <option name="closed" value="true" />
+      <created>1755035264131</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1755035264131</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,8 +655,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="getAllMocktail fonctionelle" />
-    <MESSAGE value="Backend de Mocktail fonctionelle" />
     <MESSAGE value="merge dany into dev" />
     <MESSAGE value="Correction modification bd user" />
     <MESSAGE value="Ingredient db modifier" />
@@ -604,24 +678,8 @@
     <MESSAGE value="ajout de statut pour les ingrédients" />
     <MESSAGE value="Commit avant le merge theo" />
     <MESSAGE value="Commit apres merge theo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit apres merge theo" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit" />
+    <MESSAGE value="mise a jour du back" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise a jour du back" />
   </component>
 </project>

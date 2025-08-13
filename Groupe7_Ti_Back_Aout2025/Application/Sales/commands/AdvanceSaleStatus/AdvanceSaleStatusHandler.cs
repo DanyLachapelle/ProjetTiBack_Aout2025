@@ -18,9 +18,9 @@ public class AdvanceSaleStatusHandler : ICommandHandler<AdvanceSaleStatusCommand
             throw new ArgumentNullException(nameof(command));
 
         // Get the sale
-        var sale = _saleRepository.GetSaleById(command.saleId);
+        var sale = _saleRepository.GetSaleById(command.SaleId);
         if (sale == null)
-            throw new Exception($"Sale with ID {command.saleId} not found");
+            throw new Exception($"Sale with ID {command.SaleId} not found");
 
         // Define status progression
         var statusProgression = new Dictionary<string, string>
@@ -32,7 +32,7 @@ public class AdvanceSaleStatusHandler : ICommandHandler<AdvanceSaleStatusCommand
             { "DELIVERED", "DELIVERED" } // Can't advance beyond delivered
         };
 
-        var currentStatus = sale.status ?? "Pending";
+        var currentStatus = sale.Status ?? "Pending";
         
         if (!statusProgression.ContainsKey(currentStatus))
         {
@@ -46,21 +46,21 @@ public class AdvanceSaleStatusHandler : ICommandHandler<AdvanceSaleStatusCommand
         {
             return new AdvanceSaleStatusOutput
             {
-                saleId = command.saleId,
-                newStatus = currentStatus,
-                message = "Order is already delivered"
+                saleId = command.SaleId,
+                NewStatus = currentStatus,
+                Message = "Order is already delivered"
             };
         }
 
         // Update the status
-        sale.status = newStatus;
+        sale.Status = newStatus;
         _saleRepository.UpdateSale(sale);
 
         return new AdvanceSaleStatusOutput
         {
-            saleId = command.saleId,
-            newStatus = newStatus,
-            message = $"Status updated from {currentStatus} to {newStatus}"
+            saleId = command.SaleId,
+            NewStatus = newStatus,
+            Message = $"Status updated from {currentStatus} to {newStatus}"
         };
     }
 }

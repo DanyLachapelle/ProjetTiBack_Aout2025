@@ -21,10 +21,10 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
         // Création du mocktail
         var mocktail = new Mocktail
         {
-            name = command.name,
-            description = command.description,
-            price = command.price,
-            image = command.image
+            Name = command.Name,
+            Description = command.Description,
+            Price = command.Price,
+            Image = command.Image
         };
 
         // Ajouter les ingrédients
@@ -39,10 +39,10 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
                 // Si pas trouvé, on le crée
                 var newIngredient = new Domain.Ingredient
                 {
-                    name = ingredientDto.Name,
-                    quantity = 0, // ou une autre logique si nécessaire
-                    unit = ingredientDto.Unit,
-                    restock_threshold = 0
+                    Name = ingredientDto.Name,
+                    Quantity = 0, // ou une autre logique si nécessaire
+                    Unit = ingredientDto.Unit,
+                    RestockThreshold = 0
                 };
                 ingredientEntity = _mocktailRepository.AddIngredient(newIngredient);
             }
@@ -55,8 +55,8 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             var mocktailIngredient = new mocktail_ingredient
             {
                 Ingredient = ingredientEntity,
-                quantity = ingredientDto.Quantity,
-                unit = ingredientDto.Unit
+                Quantity = ingredientDto.Quantity,
+                Unit = ingredientDto.Unit
             };
 
             mocktail.MocktailIngredients.Add(mocktailIngredient);
@@ -67,8 +67,8 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
 
         return new CreateMocktailOutput
         {
-            id = createdMocktail.id,
-            nom = createdMocktail.name
+            Id = createdMocktail.Id,
+            Nom = createdMocktail.Name
         };
     }
 }

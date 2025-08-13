@@ -25,7 +25,7 @@ public class TokenService
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.Name, userAccount.username),
+            new Claim(ClaimTypes.Name, userAccount.Username),
             new Claim(ClaimTypes.NameIdentifier,
                 Guid.NewGuid().ToString())
         };
@@ -67,7 +67,7 @@ public class TokenService
     {
         var userLoginQuery = new UserAccountLoginCommand
         {
-            username = userAccount.username
+            Username = userAccount.Username
         };
 
         return BuildToken("JeNeSuisPasConMaisJeMangesDesCaillouxAvecDeLaTerreMésopotamienneHuillée", "www.joydipkanjilal.net", userAccount);;

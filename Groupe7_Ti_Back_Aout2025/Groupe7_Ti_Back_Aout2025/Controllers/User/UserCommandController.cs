@@ -77,7 +77,7 @@ public class UserCommandController: ControllerBase
                 return Unauthorized(new { message = "User not authenticated" });
             }
 
-            command.pseudo = pseudo;
+            command.Pseudo = pseudo;
 
             _userAccountCommandsProcessor.ChangePassword(command);
             return Ok(new { message = "Password updated successfully." });

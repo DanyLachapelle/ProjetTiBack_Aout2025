@@ -2,10 +2,10 @@
 
 public class DeleteMocktailCommand
 {
-    public int id { get; set; }
+    public int Id { get; set; }
     
     public DeleteMocktailCommand(int id)
     {
-        this.id = id;
+        this.Id = id;
     }
 }

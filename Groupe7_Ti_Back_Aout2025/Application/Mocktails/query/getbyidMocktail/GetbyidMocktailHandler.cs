@@ -25,19 +25,19 @@ namespace Application.Mocktails.Query.GetByIdMocktail
 
             return new MocktailDto
             {
-                Id = mocktail.id,
-                Name = mocktail.name,
-                Description = mocktail.description,
-                Price = mocktail.price,
+                Id = mocktail.Id,
+                Name = mocktail.Name,
+                Description = mocktail.Description,
+                Price = mocktail.Price,
                 Available = IsAvailable(mocktail),
-                ForceAvailable = mocktail.forceAvailable, // Laisser les valeurs null telles quelles
-                Image = mocktail.image,
+                ForceAvailable = mocktail.ForceAvailable, // Laisser les valeurs null telles quelles
+                Image = mocktail.Image,
                 Ingredients = mocktail.MocktailIngredients.Select(mi => new MocktailIngredientDto
                 {
-                    Name = mi.Ingredient.name,
-                    Quantity = mi.quantity,
-                    Unit = mi.unit,
-                    Allergen = mi.Ingredient.allergen ?? "none" // Ajout de l'allergène
+                    Name = mi.Ingredient.Name,
+                    Quantity = mi.Quantity,
+                    Unit = mi.Unit,
+                    Allergen = mi.Ingredient.Allergen ?? "none" // Ajout de l'allergène
                 }).ToList()
             };
         }
@@ -45,16 +45,16 @@ namespace Application.Mocktails.Query.GetByIdMocktail
         private bool IsAvailable(Mocktail mocktail)
         {
             // Si forceAvailable est explicitement false, le mocktail est forcé indisponible
-            if (mocktail.forceAvailable == false)
+            if (mocktail.ForceAvailable == false)
                 return false;
                 
             // Si forceAvailable est true, le mocktail est toujours disponible
-            if (mocktail.forceAvailable == true)
+            if (mocktail.ForceAvailable == true)
                 return true;
                 
             // Si forceAvailable est null, vérifier le stock des ingrédients
             return mocktail.MocktailIngredients.All(mi => 
-                mi.Ingredient.quantity >= mi.quantity
+                mi.Ingredient.Quantity >= mi.Quantity
             );
         }
     }

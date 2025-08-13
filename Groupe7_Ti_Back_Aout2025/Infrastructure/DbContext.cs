@@ -34,24 +34,24 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Domain.User_account>(builder =>
         {
             builder.ToTable("User_account"); 
-            builder.HasKey(x => x.id); 
-            builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.username).HasColumnName("username").IsRequired();
-            builder.Property(x => x.email).HasColumnName("email").IsRequired();
-            builder.Property(x => x.password).HasColumnName("password").IsRequired();
-            builder.Property(x => x.role).HasColumnName("role");
+            builder.HasKey(x => x.Id); 
+            builder.Property(x => x.Id).HasColumnName("id");
+            builder.Property(x => x.Username).HasColumnName("username").IsRequired();
+            builder.Property(x => x.Email).HasColumnName("email").IsRequired();
+            builder.Property(x => x.Password).HasColumnName("password").IsRequired();
+            builder.Property(x => x.Role).HasColumnName("role");
         });
 
         modelBuilder.Entity<Domain.Mocktail>(builder =>
         {
             builder.ToTable("Mocktail");
-            builder.HasKey(x => x.id);
-            builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.name).HasColumnName("name").IsRequired();
-            builder.Property(x => x.description).HasColumnName("description");
-            builder.Property(x => x.price).HasColumnName("price").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.image).HasColumnName("image");
-            builder.Property(x => x.forceAvailable).HasColumnName("force_available").HasDefaultValue(false);
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("id");
+            builder.Property(x => x.Name).HasColumnName("name").IsRequired();
+            builder.Property(x => x.Description).HasColumnName("description");
+            builder.Property(x => x.Price).HasColumnName("price").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Image).HasColumnName("image");
+            builder.Property(x => x.ForceAvailable).HasColumnName("force_available").HasDefaultValue(false);
         });
 
         modelBuilder.Entity<Domain.Ingredient>(builder =>
@@ -60,36 +60,36 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
     builder.ToTable("Ingredient");
     
     // Configuration de la clé primaire
-    builder.HasKey(x => x.id);
-    builder.Property(x => x.id)
+    builder.HasKey(x => x.Id);
+    builder.Property(x => x.Id)
         .HasColumnName("id")
         .ValueGeneratedOnAdd();
 
     // Configuration des colonnes de base
-    builder.Property(x => x.name)
+    builder.Property(x => x.Name)
         .HasColumnName("name")
         .HasColumnType("VARCHAR(100)")
         .IsRequired()
         .HasMaxLength(100);
         
-    builder.Property(x => x.quantity)
+    builder.Property(x => x.Quantity)
         .HasColumnName("quantity")
         .HasColumnType("DECIMAL(10,2)")
         .IsRequired();
         
-    builder.Property(x => x.restock_threshold)
+    builder.Property(x => x.RestockThreshold)
         .HasColumnName("restock_threshold")
         .HasColumnType("DECIMAL(10,2)")
         .IsRequired();
         
-    builder.Property(x => x.unit)
+    builder.Property(x => x.Unit)
         .HasColumnName("unit")
         .HasColumnType("VARCHAR(10)")
         .IsRequired()
         .HasMaxLength(10);
 
     // Configuration de la colonne allergen avec check constraint
-    builder.Property(x => x.allergen)
+    builder.Property(x => x.Allergen)
         .HasColumnName("allergen")
         .HasColumnType("VARCHAR(20)")
         .HasDefaultValue("none")
@@ -100,14 +100,14 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
             v => v);
 
     // Configuration du timestamp de modification
-    builder.Property(x => x.last_modified_at)
+    builder.Property(x => x.LastModifiedAt)
         .HasColumnName("last_modified_at")
         .HasColumnType("DATETIME2")
         .HasDefaultValueSql("CURRENT_TIMESTAMP")
         .ValueGeneratedOnAddOrUpdate();
 
     // Configuration de l'index unique sur le nom
-    builder.HasIndex(x => x.name)
+    builder.HasIndex(x => x.Name)
         .IsUnique();
 
     // Configuration des contraintes CHECK via Fluent API
@@ -123,22 +123,22 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.Entity<Domain.mocktail_ingredient>(builder =>
         {
             builder.ToTable("mocktail_ingredient");
-            builder.HasKey(x => x.id);
-            builder.Property(x => x.id).HasColumnName("id");
-            builder.Property(x => x.mocktail_id).HasColumnName("mocktail_id");
-            builder.Property(x => x.ingredient_id).HasColumnName("ingredient_id");
-            builder.Property(x => x.quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
-            builder.Property(x => x.unit).HasColumnName("unit").HasMaxLength(10);
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("id");
+            builder.Property(x => x.MocktailId).HasColumnName("mocktail_id");
+            builder.Property(x => x.IngredientId).HasColumnName("ingredient_id");
+            builder.Property(x => x.Quantity).HasColumnName("quantity").HasColumnType("decimal(10,2)");
+            builder.Property(x => x.Unit).HasColumnName("unit").HasMaxLength(10);
 
             // Relations
             builder.HasOne(x => x.Mocktail)
                 .WithMany(x => x.MocktailIngredients)
-                .HasForeignKey(x => x.mocktail_id)
+                .HasForeignKey(x => x.MocktailId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(x => x.Ingredient)
                 .WithMany(x => x.MocktailIngredients)
-                .HasForeignKey(x => x.ingredient_id)
+                .HasForeignKey(x => x.IngredientId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
         
@@ -166,14 +166,14 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
                 .HasColumnType("VARCHAR(10)")
                 .HasMaxLength(10);
         
-            builder.Property(x => x.status)
+            builder.Property(x => x.Status)
                 .HasColumnName("status")
                 .HasColumnType("VARCHAR(20)")
                 .HasDefaultValue("Pending")
                 .IsRequired()
                 .HasMaxLength(20);
             
-            builder.Property(x => x.order_timer)
+            builder.Property(x => x.OrderTimer)
                 .HasColumnName("order_timer")
                 .HasColumnType("INT")
                 .HasDefaultValue(15)

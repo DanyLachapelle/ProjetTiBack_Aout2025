@@ -89,7 +89,7 @@ public class SaleCommandController: ControllerBase
 
         try
         {
-            var command = new AdvanceSaleStatusCommand { saleId = id };
+            var command = new AdvanceSaleStatusCommand { SaleId = id };
             var result = _saleCommandProcessor.AdvanceSaleStatus(command);
             return Ok(result);
         }

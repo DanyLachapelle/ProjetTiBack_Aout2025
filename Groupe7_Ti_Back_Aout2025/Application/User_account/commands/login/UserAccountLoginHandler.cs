@@ -24,28 +24,28 @@ public class UserAccountLoginHandler:ICommandHandler<UserAccountLoginCommand, Us
     
    public UserAccountLoginOutput Handle(UserAccountLoginCommand command)
 {
-    _logger.LogInformation("Login attempt with username: {Pseudo}", command.username);
+    _logger.LogInformation("Login attempt with username: {Pseudo}", command.Username);
 
     // Find the user by pseudo
-    var user = _userRepository.GetUserByPseudo(command.username);
+    var user = _userRepository.GetUserByPseudo(command.Username);
 
     if (user == null)
     {
-        _logger.LogWarning("No user found with pseudo: {Pseudo}", command.username);
+        _logger.LogWarning("No user found with pseudo: {Pseudo}", command.Username);
         throw new InvalidOperationException("Invalid pseudo");
     }
 
-    _logger.LogInformation("Provided password: {Password}", command.password);
-    _logger.LogInformation("Stored password hash: {StoredHash}", user.password);
+    _logger.LogInformation("Provided password: {Password}", command.Password);
+    _logger.LogInformation("Stored password hash: {StoredHash}", user.Password);
 
     // Verify password using bcrypt
-    if (!VerifyPassword(command.password, user.password))
+    if (!VerifyPassword(command.Password, user.Password))
     {
-        _logger.LogWarning("Incorrect password for user: {Pseudo}", command.username);
+        _logger.LogWarning("Incorrect password for user: {Pseudo}", command.Username);
         throw new InvalidOperationException("Invalid password");
     }
 
-    _logger.LogInformation("Login successful for: {Pseudo}", command.username);
+    _logger.LogInformation("Login successful for: {Pseudo}", command.Username);
 
     _userRepository.Save(user);
 

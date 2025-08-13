@@ -2,10 +2,10 @@ namespace Application.User.commands.changePassword;
 
 public class UserAccountChangePasswordOutput
 {
-    private string message;
+    private string Message;
 
     public UserAccountChangePasswordOutput(string message)
     {
-        this.message = message;
+        this.Message = message;
     }
 }

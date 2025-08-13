@@ -6,12 +6,18 @@ namespace Domain;
 
 public class Mocktail
 {
-    public int id { get; set; }
-    public string name { get; set; } = string.Empty;
-    public string description { get; set; } = string.Empty;
-    public decimal price { get; set; }
-    public string? image { get; set; }
-    public bool? forceAvailable { get; set; } = false; // Champ pour forcer la disponibilité (nullable)
+    [Column("id")]
+    public int Id { get; set; }
+    [Column("name")]
+    public string Name { get; set; } = string.Empty;
+    [Column("description")]
+    public string Description { get; set; } = string.Empty;
+    [Column("price")]
+    public decimal Price { get; set; }
+    [Column("image")]
+    public string? Image { get; set; }
+    [Column("forceAvailable")]
+    public bool? ForceAvailable { get; set; } = false; // Champ pour forcer la disponibilité (nullable)
 
     // Navigation property pour les ingrédients
     public virtual ICollection<mocktail_ingredient> MocktailIngredients { get; set; } = new List<mocktail_ingredient>();

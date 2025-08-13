@@ -3,9 +3,9 @@
 public class UserAccountLoginOutput
 {
     public string Token { get; set; }
-    public int id { get; set; }
-    public string username { get; set; } = string.Empty;
-    public string email { get; set; } = string.Empty;
-    public string role { get; set; } = string.Empty;
+    public int Id { get; set; }
+    public string Username { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Role { get; set; } = string.Empty;
     
 }

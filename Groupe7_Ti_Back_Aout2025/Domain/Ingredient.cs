@@ -7,14 +7,21 @@ namespace Domain;
 
 public class Ingredient
 { 
-    public int id { get; set; }
-    public string name { get; set; } = string.Empty;
-    public decimal quantity { get; set; }
-    public decimal restock_threshold { get; set; }
-    public string unit { get; set; } = string.Empty;
+    [Column("id")]
+    public int Id { get; set; }
+    [Column("name")]
+    public string Name { get; set; } = string.Empty;
+    [Column("quantity")]
+    public decimal Quantity { get; set; }
+    [Column("restock_threshold")]
+    public decimal RestockThreshold { get; set; }
+    [Column("unit")]
+    public string Unit { get; set; } = string.Empty;
     
-    public string allergen { get; set; } = "none";
-    public DateTime? last_modified_at { get; set; }
+    [Column("allergen")]
+    public string Allergen { get; set; } = "none";
+    [Column("last_modified_at")]
+    public DateTime? LastModifiedAt { get; set; } 
 
     // Navigation property pour les mocktails
     public virtual ICollection<mocktail_ingredient> MocktailIngredients { get; set; } = new List<mocktail_ingredient>();
@@ -27,8 +34,8 @@ public class Ingredient
             throw new ArgumentException("Amount to add must be positive", nameof(amount));
         }
 
-        quantity += amount;
-        last_modified_at = DateTime.Now;
+        Quantity += amount;
+        LastModifiedAt = DateTime.Now;
     }
     
     public void DecreaseQuantity(decimal amount)
@@ -38,19 +45,19 @@ public class Ingredient
             throw new ArgumentException("Amount to decrease must be positive", nameof(amount));
         }
 
-        if (quantity < amount)
+        if (Quantity < amount)
         {
             throw new InvalidOperationException("Insufficient quantity to decrease");
         }
 
-        quantity -= amount;
-        last_modified_at = DateTime.Now;
+        Quantity -= amount;
+        LastModifiedAt = DateTime.Now;
     }
 
     
     public bool NeedsRestock()
     {
-        return quantity <= restock_threshold;
+        return Quantity <= RestockThreshold;
     }
 
     // Validation des valeurs possibles pour Unit

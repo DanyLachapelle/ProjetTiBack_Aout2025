@@ -24,19 +24,19 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
 
         return mocktails.Select(m => new MocktailDto
         {
-            Id = m.id,
-            Name = m.name,
-            Description = m.description,
-            Price = m.price,
+            Id = m.Id,
+            Name = m.Name,
+            Description = m.Description,
+            Price = m.Price,
             Available = IsAvailable(m),
-            ForceAvailable = m.forceAvailable, // Laisser les valeurs null telles quelles
-            Image = m.image,
+            ForceAvailable = m.ForceAvailable, // Laisser les valeurs null telles quelles
+            Image = m.Image,
             Ingredients = m.MocktailIngredients.Select(mi => new MocktailIngredientDto
             {
-                Name = mi.Ingredient.name,
-                Quantity = mi.quantity,
-                Unit = mi.unit,
-                Allergen = mi.Ingredient.allergen ?? "none" // Ajout de l'allergène
+                Name = mi.Ingredient.Name,
+                Quantity = mi.Quantity,
+                Unit = mi.Unit,
+                Allergen = mi.Ingredient.Allergen ?? "none" // Ajout de l'allergène
             }).ToList()
         }).ToList();
     }
@@ -45,16 +45,16 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
     private bool IsAvailable(Mocktail mocktail)
     {
         // Si forceAvailable est explicitement false, le mocktail est forcé indisponible
-        if (mocktail.forceAvailable == false)
+        if (mocktail.ForceAvailable == false)
             return false;
             
         // Si forceAvailable est true, le mocktail est toujours disponible
-        if (mocktail.forceAvailable == true)
+        if (mocktail.ForceAvailable == true)
             return true;
             
         // Si forceAvailable est null, vérifier le stock des ingrédients
         return mocktail.MocktailIngredients.All(mi => 
-            mi.Ingredient.quantity >= mi.quantity
+            mi.Ingredient.Quantity >= mi.Quantity
         );
     }
     

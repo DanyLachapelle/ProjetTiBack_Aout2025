@@ -33,37 +33,37 @@ namespace Application.Sales.query.GetSalesByDate;
             // 4. Mapper les items si demandé
             if (query.IncludeItems)
             {
-                output.sales = sales.Select(s => new SaleDto
+                output.Sales = sales.Select(s => new SaleDto
                 {
-                    id = s.Id,
-                    tableNumber = s.TableNumber ?? string.Empty,
-                    totalAmount = s.TotalAmount,
-                    saleDate = s.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                    status = s.status ?? "Pending",
-                    order_timer = s.order_timer,
-                    items = s.SaleItems?.Where(si => si != null).Select(i => new SaleItemDto
+                    Id = s.Id,
+                    TableNumber = s.TableNumber ?? string.Empty,
+                    TotalAmount = s.TotalAmount,
+                    SaleDate = s.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    Status = s.Status ?? "Pending",
+                    OrderTimer = s.OrderTimer,
+                    Items = s.SaleItems?.Where(si => si != null).Select(i => new SaleItemDto
                     {
-                        id = i.Id,
-                        mocktailId = i.MocktailId,
-                        mocktailName = i.Mocktail?.name ?? "Mocktail supprimé",
-                        quantity = i.Quantity,
-                        unitPrice = i.Mocktail?.price ?? 0,
-                        itemTotal = i.ItemTotal
+                        Id = i.Id,
+                        MocktailId = i.MocktailId,
+                        MocktailName = i.Mocktail?.Name ?? "Mocktail supprimé",
+                        Quantity = i.Quantity,
+                        UnitPrice = i.Mocktail?.Price ?? 0,
+                        ItemTotal = i.ItemTotal
                     }).ToList() ?? new List<SaleItemDto>()
                 }).ToList();
             }
             else
             {
                 // Version sans les items
-                output.sales = sales.Select(s => new SaleDto
+                output.Sales = sales.Select(s => new SaleDto
                 {
-                    id = s.Id,
-                    tableNumber = s.TableNumber ?? string.Empty,
-                    totalAmount = s.TotalAmount,
-                    saleDate = s.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                    status = s.status ?? "Pending",
-                    order_timer = s.order_timer,
-                    items = new List<SaleItemDto>()
+                    Id = s.Id,
+                    TableNumber = s.TableNumber ?? string.Empty,
+                    TotalAmount = s.TotalAmount,
+                    SaleDate = s.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    Status = s.Status ?? "Pending",
+                    OrderTimer = s.OrderTimer,
+                    Items = new List<SaleItemDto>()
                 }).ToList();
             }
 

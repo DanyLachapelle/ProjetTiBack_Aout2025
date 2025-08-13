@@ -14,7 +14,7 @@ public class DeleteIngredientHandler:ICommandHandler<DeleteIngredientCommand,Del
     }
     public DeleteIngredientOutput Handle(DeleteIngredientCommand command)
     {
-        var ingredient = _ingredientRepository.GetIngredientById(command.id);
+        var ingredient = _ingredientRepository.GetIngredientById(command.Id);
         if (ingredient == null)
         {
             return new DeleteIngredientOutput

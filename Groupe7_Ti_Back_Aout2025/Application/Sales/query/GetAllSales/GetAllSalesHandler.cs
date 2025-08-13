@@ -34,20 +34,20 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                     
                     var saleDto = new SaleDto
                     {
-                        id = sale.Id,
-                        tableNumber = sale.TableNumber ?? string.Empty,
-                        totalAmount = sale.TotalAmount,
-                        saleDate = sale.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                        status = sale.status ?? "Pending",
-                        order_timer = sale.order_timer,
-                        items = saleItems?.Select(i => new SaleItemDto
+                        Id = sale.Id,
+                        TableNumber = sale.TableNumber ?? string.Empty,
+                        TotalAmount = sale.TotalAmount,
+                        SaleDate = sale.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                        Status = sale.Status ?? "Pending",
+                        OrderTimer = sale.OrderTimer,
+                        Items = saleItems?.Select(i => new SaleItemDto
                         {
-                            id = i.Id,
-                            mocktailId = i.MocktailId,
-                            mocktailName = i.Mocktail?.name ?? "Unknown Mocktail",
-                            quantity = i.Quantity,
-                            unitPrice = i.Mocktail?.price ?? 0,
-                            itemTotal = i.ItemTotal
+                            Id = i.Id,
+                            MocktailId = i.MocktailId,
+                            MocktailName = i.Mocktail?.Name ?? "Unknown Mocktail",
+                            Quantity = i.Quantity,
+                            UnitPrice = i.Mocktail?.Price ?? 0,
+                            ItemTotal = i.ItemTotal
                         }).ToList() ?? new List<SaleItemDto>()
                     };
                     
@@ -59,13 +59,13 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                     // Créer la vente sans items en cas d'erreur
                     var saleDto = new SaleDto
                     {
-                        id = sale.Id,
-                        tableNumber = sale.TableNumber ?? string.Empty,
-                        totalAmount = sale.TotalAmount,
-                        saleDate = sale.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                        status = sale.status ?? "Pending",
-                        order_timer = sale.order_timer,
-                        items = new List<SaleItemDto>()
+                        Id = sale.Id,
+                        TableNumber = sale.TableNumber ?? string.Empty,
+                        TotalAmount = sale.TotalAmount,
+                        SaleDate = sale.SaleDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                        Status = sale.Status ?? "Pending",
+                        OrderTimer = sale.OrderTimer,
+                        Items = new List<SaleItemDto>()
                     };
                     
                     salesWithItems.Add(saleDto);
@@ -75,10 +75,10 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
             // 3. Préparer la réponse
             var output = new GetAllSalesOutput
             {
-                sales = salesWithItems
+                Sales = salesWithItems
             };
 
-            Console.WriteLine($"GetAllSalesHandler: {output.sales.Count} ventes dans la réponse");
+            Console.WriteLine($"GetAllSalesHandler: {output.Sales.Count} ventes dans la réponse");
             return output;
         }
         catch (Exception ex)

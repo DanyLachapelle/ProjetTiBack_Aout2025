@@ -59,7 +59,7 @@ public class MocktailCommandController:ControllerBase
     {
         try
         {
-            command.id = id; // injecte l'id du route dans la commande
+            command.Id = id; // injecte l'id du route dans la commande
             var result = _mocktailCommandProcessor.UpdateMocktail(command);
             return Ok(result);
         }

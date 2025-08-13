@@ -45,7 +45,7 @@ public class MocktailRepository : IMocktailRepository
         return _context.Mocktails
             .Include(m => m.MocktailIngredients)
             .ThenInclude(mi => mi.Ingredient)
-            .FirstOrDefault(m => m.id == id);
+            .FirstOrDefault(m => m.Id == id);
     }
 
     // public async Task<Domain.mocktail> CreateAsync(Domain.mocktail mocktail)
@@ -95,7 +95,7 @@ public class MocktailRepository : IMocktailRepository
 
     public async Task<bool> ExistsAsync(int id)
     {
-        return await _context.Mocktails.AnyAsync(m => m.id == id);
+        return await _context.Mocktails.AnyAsync(m => m.Id == id);
     }
 
     public async Task<IEnumerable<Domain.Ingredient>> GetAllIngredientsAsync()
@@ -105,7 +105,7 @@ public class MocktailRepository : IMocktailRepository
     
     public Domain.Ingredient? GetIngredientByName(string name)
     {
-        return _context.Ingredients.FirstOrDefault(i => i.name == name);
+        return _context.Ingredients.FirstOrDefault(i => i.Name == name);
     }
 
     public Domain.Ingredient AddIngredient(Domain.Ingredient ingredient)

@@ -123,7 +123,7 @@ public class IngredientCommandController:ControllerBase
 
         try
         {
-            var commands = new DecreaseIngredientQuantityCommand() {Id = id, quantity = command};
+            var commands = new DecreaseIngredientQuantityCommand() {Id = id, Quantity = command};
             var result = _ingredientCommandsProcessor.DecreaseIngredientQuantity(id, commands);
             return Ok(result);
         }

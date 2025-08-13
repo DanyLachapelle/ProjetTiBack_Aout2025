@@ -23,13 +23,13 @@ public class IngredientGetAllHandler: IQueryHandler<IngredientGetAllQuery, Ingre
 
         var ingredientDtos = ingredients.Select(i => new IngredientDto
         {
-            id = i.id,
-            name = i.name,
-            quantity = i.quantity,
-            restock_threshold = i.restock_threshold,
-            unit = i.unit,
-            allergen = i.allergen ?? "none", 
-            last_modified_at = i.last_modified_at,
+            Id = i.Id,
+            Name = i.Name,
+            Quantity = i.Quantity,
+            RestockThreshold = i.RestockThreshold,
+            Unit = i.Unit,
+            Allergen = i.Allergen ?? "none", 
+            LastModifiedAt = i.LastModifiedAt,
             // plus besoin de StockStatus ici, c’est calculé dans le DTO
         }).ToList();
 

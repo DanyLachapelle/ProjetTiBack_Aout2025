@@ -14,7 +14,7 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
     }
     public UpdateMocktailOutput Handle(UpdateMocktailCommand command)
     {
-        var mocktail = _mocktailRepository.GetMocktailById(command.id);
+        var mocktail = _mocktailRepository.GetMocktailById(command.Id);
         if (mocktail == null)
         {
             return new UpdateMocktailOutput
@@ -25,11 +25,11 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
         }
 
         // Mise à jour des propriétés classiques
-        mocktail.name = command.name;
-        mocktail.description = command.description;
-        mocktail.price = command.price;
-        mocktail.image = command.image;
-        mocktail.forceAvailable = command.forceAvailable;
+        mocktail.Name = command.Name;
+        mocktail.Description = command.Description;
+        mocktail.Price = command.Price;
+        mocktail.Image = command.Image;
+        mocktail.ForceAvailable = command.ForceAvailable;
 
         // --- Mise à jour des ingrédients ---
 
@@ -42,7 +42,7 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
         foreach (var ingredientDto in command.Ingredients)
         {
             // Trouver l'ingrédient existant en base
-            var ingredient = allIngredients.FirstOrDefault(i => i.name == ingredientDto.Name);
+            var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientDto.Name);
             if (ingredient == null)
             {
                 // Option : ajouter un nouvel ingrédient ou retourner une erreur
@@ -57,8 +57,8 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
             {
                 Mocktail = mocktail,
                 Ingredient = ingredient,
-                quantity = ingredientDto.Quantity,
-                unit = ingredientDto.Unit
+                Quantity = ingredientDto.Quantity,
+                Unit = ingredientDto.Unit
             };
 
             mocktail.MocktailIngredients.Add(mocktailIngredient);

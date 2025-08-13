@@ -6,11 +6,20 @@ namespace Domain;
 
 public class mocktail_ingredient
 {
-    public int id { get; set; }
-    public int mocktail_id { get; set; }
-    public int ingredient_id { get; set; }
-    public decimal quantity { get; set; }
-    public string unit { get; set; } = string.Empty;
+    [Column("id")]
+    public int Id { get; set; }
+    
+    [Column("mocktail_id")]
+    public int MocktailId { get; set; }
+    
+    [Column("ingredient_id")]
+    public int IngredientId { get; set; }
+    
+    [Column("quantity")]
+    public decimal Quantity { get; set; }
+    
+    [Column("unit")]
+    public string Unit { get; set; } = string.Empty;
 
     // Navigation properties
     [JsonIgnore]

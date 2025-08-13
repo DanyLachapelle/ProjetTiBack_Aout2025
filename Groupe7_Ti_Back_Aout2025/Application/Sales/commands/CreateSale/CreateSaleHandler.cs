@@ -28,8 +28,8 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
         {
             TableNumber = command.TableNumber,
             SaleDate = DateTime.Now,
-            status = "Pending", 
-            order_timer = 15
+            Status = "Pending", 
+            OrderTimer = 15
         };
 
         // Ajout des items
@@ -56,8 +56,8 @@ public class CreateSaleHandler : ICommandHandler<CreateSaleCommand, CreateSaleOu
 
         return new CreateSaleOutput
         {
-            id = createdSale.Id,
-            totalAmount = createdSale.TotalAmount
+            Id = createdSale.Id,
+            TotalAmount = createdSale.TotalAmount
         };
     }
 }

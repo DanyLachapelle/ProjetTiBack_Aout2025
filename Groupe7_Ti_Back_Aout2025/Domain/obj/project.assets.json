@@ -56,19 +56,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\laros\\.nuget\\packages\\": {}
+    "C:\\Users\\guill\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\laros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\ProjetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\laros\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -91,7 +91,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -118,7 +119,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\laros\\.dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

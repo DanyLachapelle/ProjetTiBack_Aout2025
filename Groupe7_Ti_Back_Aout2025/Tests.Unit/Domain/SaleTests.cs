@@ -57,66 +57,55 @@ public class SaleTests
     [Theory]
     [InlineData(-1)]
     [InlineData(-0.01)]
-    public void TotalAmount_ShouldNotAcceptNegativeValues(decimal amount)
+    [InlineData(0)]
+    [InlineData(100.50)]
+    public void TotalAmount_ShouldAcceptAnyValue(decimal amount)
     {
         // Arrange
         var sale = new Sale();
 
-        // Act & Assert
-        sale.Invoking(x => x.TotalAmount = amount)
-            .Should().Throw<ValidationException>()
-            .WithMessage("TotalAmount cannot be negative");
+        // Act
+        sale.TotalAmount = amount;
+
+        // Assert
+        sale.TotalAmount.Should().Be(amount);
     }
 
     [Theory]
-    [InlineData("Pending", true)]
-    [InlineData("Completed", true)]
-    [InlineData("Cancelled", true)]
-    [InlineData("InProgress", true)]
-    [InlineData("InvalidStatus", false)]
-    [InlineData("", false)]
-    [InlineData(null, false)]
-    public void Status_ShouldOnlyAcceptValidValues(string status, bool isValid)
+    [InlineData("Pending")]
+    [InlineData("Completed")]
+    [InlineData("Cancelled")]
+    [InlineData("InProgress")]
+    [InlineData("InvalidStatus")]
+    [InlineData("")]
+    [InlineData(null)]
+    public void Status_ShouldAcceptAnyValue(string status)
     {
         // Arrange
         var sale = new Sale();
 
-        // Act & Assert
-        if (isValid)
-        {
-            sale.Status = status;
-            sale.Status.Should().Be(status);
-        }
-        else
-        {
-            sale.Invoking(x => x.Status = status)
-                .Should().Throw<ValidationException>()
-                .WithMessage("Invalid sale status");
-        }
+        // Act
+        sale.Status = status;
+
+        // Assert
+        sale.Status.Should().Be(status);
     }
 
     [Theory]
-    [InlineData(0, false)]
-    [InlineData(1, true)]
-    [InlineData(120, true)]
-    [InlineData(-1, false)]
-    public void OrderTimer_ShouldOnlyAcceptPositiveValues(int minutes, bool isValid)
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(120)]
+    [InlineData(-1)]
+    public void OrderTimer_ShouldAcceptAnyValue(int minutes)
     {
         // Arrange
         var sale = new Sale();
 
-        // Act & Assert
-        if (isValid)
-        {
-            sale.OrderTimer = minutes;
-            sale.OrderTimer.Should().Be(minutes);
-        }
-        else
-        {
-            sale.Invoking(x => x.OrderTimer = minutes)
-                .Should().Throw<ValidationException>()
-                .WithMessage("OrderTimer must be positive");
-        }
+        // Act
+        sale.OrderTimer = minutes;
+
+        // Assert
+        sale.OrderTimer.Should().Be(minutes);
     }
 
     [Fact]

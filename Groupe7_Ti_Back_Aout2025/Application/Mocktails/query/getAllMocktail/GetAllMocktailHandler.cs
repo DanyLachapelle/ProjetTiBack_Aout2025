@@ -47,10 +47,20 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
     {
         
         if (mocktail.MocktailIngredients.Any(mi =>
-                mi.Ingredient.Quantity == 0 || 
-                mi.Ingredient.Quantity <= mi.Ingredient.RestockThreshold))
+                mi.Ingredient.Quantity == 0 ))
         {
             return false;
+        }
+
+        foreach (var mi in mocktail.MocktailIngredients)
+        {
+            var stock = mi.Ingredient.Quantity;
+            var limit = mi.Ingredient.RestockThreshold;
+
+            // Calcul du statut
+            if (stock < limit * 1.5m) // critical
+                return false; // on bloque si un ingrédient est critique
+            // 'warning' et 'good' ne bloquent pas la disponibilité
         }
         
         // Si forceAvailable est explicitement false, le mocktail est forcé indisponible

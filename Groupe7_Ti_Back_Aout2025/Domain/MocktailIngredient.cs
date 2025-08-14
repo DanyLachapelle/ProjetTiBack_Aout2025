@@ -46,6 +46,7 @@ public class mocktail_ingredient
         }
     }    
 
+    
     public virtual Mocktail Mocktail
     {
         get => _mocktail;

@@ -45,6 +45,14 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
 
     private bool IsAvailable(Mocktail mocktail)
     {
+        
+        if (mocktail.MocktailIngredients.Any(mi =>
+                mi.Ingredient.Quantity == 0 || 
+                mi.Ingredient.Quantity <= mi.Ingredient.RestockThreshold))
+        {
+            return false;
+        }
+        
         // Si forceAvailable est explicitement false, le mocktail est forcé indisponible
         if (mocktail.ForceAvailable == false)
             return false;

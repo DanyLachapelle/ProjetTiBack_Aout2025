@@ -21,4 +21,6 @@ public class MocktailIngredientDto
     public decimal Quantity { get; set; }
     public string Unit { get; set; } = string.Empty;
     public string Allergen { get; set; } = "none"; // Ajout du champ allergène
+    
+    
 } 

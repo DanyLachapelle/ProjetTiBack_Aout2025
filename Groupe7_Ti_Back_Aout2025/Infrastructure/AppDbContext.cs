@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.User;
 
-public class DbContext:Microsoft.EntityFrameworkCore.DbContext
+public class AppDbContext:Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<Domain.User_account> Users { get; set; }
     public DbSet<Domain.Mocktail> Mocktails { get; set; }
@@ -16,7 +16,7 @@ public class DbContext:Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Domain.SaleItem> SaleItems { get; set; }
     
     private readonly ILoggerFactory _loggerFactory;
-    public DbContext(DbContextOptions<DbContext> options, ILoggerFactory loggerFactory) 
+    public AppDbContext(DbContextOptions<AppDbContext> options, ILoggerFactory loggerFactory) 
         : base(options)
     {
         _loggerFactory = loggerFactory;

@@ -1,14 +1,14 @@
 using Domain;
+using Infrastructure.User;
 using Microsoft.EntityFrameworkCore;
-using DbContext = Infrastructure.User.DbContext;
 
 namespace Infrastructure.Sale;
 
     public class SaleItemRepository : ISaleItemRepository
     {
-        private readonly DbContext _context;
+        private readonly AppDbContext _context;
 
-        public SaleItemRepository(DbContext context)
+        public SaleItemRepository(AppDbContext context)
         {
             _context = context;
         }

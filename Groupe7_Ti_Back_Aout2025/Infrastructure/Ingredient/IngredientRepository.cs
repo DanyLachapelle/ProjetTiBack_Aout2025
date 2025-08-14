@@ -9,9 +9,9 @@ namespace Infrastructure.Ingredient;
 
 public class IngredientRepository:IIngredientRepository
 {
-    private readonly DbContext _context;
+    private readonly AppDbContext _context;
     
-    public IngredientRepository(DbContext context)
+    public IngredientRepository(AppDbContext context)
     {
         _context = context;
     }

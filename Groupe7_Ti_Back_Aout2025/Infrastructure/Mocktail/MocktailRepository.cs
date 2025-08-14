@@ -4,15 +4,14 @@ using System.Threading.Tasks;
 using Domain;
 using Infrastructure.User;
 using Microsoft.EntityFrameworkCore;
-using DbContext = Infrastructure.User.DbContext;
 
 namespace Infrastructure.Mocktail;
 
 public class MocktailRepository : IMocktailRepository
 {
-    private readonly DbContext _context;
+    private readonly AppDbContext _context;
 
-    public MocktailRepository(DbContext context)
+    public MocktailRepository(AppDbContext context)
     {
         _context = context;
     }

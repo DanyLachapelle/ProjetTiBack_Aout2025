@@ -33,6 +33,7 @@ public class GetAllMocktailHandler:IQueryHandler<GetAllMocktailQuery, List<Mockt
             Image = m.Image,
             Ingredients = m.MocktailIngredients.Select(mi => new MocktailIngredientDto
             {
+                Id = mi.Ingredient.Id,
                 Name = mi.Ingredient.Name,
                 Quantity = mi.Quantity,
                 Unit = mi.Unit,

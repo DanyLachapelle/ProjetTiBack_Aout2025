@@ -58,7 +58,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using DbContext = Infrastructure.User.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -106,7 +105,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 // USER
-builder.Services.AddScoped<DbContext>();
+builder.Services.AddScoped<AppDbContext>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserAccountCommandProcessor>();
@@ -137,11 +136,17 @@ builder.Services.AddScoped<ICommandHandler<UpdateMocktailCommand, UpdateMocktail
 builder.Services.AddScoped<IQueryHandler<GetAllMocktailQuery, List<MocktailDto>>, GetAllMocktailHandler>();
 
 
-builder.Services.AddDbContext<DbContext>(dbContextBuilder =>
+builder.Services.AddDbContextPool<AppDbContext>(options =>
 {
-    dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlServerOptions =>
+        {
+            sqlServerOptions.EnableRetryOnFailure(5, TimeSpan.FromSeconds(30), null);
+            sqlServerOptions.CommandTimeout(60);
+        });
+    options.EnableSensitiveDataLogging();
 });
-
 // Email service (Gmail SMTP)
 builder.Services.AddScoped<IEmailService, EmailService>();
 

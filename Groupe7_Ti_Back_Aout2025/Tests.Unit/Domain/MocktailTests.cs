@@ -17,7 +17,6 @@ public class MocktailTests
         mocktail.Description.Should().BeEmpty();
         mocktail.Price.Should().Be(0);
         mocktail.Image.Should().BeNull();
-        mocktail.ForceAvailable.Should().BeFalse();
         mocktail.MocktailIngredients.Should().NotBeNull();
         mocktail.MocktailIngredients.Should().BeEmpty();
     }

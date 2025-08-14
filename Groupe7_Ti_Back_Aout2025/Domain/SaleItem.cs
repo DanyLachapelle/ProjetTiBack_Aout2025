@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -6,6 +5,9 @@ namespace Domain;
 
 public class SaleItem
 {
+    private Sale _sale;
+    private Mocktail _mocktail;
+
     [Column("id")]
     public int Id { get; set; }
     
@@ -23,21 +25,30 @@ public class SaleItem
 
     // Navigation properties
     [JsonIgnore]
-    public virtual Sale Sale { get; set; } = null!;
-    public virtual Mocktail Mocktail { get; set; }
-    
-    [NotMapped]
-    public decimal TotalAmount { get; set; }
-    
-    public void CalculateTotal()
+    public virtual Sale Sale
     {
-        if (Mocktail == null)
-            throw new InvalidOperationException("Mocktail reference is required");
+        get => _sale;
+        set
+        {
+            _sale = value;
+            SaleId = value?.Id ?? 0;
+        }
+    }
 
-        if (Quantity <= 0)
-            throw new ValidationException("Quantity must be positive");
+    public virtual Mocktail Mocktail
+    {
+        get => _mocktail;
+        set
+        {
+            _mocktail = value;
+            MocktailId = value?.Id ?? 0;
+        }
+    }
 
-        ItemTotal = Mocktail.Price * Quantity;
-        TotalAmount = ItemTotal; // Synchronise les deux propriétés
+    [NotMapped]
+    public decimal TotalAmount
+    {
+        get => ItemTotal;
+        set => ItemTotal = value;
     }
 }

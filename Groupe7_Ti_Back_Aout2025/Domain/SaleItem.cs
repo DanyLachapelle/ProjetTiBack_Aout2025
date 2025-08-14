@@ -5,6 +5,9 @@ namespace Domain;
 
 public class SaleItem
 {
+    private Sale _sale;
+    private Mocktail _mocktail;
+
     [Column("id")]
     public int Id { get; set; }
     
@@ -22,9 +25,30 @@ public class SaleItem
 
     // Navigation properties
     [JsonIgnore]
-    public virtual Sale Sale { get; set; } = null!;
-    public virtual Mocktail Mocktail { get; set; }
-    
+    public virtual Sale Sale
+    {
+        get => _sale;
+        set
+        {
+            _sale = value;
+            SaleId = value?.Id ?? 0;
+        }
+    }
+
+    public virtual Mocktail Mocktail
+    {
+        get => _mocktail;
+        set
+        {
+            _mocktail = value;
+            MocktailId = value?.Id ?? 0;
+        }
+    }
+
     [NotMapped]
-    public decimal TotalAmount { get; set; }
+    public decimal TotalAmount
+    {
+        get => ItemTotal;
+        set => ItemTotal = value;
+    }
 }

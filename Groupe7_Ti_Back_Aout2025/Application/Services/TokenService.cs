@@ -21,7 +21,7 @@ public class TokenService
         _resetTokenExpirationMinutes = int.Parse(configuration["Jwt:ResetTokenExpirationMinutes"] ?? "15");
     }
 
-    public string BuildToken(string key, string issuer, User_account userAccount)
+    public string BuildToken(string key, string issuer, UserAccount userAccount)
     {
         var claims = new[]
         {
@@ -63,7 +63,7 @@ public class TokenService
         return true;
     }
 
-    public string GenerateToken(User_account userAccount)
+    public string GenerateToken(UserAccount userAccount)
     {
         var userLoginQuery = new UserAccountLoginCommand
         {

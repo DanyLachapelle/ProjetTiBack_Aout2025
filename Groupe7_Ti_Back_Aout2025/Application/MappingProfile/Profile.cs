@@ -8,7 +8,7 @@ namespace Application.MappingProfile
     {
         public MappingProfile()
         {
-            CreateMap<Domain.User_account,UserAccountLoginOutput>();
+            CreateMap<Domain.UserAccount,UserAccountLoginOutput>();
         }
     }
 }

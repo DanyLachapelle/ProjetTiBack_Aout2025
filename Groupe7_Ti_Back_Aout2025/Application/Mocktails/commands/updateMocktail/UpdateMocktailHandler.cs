@@ -4,16 +4,21 @@ using Infrastructure.Mocktail;
 
 namespace Application.Mocktails.commands.updateMocktail;
 
-public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput>
+// Handler pour la mise à jour d'un mocktail
+public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput>
 {
+    // Répository pour l'accès aux données
     public readonly IMocktailRepository _mocktailRepository;
     
+    // Injection de dépendance
     public UpdateMocktailHandler(IMocktailRepository mocktailRepository)
     {
         _mocktailRepository = mocktailRepository;
     }
+
     public UpdateMocktailOutput Handle(UpdateMocktailCommand command)
     {
+        // Récupération du mocktail existant
         var mocktail = _mocktailRepository.GetMocktailById(command.Id);
         if (mocktail == null)
         {
@@ -24,28 +29,28 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
             };
         }
 
-        // Mise à jour des propriétés classiques
+        // Mise à jour des propriétés de base
         mocktail.Name = command.Name;
         mocktail.Description = command.Description;
         mocktail.Price = command.Price;
         mocktail.Image = command.Image;
         mocktail.ForceAvailable = command.ForceAvailable;
 
-        // --- Mise à jour des ingrédients ---
+        // --- Gestion des ingrédients ---
+        
+        // Récupération synchrone de tous les ingrédients
+        var allIngredients = _mocktailRepository.GetAllIngredientsAsync().Result;
 
-        // Récupérer tous les ingrédients en base
-        var allIngredients = _mocktailRepository.GetAllIngredientsAsync().Result; // Utiliser .Result pour sync
-
-        // Vider les anciennes associations
+        // Suppression des anciennes associations
         mocktail.MocktailIngredients.Clear();
 
+        // Ajout des nouveaux ingrédients
         foreach (var ingredientDto in command.Ingredients)
         {
-            // Trouver l'ingrédient existant en base
             var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientDto.Name);
             if (ingredient == null)
             {
-                // Option : ajouter un nouvel ingrédient ou retourner une erreur
+                // Gestion d'erreur si ingrédient non trouvé
                 return new UpdateMocktailOutput
                 {
                     Success = false,
@@ -53,18 +58,17 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
                 };
             }
 
-            var mocktailIngredient = new Domain.mocktail_ingredient
+            // Création de la nouvelle association
+            mocktail.MocktailIngredients.Add(new Domain.mocktail_ingredient
             {
                 Mocktail = mocktail,
                 Ingredient = ingredient,
                 Quantity = ingredientDto.Quantity,
                 Unit = ingredientDto.Unit
-            };
-
-            mocktail.MocktailIngredients.Add(mocktailIngredient);
+            });
         }
 
-        // Enregistrer les modifications
+        // Sauvegarde des modifications
         _mocktailRepository.UpdateMocktail(mocktail);
 
         return new UpdateMocktailOutput
@@ -73,5 +77,4 @@ public class UpdateMocktailHandler:ICommandHandler<UpdateMocktailCommand, Update
             Message = "Mocktail updated successfully"
         };
     }
-
 }

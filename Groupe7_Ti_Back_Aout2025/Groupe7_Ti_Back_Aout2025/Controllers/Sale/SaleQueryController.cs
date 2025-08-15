@@ -1,0 +1,113 @@
+using Application.Sales.query;
+using Application.Sales.query.GetAllTables;
+using Application.Sales.query.GetSalesByDate;
+using Application.Sales.query.GetSalesById;
+using Infrastructure.User.Sale;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Application.Sales.query.GetAllSales;
+
+
+namespace Groupe7_Ti_Back_Aout2025.Controllers.Sale;
+
+[ApiController]
+[Route("api/[controller]")]
+public class SaleQueryController: ControllerBase
+{
+    private readonly ISaleRepository _saleRepository;
+    private readonly SalesQueryProcessor _salesQueryProcessor;
+    
+    public SaleQueryController(SalesQueryProcessor salesQueryProcessor, ISaleRepository saleRepository)
+    {
+        _salesQueryProcessor = salesQueryProcessor;
+        _saleRepository = saleRepository;
+    }
+    
+    [HttpGet("GetSaleById")]
+    public IActionResult GetSaleById([FromQuery] int id)
+    {
+        if (id <= 0)
+        {
+            return BadRequest(new { message = "Invalid sale ID." });
+        }
+
+        try
+        {
+            var query = new GetSalesByIdQuery(id);
+            var sale = _salesQueryProcessor.GetSaleById(query);
+
+            if (sale == null)
+            {
+                return NotFound(new { message = "Sale not found." });
+            }
+            return Ok(sale);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error retrieving the sale.", error = ex.Message });
+        }
+    }
+    
+    [HttpGet("GetSalesByDate")]
+    public IActionResult GetSalesByDate([FromQuery] DateTime date)
+    {
+        if (date == default)
+        {
+            return BadRequest(new { message = "Invalid date." });
+        }
+
+        try
+        {
+            // Toujours inclure les items dans la requête
+            var query = new GetSalesByDateQuery(date, includeItems: true);
+            var sales = _salesQueryProcessor.GetSalesByDate(query);
+
+            if (sales == null || !sales.Sales.Any())
+            {
+                return NotFound(new { message = "No sales found for this date." });
+            }
+            return Ok(sales);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error retrieving sales.", error = ex.Message });
+        }
+    }
+    
+    [HttpGet("GetAllSales")]
+    public IActionResult GetAllSales()
+    {
+        try
+        {
+            var query = new GetAllSalesQuery();
+            var sales = _salesQueryProcessor.GetAllSales(query);
+
+            // Retourner toujours un objet avec un tableau (vide ou non)
+            return Ok(sales);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error retrieving sales.", error = ex.Message });
+        }
+    }
+
+    [HttpGet("GetAllTables")]
+    public IActionResult GetAllTables()
+    {
+        try
+        {
+            var query = new GetAllTablesQuery();
+            var tables = _salesQueryProcessor.GetAllTables(query);
+
+            if (tables == null || !tables.Tables.Any())
+            {
+                return NotFound(new { message = "No tables found." });
+            }
+            return Ok(tables);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error retrieving tables.", error = ex.Message });
+        }
+    }
+}

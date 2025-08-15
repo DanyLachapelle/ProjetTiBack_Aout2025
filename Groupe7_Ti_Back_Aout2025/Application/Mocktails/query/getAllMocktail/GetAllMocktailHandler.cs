@@ -42,6 +42,7 @@ public class GetAllMocktailHandler : IQueryHandler<GetAllMocktailQuery, List<Moc
             // Map ingredients with their details
             Ingredients = m.MocktailIngredients.Select(mi => new MocktailIngredientDto
             {
+                Id = mi.Ingredient.Id,
                 Name = mi.Ingredient.Name,
                 Quantity = mi.Quantity,
                 Unit = mi.Unit,

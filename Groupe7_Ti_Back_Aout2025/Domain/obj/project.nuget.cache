@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IEAj7l+fnO8=",
+  "dgSpecHash": "6X8xDTpv0Vw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\laros\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+    "C:\\Users\\AsusT\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
   ],
   "logs": []
 }

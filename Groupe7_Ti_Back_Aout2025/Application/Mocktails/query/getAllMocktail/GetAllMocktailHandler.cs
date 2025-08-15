@@ -53,6 +53,7 @@ public class GetAllMocktailHandler : IQueryHandler<GetAllMocktailQuery, List<Moc
     // Helper method to determine mocktail availability
     private bool IsAvailable(Mocktail mocktail)
     {
+        
         // Explicitly forced unavailable
         if (mocktail.ForceAvailable == false)
             return false;

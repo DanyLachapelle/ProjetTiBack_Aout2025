@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="Test unitaire">
+    <list default="true" id="f65ff58f-1f02-4740-86cb-4865dd20fbe2" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Groupe7_Ti_Back_Aout2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/DecreaseIngredientQuantity/DecreaseIngredientQuantityHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/IngredientCommandProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateLimitIngredient/UpdateLimitIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateLimitIngredient/UpdateLimitIngredientHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateQuantityIngredient/UpdateQuantityIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/UpdateQuantityIngredient/UpdateQuantityIngredientHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/createIngredient/CreateIngredientHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Ingredient/commands/deleteIngredient/DeleteIngredientHandler.cs" afterDir="false" />
@@ -23,48 +22,24 @@
       <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/createMocktail/CreateMocktailHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/deleteMocktail/DeleteMocktailHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/commands/updateMocktail/UpdateMocktailHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktails/query/MocktailQueryProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/query/MocktailQueryProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Mocktails/query/getbyidMocktail/GetbyidMocktailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Mocktails/query/getbyidMocktail/GetbyidMocktailHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/AdvanceSaleStatus/AdvanceSaleStatusHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/CreateSale/CreateSaleHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Sales/commands/DeleteSale/DeleteSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/DeleteSale/DeleteSaleHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Sales/commands/SaleCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/SaleCommandProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/commands/UpdateSale/UpdateSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetAllSales/GetAllSalesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetAllTables/GetAllTablesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetAllTables/GetAllTablesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesByDate/GetSalesByDateHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/GetSalesById/GetSalesByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Sales/query/SaleQueryProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Sales/query/SaleQueryProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/AddItemToSale/AddItemToSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/RemoveItemFromSale/RemoveItemFromSaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/RemoveItemFromSale/RemoveItemFromSaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/SaleItemCommandProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/SaleItemCommandProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/commands/UpdateSaleItem/UpdateSaleItemHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetAllItemBySale/GetAllItemBySaleHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/query/GetItemBySaleById/GetItemBySaleByIdHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/SalesItem/query/SaleItemQueryProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SalesItem/query/SaleItemQueryProcessor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/EmailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/EmailService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/TokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/changePassword/UserAccountChangePasswordHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/login/UserAccountLoginHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/User_account/commands/resetPassword/UserAccountResetPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/User_account/commands/resetPassword/UserAccountResetPasswordHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/Groupe7_Ti_Back_Aout2025.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,39 +71,24 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Services/TokenService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Services/TokenService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/UserAccountCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/UserAccountCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/UserAccountCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/UserAccountCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/Ingredient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/Ingredient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/Mocktail.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/Mocktail.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/MocktailIngredient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/MocktailIngredient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/User_account.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Domain/User_account.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/IngredientController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/IngredientController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/MocktailController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/MocktailController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Controllers/User/UserCommandController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/Mocktail/MocktailRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/Mocktail/MocktailRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/UserAccount/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/UserAccount/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/UserAccount/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Ingredient/commands/IngredientCommandProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/Mocktails/query/getAllMocktail/GetAllMocktailHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/laros/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Application/User_account/commands/forgotPassword/UserAccountForgotPasswordHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/UserAccount/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ravends/RiderProjects/ProjetTiBack_Aout2025/Groupe7_Ti_Back_Aout2025/Infrastructure/UserAccount/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -149,24 +109,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Groupe7_Ti_Back_Aout2025: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Groupe7_Ti_Back_Aout2025: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sean&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;RiderIisExpressOptionsPageId&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Groupe7_Ti_Back_Aout2025: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.Groupe7_Ti_Back_Aout2025: http.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "RiderIisExpressOptionsPageId",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Groupe7_Ti_Back_Aout2025: http">
     <configuration name="Groupe7_Ti_Back_Aout2025: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Groupe7_Ti_Back_Aout2025/Groupe7_Ti_Back_Aout2025.csproj" />
@@ -567,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755126532654</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="merge">
+      <option name="closed" value="true" />
+      <created>1755271180018</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1755271180018</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +584,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Ingredient db modifier" />
     <MESSAGE value="correction mocktail et ingredient" />
     <MESSAGE value="mise a jour pour docker" />
     <MESSAGE value="sales updates" />
@@ -641,6 +608,7 @@
     <MESSAGE value="mise a jour du back" />
     <MESSAGE value="fix french to english" />
     <MESSAGE value="Test unitaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test unitaire" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
 </project>

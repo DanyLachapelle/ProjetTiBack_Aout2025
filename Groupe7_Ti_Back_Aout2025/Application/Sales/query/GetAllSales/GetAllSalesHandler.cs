@@ -5,31 +5,32 @@ using Infrastructure.User.Sale;
 
 namespace Application.Sales.query.GetAllSales;
 
-public class GetAllSalesHandler:IQueryHandler<GetAllSalesQuery, GetAllSalesOutput>
+public class GetAllSalesHandler : IQueryHandler<GetAllSalesQuery, GetAllSalesOutput>
 {
     private readonly ISaleRepository _saleRepository;
     
-public GetAllSalesHandler(ISaleRepository saleRepository)
+    public GetAllSalesHandler(ISaleRepository saleRepository)
     {
         _saleRepository = saleRepository;
     }
+    
     public GetAllSalesOutput Handle(GetAllSalesQuery query)
     {
         try
         {
-            // 1. Récupérer toutes les ventes depuis le repository (méthode simple)
+            // 1. Get all sales from repository (simple method)
             var sales = _saleRepository.GetAllSales();
             
-            Console.WriteLine($"GetAllSalesHandler: {sales.Count()} ventes récupérées");
+            Console.WriteLine($"GetAllSalesHandler: {sales.Count()} sales retrieved");
 
-            // 2. Pour chaque vente, récupérer ses items séparément 
+            // 2. For each sale, get its items separately
             var salesWithItems = new List<SaleDto>();
             
             foreach (var sale in sales)
             {
                 try
                 {
-                    // Récupérer les items de cette vente spécifiquement
+                    // Get items for this specific sale
                     var saleItems = _saleRepository.GetSaleItemsBySaleId(sale.Id);
                     
                     var saleDto = new SaleDto
@@ -56,7 +57,7 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 catch (Exception itemEx)
                 {
                     Console.WriteLine($"Error loading items for sale {sale.Id}: {itemEx.Message}");
-                    // Créer la vente sans items en cas d'erreur
+                    // Create sale without items in case of error
                     var saleDto = new SaleDto
                     {
                         Id = sale.Id,
@@ -72,18 +73,18 @@ public GetAllSalesHandler(ISaleRepository saleRepository)
                 }
             }
 
-            // 3. Préparer la réponse
+            // 3. Prepare response
             var output = new GetAllSalesOutput
             {
                 Sales = salesWithItems
             };
 
-            Console.WriteLine($"GetAllSalesHandler: {output.Sales.Count} sale in response");
+            Console.WriteLine($"GetAllSalesHandler: {output.Sales.Count} sales in response");
             return output;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"error in GetAllSalesHandler: {ex.Message}");
+            Console.WriteLine($"Error in GetAllSalesHandler: {ex.Message}");
             Console.WriteLine($"StackTrace: {ex.StackTrace}");
             throw;
         }

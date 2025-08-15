@@ -3,26 +3,26 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.deleteIngredient;
 
-// Handler pour la suppression d'un ingrédient
+// Handler for ingredient deletion
 public class DeleteIngredientHandler : ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> 
 {
-    // Répository pour l'accès aux données
+    // Repository for data access
     private readonly IIngredientRepository _ingredientRepository;
     
-    // Injection du repository
+    // Repository injection
     public DeleteIngredientHandler(IIngredientRepository ingredientRepository)
     {
         _ingredientRepository = ingredientRepository;
     }
 
-    // Traitement de la commande de suppression
+    // Handles the delete command
     public DeleteIngredientOutput Handle(DeleteIngredientCommand command)
     {
-        // Vérification de l'existence de l'ingrédient
+        // Verify ingredient exists
         var ingredient = _ingredientRepository.GetIngredientById(command.Id);
         if (ingredient == null)
         {
-            // Retour d'erreur si non trouvé
+            // Return error if not found
             return new DeleteIngredientOutput
             {
                 Success = false,
@@ -30,10 +30,10 @@ public class DeleteIngredientHandler : ICommandHandler<DeleteIngredientCommand, 
             };
         }
 
-        // Suppression effective
+        // Perform deletion
         _ingredientRepository.DeleteIngredient(ingredient);
 
-        // Confirmation de suppression
+        // Return success confirmation
         return new DeleteIngredientOutput
         {
             Success = true,

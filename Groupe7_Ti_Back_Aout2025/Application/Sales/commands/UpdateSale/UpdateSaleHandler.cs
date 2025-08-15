@@ -5,7 +5,7 @@ using Infrastructure.User.Sale;
 
 namespace Application.Sales.commands.UpdateSale;
 
- public class UpdateSaleHandler : ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>
+public class UpdateSaleHandler : ICommandHandler<UpdateSaleCommand, UpdateSaleOutput>
 {
     private readonly ISaleRepository _saleRepository;
     private readonly IMocktailRepository _mocktailRepository;
@@ -23,20 +23,20 @@ namespace Application.Sales.commands.UpdateSale;
         if (command == null)
             throw new ArgumentNullException(nameof(command));
 
-        // 1. Charger la vente AVEC les items et les mocktails associés
+        // 1. Load the sale WITH items and associated mocktails
         var sale = _saleRepository.GetSaleByIdWithItemsAndMocktails(command.SaleId);
         if (sale == null)
             throw new Exception($"Sale {command.SaleId} not found");
 
-        // 2. Mise à jour du numéro de table
+        // 2. Update table number
         if (!string.IsNullOrWhiteSpace(command.TableNumber))
             sale.TableNumber = command.TableNumber;
 
-        // 2. Mise à jour du statut de la vente
+        // 2. Update sale status
         if (!string.IsNullOrWhiteSpace(command.Status))
             sale.Status = command.Status;
         
-        // 3. Mise à jour des items
+        // 3. Update items
         if (command.UpdatedItems != null && command.UpdatedItems.Any())
         {
             foreach (var itemDto in command.UpdatedItems)
@@ -44,7 +44,7 @@ namespace Application.Sales.commands.UpdateSale;
                 var item = sale.SaleItems.FirstOrDefault(i => i.Id == itemDto.ItemId);
                 if (item == null) continue;
 
-                // a. Vérification et mise à jour du mocktail
+                // a. Verify and update mocktail
                 if (itemDto.NewMocktailId.HasValue)
                 {
                     var newMocktail = _mocktailRepository.GetMocktailById(itemDto.NewMocktailId.Value);
@@ -52,19 +52,19 @@ namespace Application.Sales.commands.UpdateSale;
                         throw new Exception($"Mocktail {itemDto.NewMocktailId} not found");
                     
                     item.MocktailId = newMocktail.Id;
-                    item.Mocktail = newMocktail; // Mise à jour de la référence
+                    item.Mocktail = newMocktail; // Update reference
                 }
 
-                // b. Mise à jour quantité
+                // b. Update quantity
                 if (itemDto.NewQuantity.HasValue)
                     item.Quantity = itemDto.NewQuantity.Value;
             }
 
-            // 4. Recalcul du total BASÉ SUR LE PRIX DU MOCKTAIL
+            // 4. Recalculate total BASED ON MOCKTAIL PRICE
             RecalculateTotal(sale);
         }
 
-        // 5. Sauvegarde
+        // 5. Save changes
         _saleRepository.UpdateSale(sale);
 
         return new UpdateSaleOutput
@@ -81,7 +81,7 @@ namespace Application.Sales.commands.UpdateSale;
         
         foreach (var item in sale.SaleItems)
         {
-            // Récupération du prix via le mocktail associé
+            // Get price via associated mocktail
             if (item.Mocktail == null)
             {
                 item.Mocktail = _mocktailRepository.GetMocktailById(item.MocktailId);

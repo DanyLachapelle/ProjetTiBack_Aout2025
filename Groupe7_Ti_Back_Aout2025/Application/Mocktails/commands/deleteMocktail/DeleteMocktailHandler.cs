@@ -5,38 +5,38 @@ using Infrastructure.Mocktail;
 
 namespace Application.Mocktails.commands.deleteMocktail;
 
-// Handler pour la suppression d'un mocktail
+// Handler for deleting a mocktail
 public class DeleteMocktailHandler : ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput>
 {
-    // Répository pour l'accès aux données des mocktails
+    // Repository for mocktail data access
     private readonly IMocktailRepository _mocktailRepository;
     
-    // Injection de dépendance du repository
+    // Repository dependency injection
     public DeleteMocktailHandler(IMocktailRepository mocktailRepository)
     {
         _mocktailRepository = mocktailRepository;
     }
 
-    // Méthode principale de traitement de la commande
+    // Main command processing method
     public DeleteMocktailOutput Handle(DeleteMocktailCommand command)
     {
-        // Validation de la commande
+        // Command validation
         if (command == null)
             throw new ArgumentNullException(nameof(command), "Command cannot be null");
 
-        // Validation de l'ID
+        // ID validation
         if (command.Id <= 0)
             throw new ArgumentException("Invalid mocktail ID provided", nameof(command.Id));
 
-        // Récupération du mocktail
+        // Retrieving the mocktail
         var mocktail = _mocktailRepository.GetMocktailById(command.Id);
         if (mocktail == null)
             throw new KeyNotFoundException($"Mocktail with ID {command.Id} not found");
 
-        // Suppression effective
+        // Actual deletion
         _mocktailRepository.DeleteMocktail(mocktail);
 
-        // Retour d'une output vide (pattern utile pour les confirmations de suppression)
+        // Returning empty output (useful pattern for deletion confirmations)
         return new DeleteMocktailOutput();
     }
 }

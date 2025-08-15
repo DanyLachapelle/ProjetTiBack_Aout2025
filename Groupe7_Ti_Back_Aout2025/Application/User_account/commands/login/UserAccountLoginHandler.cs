@@ -7,18 +7,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.User.commands.login;
 
-// Handler pour le processus de connexion utilisateur
+// Handles user authentication process
 public class UserAccountLoginHandler : ICommandHandler<UserAccountLoginCommand, UserAccountLoginOutput>
 {
-    // Dépendances injectées
-    public readonly IUserRepository _userRepository;
-    public readonly IMapper _mapper;
+    private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
     private readonly ILogger<UserAccountLoginHandler> _logger;
-    public readonly TokenService _tokenService;
+    private readonly TokenService _tokenService;
     
-    // Initialisation des services
-    public UserAccountLoginHandler(IUserRepository userRepository, IMapper mapper, 
-        TokenService tokenService, ILogger<UserAccountLoginHandler> logger)
+    public UserAccountLoginHandler(
+        IUserRepository userRepository, 
+        IMapper mapper,
+        TokenService tokenService, 
+        ILogger<UserAccountLoginHandler> logger)
     {
         _userRepository = userRepository;
         _mapper = mapper;
@@ -28,39 +29,30 @@ public class UserAccountLoginHandler : ICommandHandler<UserAccountLoginCommand, 
     
     public UserAccountLoginOutput Handle(UserAccountLoginCommand command)
     {
-        _logger.LogInformation("Login attempt with username: {Pseudo}", command.Username);
+        _logger.LogInformation("Login attempt: {Pseudo}", command.Username);
 
-        // Recherche de l'utilisateur
         var user = _userRepository.GetUserByPseudo(command.Username);
 
+        // Validate user exists
         if (user == null)
         {
             _logger.LogWarning("User not found: {Pseudo}", command.Username);
-            throw new InvalidOperationException("Invalid pseudo");
+            throw new InvalidOperationException("Invalid credentials");
         }
 
-        // Vérification du mot de passe
-        if (!VerifyPassword(command.Password, user.Password))
+        // Verify password
+        if (!BCrypt.Net.BCrypt.Verify(command.Password, user.Password))
         {
-            _logger.LogWarning("Authentication failed for: {Pseudo}", command.Username);
-            throw new InvalidOperationException("Invalid password");
+            _logger.LogWarning("Authentication failed: {Pseudo}", command.Username);
+            throw new InvalidOperationException("Invalid credentials");
         }
 
-        _logger.LogInformation("Authentication successful for: {Pseudo}", command.Username);
+        _logger.LogInformation("Authenticated: {Pseudo}", command.Username);
 
-        // Génération du token JWT
-        var token = _tokenService.GenerateToken(user);
-
-        // Mapping vers l'objet de sortie
+        // Generate JWT and map response
         var output = _mapper.Map<UserAccountLoginOutput>(user);
-        output.Token = token;
+        output.Token = _tokenService.GenerateToken(user);
 
         return output;
-    }
-
-    // Méthode utilitaire pour vérifier le mot de passe hashé
-    private bool VerifyPassword(string providedPassword, string storedPasswordHash)
-    {
-        return BCrypt.Net.BCrypt.Verify(providedPassword, storedPasswordHash);
     }
 }

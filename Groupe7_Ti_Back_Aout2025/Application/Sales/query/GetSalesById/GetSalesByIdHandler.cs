@@ -9,6 +9,7 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
 {
     private readonly ISaleRepository _saleRepository;
 
+    // Initialize with sale repository dependency
     public GetSalesByIdHandler(ISaleRepository saleRepository)
     {
         _saleRepository = saleRepository;
@@ -16,11 +17,14 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
 
     public GetSalesByIdOutput Handle(GetSalesByIdQuery query)
     {
+        // Fetch sale with related items from repository
         var sale = _saleRepository.GetByIdWithItems(query.Id);
 
+        // Return null if sale not found
         if (sale == null)
             return null;
 
+        // Map sale data to output DTO
         return new GetSalesByIdOutput
         {
             Id = sale.Id,
@@ -30,6 +34,7 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
             Status = sale.Status ?? "Pending",
             OrderTimer = sale.OrderTimer,
             
+            // Map sale items with null checks
             Items = sale.SaleItems?.Select(i => new SaleItemOutput
             {
                 Id = i.Id,
@@ -41,5 +46,4 @@ public class GetSalesByIdHandler : IQueryHandler<GetSalesByIdQuery, GetSalesById
             }).ToList() ?? new List<SaleItemOutput>()
         };
     }
-
 }

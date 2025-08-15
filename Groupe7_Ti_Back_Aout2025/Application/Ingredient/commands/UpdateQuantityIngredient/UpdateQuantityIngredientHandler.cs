@@ -4,37 +4,37 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.UpdateQuantityIngredient;
 
-// Handler pour la mise à jour de la quantité d'un ingrédient
+// Handler for updating ingredient quantity
 public class UpdateQuantityIngredientHandler : ICommandHandler<UpdateQuantityIngredientCommand, UpdateQuantityIngredientOutput>
 {
-    // Répository pour l'accès aux données des ingrédients
+    // Repository for ingredient data access
     private readonly IIngredientRepository _ingredientRepository;
     
-    // Injection de dépendance du repository
+    // Dependency injection of the repository
     public UpdateQuantityIngredientHandler(IIngredientRepository ingredientRepository)
     {
         _ingredientRepository = ingredientRepository;
     }
 
-    // Méthode principale pour gérer la commande
+    // Main command handling method
     public UpdateQuantityIngredientOutput Handle(UpdateQuantityIngredientCommand command)
     {
-        // Validation de la quantité à ajouter
+        // Validate the amount to add
         if (command.Amount <= 0)
-            throw new ArgumentException("Amount to add must be positive");
+            throw new ArgumentException("Amount to add must be positive", nameof(command.Amount));
 
-        // Récupération de l'ingrédient
+        // Retrieve the ingredient
         var ingredient = _ingredientRepository.GetIngredientById(command.Id);
         if (ingredient == null)
-            throw new ArgumentException("Ingredient not found");
+            throw new ArgumentException("Ingredient not found", nameof(command.Id));
 
-        // Mise à jour de la quantité (logique métier)
+        // Business logic: update quantity
         ingredient.AddQuantity(command.Amount);
         
-        // Persistance de la modification
+        // Persist the changes
         _ingredientRepository.UpdateQuantityIngredient(ingredient);
 
-        // Retour du résultat avec la nouvelle quantité
+        // Return result with new quantity
         return new UpdateQuantityIngredientOutput
         {
             Success = true,

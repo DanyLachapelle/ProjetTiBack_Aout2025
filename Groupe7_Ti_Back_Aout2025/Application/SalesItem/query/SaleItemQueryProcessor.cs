@@ -4,6 +4,7 @@ using Application.Utils;
 
 namespace Application.SalesItem.query;
 
+// Routes sale item queries to appropriate handlers
 public class SaleItemQueryProcessor
 {
     private readonly IQueryHandler<GetAllItemsBySaleQuery, GetAllItemsBySaleOutput> _getAllItemsHandler;
@@ -17,6 +18,7 @@ public class SaleItemQueryProcessor
         _getItemByIdHandler = getItemByIdHandler;
     }
 
+    // Gets all items for a sale
     public GetAllItemsBySaleOutput GetAllItemsBySale(GetAllItemsBySaleQuery query)
     {
         if (query == null)
@@ -25,6 +27,7 @@ public class SaleItemQueryProcessor
         return _getAllItemsHandler.Handle(query);
     }
 
+    // Gets single item by ID within sale context
     public GetItemBySaleByIdOutput GetItemBySaleId(GetItemBySaleByIdQuery query)
     {
         if (query == null)

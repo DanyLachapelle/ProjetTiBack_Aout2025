@@ -5,22 +5,22 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.createIngredient;
 
-// Handler pour la commande de création d'ingrédient
-public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, CreateIngredientOutput>
+// Handler for the ingredient creation command
+public class CreateIngredientHandler : ICommandHandler<CreateIngredientCommand, CreateIngredientOutput>
 {
-    // Répository pour la persistance des ingrédients
+    // Repository for ingredient persistence
     private readonly IIngredientRepository _ingredientRepository;
     
-    // Injection de dépendance du repository
+    // Dependency injection of the repository
     public CreateIngredientHandler(IIngredientRepository ingredientRepository)
     {
         _ingredientRepository = ingredientRepository;
     }
     
-    // Méthode principale pour gérer la commande
+    // Main method to handle the command
     public CreateIngredientOutput Handle(CreateIngredientCommand command)
     {
-        // Création d'un nouvel ingrédient à partir de la commande
+        // Create a new ingredient from the command
         var ingredient = new Domain.Ingredient()
         {
             Name = command.Name,
@@ -30,10 +30,10 @@ public class CreateIngredientHandler:ICommandHandler<CreateIngredientCommand, Cr
             Allergen = command.Allergen
         };
 
-        // Persistance de l'ingrédient
+        // Persist the ingredient
         _ingredientRepository.CreateIngredient(ingredient);
 
-        // Retour des données créées
+        // Return the created data
         return new CreateIngredientOutput
         {
             Name = ingredient.Name,

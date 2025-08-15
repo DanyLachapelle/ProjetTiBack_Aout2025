@@ -4,13 +4,13 @@ using Infrastructure.Mocktail;
 
 namespace Application.Mocktails.commands.updateMocktail;
 
-// Handler pour la mise à jour d'un mocktail
+// Handler for updating a mocktail
 public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput>
 {
-    // Répository pour l'accès aux données
+    // Repository for data access
     public readonly IMocktailRepository _mocktailRepository;
     
-    // Injection de dépendance
+    // Dependency injection
     public UpdateMocktailHandler(IMocktailRepository mocktailRepository)
     {
         _mocktailRepository = mocktailRepository;
@@ -18,7 +18,7 @@ public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, Upda
 
     public UpdateMocktailOutput Handle(UpdateMocktailCommand command)
     {
-        // Récupération du mocktail existant
+        // Retrieving existing mocktail
         var mocktail = _mocktailRepository.GetMocktailById(command.Id);
         if (mocktail == null)
         {
@@ -29,28 +29,28 @@ public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, Upda
             };
         }
 
-        // Mise à jour des propriétés de base
+        // Updating basic properties
         mocktail.Name = command.Name;
         mocktail.Description = command.Description;
         mocktail.Price = command.Price;
         mocktail.Image = command.Image;
         mocktail.ForceAvailable = command.ForceAvailable;
 
-        // --- Gestion des ingrédients ---
+        // --- Ingredients management ---
         
-        // Récupération synchrone de tous les ingrédients
+        // Synchronous retrieval of all ingredients
         var allIngredients = _mocktailRepository.GetAllIngredientsAsync().Result;
 
-        // Suppression des anciennes associations
+        // Removing old associations
         mocktail.MocktailIngredients.Clear();
 
-        // Ajout des nouveaux ingrédients
+        // Adding new ingredients
         foreach (var ingredientDto in command.Ingredients)
         {
             var ingredient = allIngredients.FirstOrDefault(i => i.Name == ingredientDto.Name);
             if (ingredient == null)
             {
-                // Gestion d'erreur si ingrédient non trouvé
+                // Error handling if ingredient not found
                 return new UpdateMocktailOutput
                 {
                     Success = false,
@@ -58,7 +58,7 @@ public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, Upda
                 };
             }
 
-            // Création de la nouvelle association
+            // Creating new association
             mocktail.MocktailIngredients.Add(new Domain.mocktail_ingredient
             {
                 Mocktail = mocktail,
@@ -68,7 +68,7 @@ public class UpdateMocktailHandler : ICommandHandler<UpdateMocktailCommand, Upda
             });
         }
 
-        // Sauvegarde des modifications
+        // Saving changes
         _mocktailRepository.UpdateMocktail(mocktail);
 
         return new UpdateMocktailOutput

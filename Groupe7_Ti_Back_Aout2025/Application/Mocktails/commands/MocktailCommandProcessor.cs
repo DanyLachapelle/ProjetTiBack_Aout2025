@@ -5,15 +5,15 @@ using Application.Utils;
 
 namespace Application.Mocktails.commands;
 
-// Façade centrale pour les commandes relatives aux mocktails
+// Central facade for mocktail-related commands
 public class MocktailCommandProcessor
 {
-    // Handlers pour les différentes opérations
+    // Handlers for different operations
     private readonly ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput> _deleteMocktailHandler;
     private readonly ICommandHandler<CreateMocktailCommand, CreateMocktailOutput> _createMocktailHandler;
     private readonly ICommandHandler<UpdateMocktailCommand, UpdateMocktailOutput> _updateMocktailHandler;
     
-    // Injection des dépendances
+    // Dependency injection
     public MocktailCommandProcessor(
         ICommandHandler<DeleteMocktailCommand, DeleteMocktailOutput> deleteMocktailHandler,
         ICommandHandler<CreateMocktailCommand, CreateMocktailOutput> createMocktailHandler,
@@ -24,19 +24,19 @@ public class MocktailCommandProcessor
         _updateMocktailHandler = updateMocktailHandler;
     }
     
-    // Création d'un nouveau mocktail
+    // Create a new mocktail
     public CreateMocktailOutput CreateMocktail(CreateMocktailCommand command)
     {
         return _createMocktailHandler.Handle(command);
     }
 
-    // Suppression d'un mocktail existant
+    // Delete an existing mocktail
     public DeleteMocktailOutput DeleteMocktail(DeleteMocktailCommand command)
     {
         return _deleteMocktailHandler.Handle(command);
     }
     
-    // Mise à jour d'un mocktail existant
+    // Update an existing mocktail
     public UpdateMocktailOutput UpdateMocktail(UpdateMocktailCommand command)
     {
         return _updateMocktailHandler.Handle(command);

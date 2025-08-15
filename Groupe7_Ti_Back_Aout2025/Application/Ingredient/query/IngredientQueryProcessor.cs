@@ -3,23 +3,23 @@ using Application.Utils;
 
 namespace Application.Ingredient.query;
 
-// Processeur centralisé pour les queries relatives aux ingrédients
+// Centralized processor for ingredient-related queries
 public class IngredientQueryProcessor
 {
-    // Handler pour la récupération de tous les ingrédients
+    // Handler for retrieving all ingredients
     private readonly IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput> _ingredientGetAllHandler;
    
-    // Injection de dépendance du handler
+    // Dependency injection of the handler
     public IngredientQueryProcessor(
         IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput> ingredientGetAllHandler)
     {
         _ingredientGetAllHandler = ingredientGetAllHandler;
     }
    
-    // Méthode publique pour obtenir tous les ingrédients
+    // Public method to get all ingredients
     public IngredientGetAllOutput GetAllIngredients(IngredientGetAllQuery query)
     {
-        // Délégation au handler spécialisé
+        // Delegation to the specialized handler
         return _ingredientGetAllHandler.Handle(query);
     }
 }

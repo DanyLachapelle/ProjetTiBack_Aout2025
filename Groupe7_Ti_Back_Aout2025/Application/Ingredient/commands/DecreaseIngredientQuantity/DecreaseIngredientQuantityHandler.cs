@@ -3,37 +3,37 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.commands.DecreaseIngredientQuantity;
 
-// Handler pour la diminution de quantité d'ingrédient
+// Handler for decreasing ingredient quantity
 public class DecreaseIngredientQuantityHandler : ICommandHandler<DecreaseIngredientQuantityCommand, DecreaseIngredientQuantityOutput>
 {
-    // Répository pour l'accès aux données des ingrédients
+    // Repository for accessing ingredient data
     private readonly IIngredientRepository _ingredientRepository;
     
-    // Injection de dépendance du repository
+    // Dependency injection of the repository
     public DecreaseIngredientQuantityHandler(IIngredientRepository ingredientRepository)
     {
         _ingredientRepository = ingredientRepository;
     }
 
-    // Méthode principale de traitement de la commande
+    // Main command handling method
     public DecreaseIngredientQuantityOutput Handle(DecreaseIngredientQuantityCommand command)
     {
-        // Validation de la quantité
+        // Quantity validation
         if (command.Quantity <= 0)
             throw new ArgumentException("Amount to decrease must be positive");
 
-        // Récupération de l'ingrédient
+        // Retrieve the ingredient
         var ingredient = _ingredientRepository.GetIngredientById(command.Id);
         if (ingredient == null)
             throw new ArgumentException("Ingredient not found");
 
-        // Opération métier : diminution de la quantité
+        // Business operation: quantity decrease
         ingredient.DecreaseQuantity(command.Quantity);
         
-        // Mise à jour en base de données
+        // Database update
         _ingredientRepository.DecreaseQuantity(ingredient);
        
-        // Retour du résultat
+        // Return the result
         return new DecreaseIngredientQuantityOutput
         {
             Success = true,

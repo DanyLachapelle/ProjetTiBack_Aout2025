@@ -6,25 +6,25 @@ using Infrastructure.Ingredient;
 
 namespace Application.Ingredient.query.getAllIngredient;
 
-// Handler pour la récupération de tous les ingrédients
+// Handler for retrieving all ingredients
 public class IngredientGetAllHandler : IQueryHandler<IngredientGetAllQuery, IngredientGetAllOutput>
 {
-    // Répository pour l'accès aux données
+    // Repository for data access
     private readonly IIngredientRepository _ingredientRepository;
     
-    // Injection de dépendance
+    // Dependency injection
     public IngredientGetAllHandler(IIngredientRepository ingredientRepository)
     {
         _ingredientRepository = ingredientRepository;
     }
     
-    // Méthode principale de traitement
+    // Main processing method
     public IngredientGetAllOutput Handle(IngredientGetAllQuery request)
     {
-        // Récupération de tous les ingrédients depuis le repository
+        // Retrieving all ingredients from the repository
         var ingredients = _ingredientRepository.GetAllIngredient();
 
-        // Transformation des entités en DTOs
+        // Transforming entities into DTOs
         var ingredientDtos = ingredients.Select(i => new IngredientDto
         {
             Id = i.Id,
@@ -32,11 +32,11 @@ public class IngredientGetAllHandler : IQueryHandler<IngredientGetAllQuery, Ingr
             Quantity = i.Quantity,
             RestockThreshold = i.RestockThreshold,
             Unit = i.Unit,
-            Allergen = i.Allergen ?? "none", // Valeur par défaut pour les allergènes null
+            Allergen = i.Allergen ?? "none", // Default value for null allergens
             LastModifiedAt = i.LastModifiedAt
         }).ToList();
 
-        // Retour des résultats
+        // Returning results
         return new IngredientGetAllOutput
         {
             Ingredients = ingredientDtos

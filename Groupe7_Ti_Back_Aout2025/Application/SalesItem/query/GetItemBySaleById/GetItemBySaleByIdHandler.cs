@@ -4,28 +4,32 @@ using Infrastructure.User.Sale;
 
 namespace Application.SalesItem.query.GetItemBySaleById;
 
+// Handles retrieval of a specific sale item by ID within a sale context
 public class GetItemBySaleByIdHandler : IQueryHandler<GetItemBySaleByIdQuery, GetItemBySaleByIdOutput>
 {
     private readonly ISaleItemRepository _saleItemRepository;
 
+    // Initializes with sale item repository dependency
     public GetItemBySaleByIdHandler(ISaleItemRepository saleItemRepository)
     {
         _saleItemRepository = saleItemRepository;
     }
 
+    // Retrieves and validates a sale item, returns null if not found or mismatched
     public GetItemBySaleByIdOutput Handle(GetItemBySaleByIdQuery query)
     {
-        // Validation
+        // Input validation
         if (query == null)
             throw new ArgumentNullException(nameof(query));
 
-        // Utilisation directe du repository existant
+        // Directly uses existing repository method
         var item = _saleItemRepository.GetById(query.ItemId);
 
-        // Vérifications supplémentaires
+        // Additional business rule checks
         if (item == null || item.SaleId != query.SaleId)
             return null;
 
+        // Maps entity to output DTO with null-safe property access
         return new GetItemBySaleByIdOutput
         {
             Id = item.Id,

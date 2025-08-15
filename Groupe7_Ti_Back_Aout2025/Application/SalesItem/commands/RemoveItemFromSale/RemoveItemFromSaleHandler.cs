@@ -19,7 +19,7 @@ public class RemoveItemFromSaleHandler : ICommandHandler<RemoveItemFromSaleComma
 
     public RemoveItemFromSaleOutput Handle(RemoveItemFromSaleCommand command)
     {
-        // Validation des entrées
+        // Input validation
         if (command == null)
             throw new ArgumentNullException(nameof(command), "Command cannot be null");
 
@@ -29,7 +29,7 @@ public class RemoveItemFromSaleHandler : ICommandHandler<RemoveItemFromSaleComma
         if (command.ItemId <= 0)
             throw new ArgumentException("Invalid item ID provided", nameof(command.ItemId));
 
-        // Récupération de l'item avec vérification d'appartenance
+        // Retrieve item with ownership check
         var item = _saleItemRepository.GetById(command.ItemId);
         if (item == null)
             throw new KeyNotFoundException($"Item with ID {command.ItemId} not found");
@@ -37,10 +37,10 @@ public class RemoveItemFromSaleHandler : ICommandHandler<RemoveItemFromSaleComma
         if (item.SaleId != command.SaleId)
             throw new InvalidOperationException("Item does not belong to this sale");
 
-        // Suppression
+        // Delete operation
         _saleItemRepository.Remove(item);
         
-        // Mise à jour du total de la vente
+        // Update sale total
         var sale = _saleItemRepository.GetById(command.SaleId);
         sale.TotalAmount = _saleItemRepository.GetBySaleId(command.SaleId)
             .Sum(i => i.ItemTotal);

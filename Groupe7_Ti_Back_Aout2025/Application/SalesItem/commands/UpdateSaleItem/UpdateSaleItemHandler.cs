@@ -30,23 +30,23 @@ public class UpdateSaleItemHandler : ICommandHandler<UpdateSaleItemCommand, Upda
         if (command.NewQuantity <= 0)
             throw new ArgumentException("Quantity must be positive", nameof(command.NewQuantity));
 
-        // Récupération de l'item avec ses relations
+        // Retrieve item with its relations
         var item = _saleItemRepository.GetByIdWithItems(command.ItemId);
         if (item == null || item.SaleId != command.SaleId)
             throw new KeyNotFoundException($"Item {command.ItemId} not found in sale {command.SaleId}");
 
-        // Récupération du mocktail pour le prix
+        // Retrieve mocktail for price
         var mocktail = _mocktailRepository.GetMocktailById(item.MocktailId);
         var unitPrice = mocktail?.Price ?? 0;
 
-        // Mise à jour
+        // Update
         item.Quantity = command.NewQuantity;
         item.ItemTotal = command.NewQuantity * unitPrice;
 
-        // Sauvegarde
+        // Save
         _saleItemRepository.Update(item);
 
-        // Mise à jour du total de la vente
+        // Update sale total
         var sale = _saleRepository.GetSaleById(command.SaleId);
         sale.TotalAmount = _saleItemRepository.GetBySaleId(command.SaleId)
             .Sum(i => i.ItemTotal);

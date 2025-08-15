@@ -29,6 +29,4 @@ public class GetAllTablesHandler : IQueryHandler<GetAllTablesQuery, GetAllTables
 
         return output;
     }
-
-    
 }

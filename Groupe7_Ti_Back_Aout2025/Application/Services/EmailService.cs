@@ -5,7 +5,7 @@ namespace Application.Services
 {
     public class EmailService : IEmailService
     {
-        // Configuration injectée plutôt qu'en dur dans le code
+        // Configuration injected
         public async Task SendEmailAsync(string to, string subject, string token)
         {
             try
@@ -35,7 +35,7 @@ namespace Application.Services
                 </html>";
 
                 var mail = new MailMessage("helhafresh@gmail.com", to, subject, htmlBody);
-                mail.IsBodyHtml = true; // Indique que le corps est du HTML
+                mail.IsBodyHtml = true; // show that the body is in html
 
                 await client.SendMailAsync(mail);
             }

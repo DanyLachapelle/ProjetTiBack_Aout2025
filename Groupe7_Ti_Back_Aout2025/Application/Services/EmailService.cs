@@ -5,6 +5,7 @@ namespace Application.Services
 {
     public class EmailService : IEmailService
     {
+        // Configuration injectée plutôt qu'en dur dans le code
         public async Task SendEmailAsync(string to, string subject, string token)
         {
             try

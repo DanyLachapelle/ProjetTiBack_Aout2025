@@ -5,20 +5,26 @@ using Infrastructure.Mocktail;
 
 namespace Application.Mocktails.commands.createMocktail;
 
-public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, CreateMocktailOutput>
+// Handler pour la création de cocktails sans alcool (mocktails)
+public class CreateMocktailHandler : ICommandHandler<CreateMocktailCommand, CreateMocktailOutput>
 {
+    // Répository pour la persistance des mocktails
     private readonly IMocktailRepository _mocktailRepository;
     
+    // Injection de dépendance du repository
     public CreateMocktailHandler(IMocktailRepository mocktailRepository)
     {
         _mocktailRepository = mocktailRepository;
     }
+
+    // Méthode principale de traitement de la commande
     public CreateMocktailOutput Handle(CreateMocktailCommand command)
     {
+        // Validation de la commande
         if (command == null)
             throw new ArgumentNullException(nameof(command));
 
-        // Création du mocktail
+        // Création de l'entité Mocktail de base
         var mocktail = new Mocktail
         {
             Name = command.Name,
@@ -27,20 +33,21 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             Image = command.Image
         };
 
-        // Ajouter les ingrédients
+        // Traitement des ingrédients
         foreach (var ingredientDto in command.Ingredients)
         {
-            // Vérifie si l'ingrédient existe déjà
+            // Vérification de l'existence de l'ingrédient
             var existingIngredient = _mocktailRepository.GetIngredientByName(ingredientDto.Name);
 
             Domain.Ingredient ingredientEntity;
+            
+            // Création si l'ingrédient n'existe pas
             if (existingIngredient == null)
             {
-                // Si pas trouvé, on le crée
                 var newIngredient = new Domain.Ingredient
                 {
                     Name = ingredientDto.Name,
-                    Quantity = 0, // ou une autre logique si nécessaire
+                    Quantity = 0, // Initialisé à 0 (sera géré séparément)
                     Unit = ingredientDto.Unit,
                     RestockThreshold = 0
                 };
@@ -51,7 +58,7 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
                 ingredientEntity = existingIngredient;
             }
 
-            // Association à la table pivot
+            // Création de la relation many-to-many avec quantité
             var mocktailIngredient = new mocktail_ingredient
             {
                 Ingredient = ingredientEntity,
@@ -62,9 +69,10 @@ public class CreateMocktailHandler:ICommandHandler<CreateMocktailCommand, Create
             mocktail.MocktailIngredients.Add(mocktailIngredient);
         }
 
-        // Enregistrement du mocktail
+        // Persistance du mocktail complet
         var createdMocktail = _mocktailRepository.CreateMocktail(mocktail);
 
+        // Retour des informations créées
         return new CreateMocktailOutput
         {
             Id = createdMocktail.Id,

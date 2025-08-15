@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cwTp0KiZWik=",
+  "dgSpecHash": "IEAj7l+fnO8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\guill\\OneDrive\\Documents\\cours_helha_3\\Seconde Session\\Projet\\Projet\\projetBack\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\laros\\RiderProjects\\ProjetTiBack_Aout2025\\Groupe7_Ti_Back_Aout2025\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\guill\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+    "C:\\Users\\laros\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
   ],
   "logs": []
 }

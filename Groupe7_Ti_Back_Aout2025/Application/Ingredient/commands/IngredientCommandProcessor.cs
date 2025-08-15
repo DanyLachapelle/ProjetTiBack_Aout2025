@@ -8,8 +8,10 @@ using Application.Utils;
 
 namespace Application.Ingredient.commands;
 
+// Processeur central pour les commandes liées aux ingrédients
 public class IngredientCommandProcessor
 {
+    // Handlers injectés pour chaque type de commande
     private readonly ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> _createIngredientHandler;
     private readonly ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> _deleteIngredientHandler;
     private readonly ICommandHandler<UpdateLimitIngredientCommand, UpdateLimitIngredientOutput> _updateLimitIngredientHandler;
@@ -18,6 +20,7 @@ public class IngredientCommandProcessor
     private readonly ICommandHandler<DecreaseIngredientQuantityCommand, DecreaseIngredientQuantityOutput> _decreaseIngredientQuantityHandler;
     
     
+    // Injection des dépendances
     public IngredientCommandProcessor(
         ICommandHandler<CreateIngredientCommand, CreateIngredientOutput> createIngredientHandler,
         ICommandHandler<DeleteIngredientCommand, DeleteIngredientOutput> deleteIngredientHandler,
@@ -34,6 +37,7 @@ public class IngredientCommandProcessor
         _decreaseIngredientQuantityHandler = decreaseIngredientQuantityHandler;
     }
     
+    // Suppression d'un ingrédient
     public DeleteIngredientOutput DeleteIngredient(int id)
     {
         var command = new DeleteIngredientCommand { Id = id };
@@ -46,6 +50,7 @@ public class IngredientCommandProcessor
         return _deleteIngredientHandler.Handle(command);
     }
     
+    // Mise à jour du seuil de réapprovisionnement
     public UpdateLimitIngredientOutput UpdateLimitIngredient(int id, UpdateLimitIngredientQuery query)
     {
         if (query == null)
@@ -63,6 +68,7 @@ public class IngredientCommandProcessor
         return _updateLimitIngredientHandler.Handle(command);
     }
     
+    // Augmentation de la quantité d'ingrédient
     public UpdateQuantityIngredientOutput UpdateQuantityIngredient(int id, UpdateQuantityIngredientCommand command)
     {
         if (command == null)
@@ -80,6 +86,7 @@ public class IngredientCommandProcessor
         return _updateQuantityIngredientHandler.Handle(command);
     }
     
+    // Création d'un nouvel ingrédient
     public CreateIngredientOutput CreateIngredient(CreateIngredientCommand command)
     {
         if (command == null)
@@ -95,7 +102,8 @@ public class IngredientCommandProcessor
         return _createIngredientHandler.Handle(command);
     }
     
-    public DecreaseIngredientQuantityOutput DecreaseIngredientQuantity(int id,DecreaseIngredientQuantityCommand command)
+    // Diminution de la quantité d'ingrédient
+    public DecreaseIngredientQuantityOutput DecreaseIngredientQuantity(int id, DecreaseIngredientQuantityCommand command)
     {
         if (command == null)
         {
@@ -117,8 +125,4 @@ public class IngredientCommandProcessor
 
         return _decreaseIngredientQuantityHandler.Handle(command);
     }
-
-
-
-    
 }

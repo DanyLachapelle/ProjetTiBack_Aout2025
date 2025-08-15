@@ -474,11 +474,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
+      "projectUniqueName": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
       "projectName": "Groupe7_Ti_Back_Aout2025",
-      "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
+      "projectPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025.csproj",
       "packagesPath": "C:\\Users\\AsusT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\obj\\",
+      "outputPath": "C:\\Users\\AsusT\\OneDrive - Haute Ecole Louvain en Hainaut\\Bloc_3\\Projet\\groupe7_TI_Aout2025\\Backend\\Groupe7_TI_BackAout2025\\Groupe7_TI_BackAout2025\\Groupe7_Ti_Back_Aout2025\\Groupe7_Ti_Back_Aout2025\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AsusT\\AppData\\Roaming\\NuGet\\NuGet.Config"
